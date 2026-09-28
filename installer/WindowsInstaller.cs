@@ -74,8 +74,28 @@ internal static class WindowsInstaller
                 return RepairShortcut();
             if (args.Any(a => String.Equals(a, "--uninstall", StringComparison.OrdinalIgnoreCase)))
                 return Uninstall();
-            if (args.Any(a => String.Equals(a, "--upgrade", StringComparison.OrdinalIgnoreCase) || String.Equals(a, "--silent", StringComparison.OrdinalIgnoreCase)))
+
+            bool isFromTemp = false;
+            try
+            {
+                string loc = Assembly.GetExecutingAssembly().Location;
+                string tempDir = Path.GetTempPath().TrimEnd('\\', '/');
+                isFromTemp = loc.StartsWith(tempDir, StringComparison.OrdinalIgnoreCase) ||
+                             loc.IndexOf("Temp", StringComparison.OrdinalIgnoreCase) >= 0;
+            }
+            catch { }
+
+            bool isAlreadyInstalled = false;
+            try
+            {
+                isAlreadyInstalled = !string.IsNullOrEmpty(InstalledRoot());
+            }
+            catch { }
+
+            if (args.Any(a => String.Equals(a, "--upgrade", StringComparison.OrdinalIgnoreCase) || String.Equals(a, "--silent", StringComparison.OrdinalIgnoreCase))
+                || (isFromTemp && isAlreadyInstalled))
                 return RunSilentUpgrade();
+
             terms = ReadTextResource(TermsResource);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -199,7 +219,7 @@ internal static class WindowsInstaller
 
             string installedExe = Path.Combine(versionPath, manifest.Executable);
 
-            // Chờ hoặc dọn dẹp các tiến trình cũ đang chạy để tránh xung đột khóa file
+            // Chờ hoặc dọn dẹp các tiến trình cũ đang chạy để tránh xung đột khóa file và đóng cửa sổ giao diện cũ
             string versionsDir = Path.Combine(basePath, "versions") + Path.DirectorySeparatorChar;
             for (int wait = 0; wait < 10; wait++)
             {
@@ -209,11 +229,14 @@ internal static class WindowsInstaller
                     try
                     {
                         string fn = p.MainModule.FileName;
-                        if (fn.StartsWith(versionsDir, StringComparison.OrdinalIgnoreCase) ||
-                            string.Equals(p.ProcessName, Path.GetFileNameWithoutExtension(manifest.Executable), StringComparison.OrdinalIgnoreCase))
+                        bool matchExe = fn.StartsWith(versionsDir, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.ProcessName, Path.GetFileNameWithoutExtension(manifest.Executable), StringComparison.OrdinalIgnoreCase);
+                        bool matchTitle = !string.IsNullOrEmpty(p.MainWindowTitle) && p.MainWindowTitle.IndexOf(manifest.AppName, StringComparison.OrdinalIgnoreCase) >= 0;
+
+                        if (matchExe || matchTitle)
                         {
                             anyRunning = true;
-                            if (wait > 4)
+                            if (wait > 1)
                             {
                                 p.Kill();
                             }
@@ -403,20 +426,47 @@ internal static class WindowsInstaller
             else ShowComplete();
         }
 
+        private bool IsExistingInstallation()
+        {
+            try
+            {
+                return !string.IsNullOrEmpty(InstalledRoot());
+            }
+            catch { return false; }
+        }
+
         private void ShowWelcome()
         {
+            if (IsExistingInstallation())
+            {
+                pageHeading.Text = "Nâng cấp " + manifest.AppName;
+                pageHint.Text = "Phát hiện phiên bản cũ đã được cài đặt trên máy. Bấm 'Nâng cấp ngay' để cập nhật lên phiên bản " + manifest.Version + ".";
+                next.Text = "Nâng cấp ngay  ›";
+                var card = new Panel { Left = 32, Top = 128, Width = 704, Height = 186, BackColor = System.Drawing.Color.FromArgb(244, 248, 253) };
+                var cardTitle = new Label { Left = 22, Top = 20, Width = 650, Height = 28, Text = "Nâng cấp an toàn & nhanh chóng", Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.FromArgb(22, 42, 75) };
+                var bullets = new Label { Left = 24, Top = 58, Width = 650, Height = 104,
+                    Text = "✓  Nâng cấp lên phiên bản mới nhất " + manifest.Version + "\n✓  Bảo toàn 100% dữ liệu lớp học, hồ sơ trẻ và giáo án\n✓  Tự động cập nhật lối tắt và cấu hình hệ thống",
+                    Font = new System.Drawing.Font("Segoe UI", 10F), ForeColor = System.Drawing.Color.FromArgb(52, 70, 94) };
+                card.Controls.AddRange(new Control[] { cardTitle, bullets });
+                var note = new Label { Left = 34, Top = 340, Width = 700, Height = 45,
+                    Text = "Nhấn 'Nâng cấp ngay' bên dưới để tiến hành cập nhật trực tiếp.",
+                    ForeColor = System.Drawing.Color.FromArgb(16, 124, 65), Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold) };
+                content.Controls.AddRange(new Control[] { card, note });
+                return;
+            }
+
             pageHeading.Text = "Chào mừng bạn";
             pageHint.Text = "Cài đặt " + manifest.AppName + " trên máy tính này. Quá trình chỉ mất vài bước.";
-            var card = new Panel { Left = 32, Top = 128, Width = 704, Height = 186, BackColor = System.Drawing.Color.FromArgb(244, 248, 253) };
-            var cardTitle = new Label { Left = 22, Top = 20, Width = 650, Height = 28, Text = "Trong bộ cài này có", Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.FromArgb(22, 42, 75) };
-            var bullets = new Label { Left = 24, Top = 58, Width = 650, Height = 104,
+            var welcomeCard = new Panel { Left = 32, Top = 128, Width = 704, Height = 186, BackColor = System.Drawing.Color.FromArgb(244, 248, 253) };
+            var welcomeCardTitle = new Label { Left = 22, Top = 20, Width = 650, Height = 28, Text = "Trong bộ cài này có", Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.FromArgb(22, 42, 75) };
+            var welcomeBullets = new Label { Left = 24, Top = 58, Width = 650, Height = 104,
                 Text = "✓  Ứng dụng và các thành phần cần thiết\n✓  Cài đặt theo từng phiên bản, không ghi đè ứng dụng đang chạy\n✓  Trình gỡ cài đặt riêng; dữ liệu công việc được giữ nguyên",
                 Font = new System.Drawing.Font("Segoe UI", 10F), ForeColor = System.Drawing.Color.FromArgb(52, 70, 94) };
-            card.Controls.AddRange(new Control[] { cardTitle, bullets });
-            var note = new Label { Left = 34, Top = 340, Width = 700, Height = 45,
+            welcomeCard.Controls.AddRange(new Control[] { welcomeCardTitle, welcomeBullets });
+            var welcomeNote = new Label { Left = 34, Top = 340, Width = 700, Height = 45,
                 Text = "Ở bước tiếp theo, bạn sẽ xem Điều khoản sử dụng. Bạn cần đồng ý trước khi cài đặt.",
                 ForeColor = System.Drawing.Color.FromArgb(91, 107, 127), Font = new System.Drawing.Font("Segoe UI", 9.5F) };
-            content.Controls.AddRange(new Control[] { card, note });
+            content.Controls.AddRange(new Control[] { welcomeCard, welcomeNote });
         }
 
         private void ShowTerms()
@@ -486,7 +536,16 @@ internal static class WindowsInstaller
 
         private void Next()
         {
-            if (page == 0) ShowPage(1);
+            if (page == 0)
+            {
+                if (IsExistingInstallation())
+                {
+                    accept.Checked = true;
+                    Install();
+                    return;
+                }
+                ShowPage(1);
+            }
             else if (page == 1 && accept.Checked) ShowPage(2);
             else if (page == 2) Install();
             else if (page == 3) FinishClick(this, EventArgs.Empty);
