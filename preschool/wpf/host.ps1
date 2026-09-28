@@ -30,6 +30,15 @@ function Status($text){(F 'Status').Text=$text}
 
 function Notice($text){Status $text;if(-not $Smoke){[void][Windows.MessageBox]::Show($window,$text,'Trợ lý Giáo viên Mầm non')}}
 
+function Check-Update {
+ Status 'Đang kiểm tra cập nhật từ xa...'
+ try {
+  [void](Api 'check_update' @{interactive=$true})
+ } catch {
+  Notice ('Không thể kết nối máy chủ cập nhật: '+$_.Exception.Message)
+ }
+}
+
 function Copy-Text($text){
  if(-not $text){Notice 'Chưa có nội dung để sao chép.';return}
  try {
@@ -191,6 +200,9 @@ function Show-Home {
  if(-not $tasks.Count){Add $tasksPanel (Label 'Chưa có việc đang chờ.' 14)}
  foreach($t in $tasks){Add $tasksPanel (Label ($t.due+'  ·  '+$t.title) 14)}
  Add $tasksPanel (Button 'Mở lịch công việc →' {Show-Page 'calendar'})
+ $barHome=New-Object Windows.Controls.WrapPanel;$barHome.Margin='0,14,0,0'
+ Add $barHome (Button '🔄 Kiểm tra cập nhật phần mềm' {Check-Update})
+ Add $p $barHome
 }
 
 function Show-Journal($kind){
@@ -994,14 +1006,7 @@ function Show-Settings {
 
  $barUp=New-Object Windows.Controls.WrapPanel
 
- $btnCheckUpdate=Button 'Kiểm tra cập nhật' {
-  Status 'Đang kiểm tra cập nhật từ xa...'
-  try {
-   [void](Api 'check_update' @{interactive=$true})
-  } catch {
-   Notice ('Không thể kết nối máy chủ cập nhật: '+$_.Exception.Message)
-  }
- }
+ $btnCheckUpdate=Button 'Kiểm tra cập nhật' {Check-Update}
  $script:ui.CheckUpdate=$btnCheckUpdate
  Add $barUp $btnCheckUpdate
  Add $p $barUp
@@ -1827,6 +1832,10 @@ foreach($group in $navGroups){
 . (Join-Path $PSScriptRoot 'school-link.ps1')
 
 (F 'BtnSchool').Add_Click({Open-SchoolWorkspace})
+$bNav=F 'BtnCheckUpdateNav'
+if($bNav){$bNav.Add_Click({Check-Update})}
+$bTop=F 'BtnTopUpdate'
+if($bTop){$bTop.Add_Click({Check-Update})}
 
 (F 'BtnSaveDoc').Add_Click({Save-Document})
 
