@@ -74,6 +74,8 @@ internal static class WindowsInstaller
                 return RepairShortcut();
             if (args.Any(a => String.Equals(a, "--uninstall", StringComparison.OrdinalIgnoreCase)))
                 return Uninstall();
+            if (args.Any(a => String.Equals(a, "--upgrade", StringComparison.OrdinalIgnoreCase) || String.Equals(a, "--silent", StringComparison.OrdinalIgnoreCase)))
+                return RunSilentUpgrade();
             terms = ReadTextResource(TermsResource);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -172,6 +174,127 @@ internal static class WindowsInstaller
         }
         Console.WriteLine("OK " + manifest.AppId + " " + manifest.Version + " " + manifest.Executable);
         return 0;
+    }
+
+    private static int RunSilentUpgrade()
+    {
+        try
+        {
+            string basePath;
+            try
+            {
+                basePath = InstalledRoot();
+            }
+            catch
+            {
+                basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Programs", manifest.InstallFolder);
+            }
+
+            string versionPath = Path.Combine(basePath, "versions", manifest.Version);
+            string staging = Path.Combine(basePath, ".install-" + Guid.NewGuid().ToString("N"));
+
+            Directory.CreateDirectory(basePath);
+            ValidateRoot(basePath);
+            Directory.CreateDirectory(Path.GetDirectoryName(versionPath));
+
+            string installedExe = Path.Combine(versionPath, manifest.Executable);
+
+            // Chờ hoặc dọn dẹp các tiến trình cũ đang chạy để tránh xung đột khóa file
+            string versionsDir = Path.Combine(basePath, "versions") + Path.DirectorySeparatorChar;
+            for (int wait = 0; wait < 10; wait++)
+            {
+                bool anyRunning = false;
+                foreach (Process p in Process.GetProcesses())
+                {
+                    try
+                    {
+                        string fn = p.MainModule.FileName;
+                        if (fn.StartsWith(versionsDir, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.ProcessName, Path.GetFileNameWithoutExtension(manifest.Executable), StringComparison.OrdinalIgnoreCase))
+                        {
+                            anyRunning = true;
+                            if (wait > 4)
+                            {
+                                p.Kill();
+                            }
+                        }
+                    }
+                    catch { }
+                }
+                if (!anyRunning) break;
+                System.Threading.Thread.Sleep(500);
+            }
+
+            if (!Directory.Exists(versionPath) || !File.Exists(installedExe))
+            {
+                if (Directory.Exists(staging)) try { Directory.Delete(staging, true); } catch { }
+                Directory.CreateDirectory(staging);
+                using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(PayloadResource))
+                using (var archive = new ZipArchive(input, ZipArchiveMode.Read))
+                {
+                    string root = Path.GetFullPath(staging) + Path.DirectorySeparatorChar;
+                    foreach (ZipArchiveEntry entry in archive.Entries)
+                    {
+                        string target = Path.GetFullPath(Path.Combine(staging, entry.FullName.Replace('/', Path.DirectorySeparatorChar)));
+                        if (!target.StartsWith(root, StringComparison.OrdinalIgnoreCase))
+                            throw new InvalidDataException("Gói cài đặt chứa đường dẫn không hợp lệ.");
+                        if (entry.FullName.EndsWith("/", StringComparison.Ordinal))
+                        {
+                            Directory.CreateDirectory(target);
+                        }
+                        else
+                        {
+                            Directory.CreateDirectory(Path.GetDirectoryName(target));
+                            using (Stream source = entry.Open())
+                            using (var output = new FileStream(target, FileMode.CreateNew, FileAccess.Write, FileShare.None))
+                            {
+                                source.CopyTo(output);
+                            }
+                        }
+                    }
+                }
+
+                string appPath = Path.Combine(staging, manifest.Executable);
+                if (!File.Exists(appPath)) throw new FileNotFoundException("Payload không có tệp chạy chính.");
+                
+                if (Directory.Exists(versionPath))
+                {
+                    try { Directory.Delete(versionPath, true); } catch { }
+                }
+                Directory.Move(staging, versionPath);
+            }
+
+            string uninstaller = EnsureRegistration(basePath);
+            try
+            {
+                CreateShortcut(StartMenuLink(), installedExe, versionPath);
+                CreateShortcut(UninstallMenuLink(), uninstaller, Path.GetDirectoryName(uninstaller));
+
+                string desktopLink = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), manifest.AppName + ".lnk");
+                if (File.Exists(desktopLink))
+                {
+                    CreateShortcut(desktopLink, installedExe, versionPath);
+                }
+            }
+            catch { }
+
+            if (File.Exists(installedExe))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = installedExe,
+                    WorkingDirectory = versionPath,
+                    UseShellExecute = true
+                });
+            }
+
+            return 0;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Nâng cấp tự động thất bại:\n\n" + ex.Message, "Cập nhật ứng dụng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return 1;
+        }
     }
 
     private sealed class SetupForm : Form

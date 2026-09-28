@@ -99,17 +99,20 @@ def download_and_install_update(download_url: str, app_title: str, latest_versio
         # Thông báo trước khi đóng ứng dụng
         show_native_message_box(
             f"Cập nhật {app_title}",
-            "Đã tải xong bản cập nhật mới thành công!\n\n"
-            "Ứng dụng sẽ tự động đóng để khởi chạy bộ cài đặt phiên bản mới.",
+            f"Đã tải xong bản cập nhật v{latest_version}!\n\n"
+            f"Ứng dụng sẽ tự động đóng và khởi động lại với phiên bản mới sau vài giây.\n"
+            f"Toàn bộ dữ liệu của lớp học được giữ nguyên 100%.",
             MB_OK | MB_ICONINFORMATION
         )
 
-        # Khởi chạy bộ cài đặt mới
+        # Khởi chạy bộ cài đặt mới với cờ --upgrade để tự động nâng cấp ngầm (không hiện wizard cài đặt)
         try:
-            # Thử chạy với cờ silent nếu là Inno Setup / NSIS, hoặc chạy trực tiếp
-            os.startfile(temp_path)
+            subprocess.Popen([temp_path, "--upgrade"])
         except Exception:
-            subprocess.Popen([temp_path], shell=True)
+            try:
+                os.startfile(temp_path)
+            except Exception:
+                subprocess.Popen([temp_path], shell=True)
 
         # Thoát ứng dụng hiện tại để tránh xung đột khóa tệp
         time.sleep(1)
@@ -161,7 +164,8 @@ def check_for_updates(
                     f"ĐÃ CÓ PHIÊN BẢN MỚI: v{latest_version}\n"
                     f"(Phiên bản hiện tại của bạn: v{current_version})\n\n"
                     f"--- NỘI DUNG NÂNG CẤP ---\n{changelog}\n\n"
-                    f"Thầy/Cô có muốn tự động tải về và nâng cấp ngay bây giờ không?"
+                    f"Thầy/Cô có muốn tự động nâng cấp ngay bây giờ không?\n"
+                    f"(Quá trình nâng cấp diễn ra tự động ngầm, toàn bộ dữ liệu được giữ nguyên 100%)"
                 )
                 choice = show_native_message_box(
                     f"Cập nhật {app_title}",
