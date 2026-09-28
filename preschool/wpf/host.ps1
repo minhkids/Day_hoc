@@ -990,6 +990,22 @@ function Show-Settings {
 
  Add $p $bar
 
+ Add $p (Label 'Cập nhật phần mềm' 20)
+
+ $barUp=New-Object Windows.Controls.WrapPanel
+
+ $btnCheckUpdate=Button 'Kiểm tra cập nhật' {
+  Status 'Đang kiểm tra cập nhật từ xa...'
+  try {
+   [void](Api 'check_update' @{interactive=$true})
+  } catch {
+   Notice ('Không thể kết nối máy chủ cập nhật: '+$_.Exception.Message)
+  }
+ }
+ $script:ui.CheckUpdate=$btnCheckUpdate
+ Add $barUp $btnCheckUpdate
+ Add $p $barUp
+
  Add $p (Label ('Dữ liệu của app: '+$script:data.root) 12)
 
  Add $p (Label 'Học liệu, sổ theo dõi, lịch và xuất tài liệu dùng được khi chưa có AI. Kết nối trường học mở cổng dùng chung để chia sẻ tài liệu đã xuất.' 13)

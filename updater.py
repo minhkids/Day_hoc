@@ -70,7 +70,7 @@ def get_default_server_url() -> str:
             except Exception:
                 pass
 
-    return "http://localhost:8000"
+    return "https://troly-giaoduc-server.onrender.com"
 
 
 def download_and_install_update(download_url: str, app_title: str, latest_version: str):
