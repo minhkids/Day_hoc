@@ -8,8 +8,8 @@ import zipfile
 root=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('release_tools',root/'installer/build_release.py')
 release=importlib.util.module_from_spec(spec);spec.loader.exec_module(release)
-release.VERSION='1.0.2'
-release.RELEASE=root/'releases/preschool-1.0.2'
+release.VERSION='1.0.3'
+release.RELEASE=root/'releases/preschool-1.0.3'
 release.INSTALLERS=release.RELEASE/'installers'
 release.INSTALLERS.mkdir(parents=True,exist_ok=True)
 app=dict(id='preschool',title='Trợ lý Giáo viên Mầm non',folder='TroLyGiaoVienMamNon',
