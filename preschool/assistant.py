@@ -50,13 +50,13 @@ SITUATIONS = [
     'Xử lý sơ cấp cứu: Sốt cao co giật ở trẻ mầm non'
 ]
 
-PRESCHOOL_AI_SYSTEM = '''Bạn là Trợ lý Sư phạm Mầm non chuyên nghiệp tại Việt Nam.
+PRESCHOOL_AI_SYSTEM = '''Bạn là Trợ lý AI Giáo viên Mầm non Việt Nam chuyên nghiệp.
 NGUYÊN TẮC BẮT BUỘC:
-1. Luôn xuất phát từ góc nhìn yêu thương trẻ, tôn trọng sự phát triển tự nhiên của trẻ mầm non (0-6 tuổi).
-2. Tôn trọng triết lý "Học bằng chơi, chơi mà học", lấy trẻ làm trung tâm theo Thông tư 51/2020/TT-BGDĐT.
-3. TUYỆT ĐỐI BẢO ĐẢM AN TOÀN TRẺ EM: Không gợi ý các vật liệu nhỏ dễ hóc (hạt cườm nhỏ, hột tròn) cho trẻ dưới 4 tuổi; không dùng kéo sắc nhọn, hóa chất độc hại; không giao bài tập viết chữ hay làm toán trừu tượng.
-4. Lời thoại cô giáo phải dịu dàng, khích lệ ("Cô khen con...", "Các con ơi...", "Chúng mình cùng xem...").
-5. Giao tiếp phụ huynh phải chân thành, tinh tế, nhận trách nhiệm bao quát, xoa dịu lo lắng và xây dựng niềm tin yêu.'''
+1. ĐI THẲNG VÀO NỘI DUNG THỰC THI (ZERO FLUFF): Tuyệt đối không mở bài dài dòng, không chào hỏi thừa thãi hay lặp lại đề bài; không thêm câu kết sáo rỗng.
+2. TRÌNH BÀY MẠCH LẠC, PHÂN CẤP RÕ RÀNG: Dùng tiêu đề Markdown (#, ##, ###), gạch đầu dòng ngắn gọn, đánh số thứ tự các bước và in đậm điểm then chốt.
+3. PHƯƠNG PHÁP LẤY TRẺ LÀM TRUNG TÂM: Tôn trọng triết lý "Học bằng chơi, chơi mà học" theo Thông tư 51/2020/TT-BGDĐT.
+4. TUYỆT ĐỐI BẢO ĐẢM AN TOÀN TRẺ EM: Không gợi ý vật liệu sắc nhọn, hạt nhỏ dễ hóc cho trẻ dưới 4 tuổi; không giao bài tập viết chữ hay làm toán trừu tượng.
+5. TÍNH THỰC CHIẾN CAO: Lời thoại cô giáo phải cụ thể, dịu dàng, khích lệ; giao tiếp phụ huynh chân thành, tinh tế, nhận trách nhiệm bao quát và tạo niềm tin yêu.'''
 
 
 def generate_activity_plan(topic: str, age: str, theme: str, method: str, duration: str, materials: str,
@@ -82,14 +82,13 @@ def generate_activity_plan(topic: str, age: str, theme: str, method: str, durati
             f"- Thời lượng: {duration}\n"
             f"- Học liệu chuẩn bị sẵn: {materials}\n"
             f"- Đơn vị: {school} - Lớp: {class_name}\n\n"
-            f"YÊU CẦU CẤU TRÚC CHI TIẾT:\n"
-            f"1. Mục tiêu (Kiến thức khoa học/khám phá, Kỹ năng thực hành/vận động tinh, Thái độ/cảm xúc tích cực)\n"
+            f"YÊU CẦU CẤU TRÚC CHI TIẾT (ĐI THẲNG VÀO NỘI DUNG KẾ HOẠCH, KHÔNG MỞ BÀI/KẾT BÀI THỪA):\n"
+            f"1. Mục tiêu (Kiến thức, Kỹ năng, Thái độ)\n"
             f"2. Chuẩn bị môi trường & học liệu an toàn\n"
             f"3. Tiến trình tổ chức hoạt động chi tiết (gồm lời dẫn thoại của cô + hoạt động cụ thể của trẻ theo từng bước)\n"
-            f"4. Hệ thống 3-5 câu hỏi mở kích thích tư duy\n"
-            f"5. Trò chơi củng cố hoặc bài hát/bài thơ kết nối\n"
-            f"6. Lưu ý an toàn và quan sát hỗ trợ cá nhân trẻ nhút nhát\n\n"
-            f"Soạn chi tiết, có lời thoại cụ thể cho cô giáo dễ thực hành ngay trên lớp."
+            f"4. Trò chơi củng cố hoặc bài học chuyển tiếp\n"
+            f"5. Quan sát và hỗ trợ cá nhân trẻ nhút nhát\n\n"
+            f"Trình bày chuẩn Markdown, phân rõ các mục lớn nhỏ và gạch đầu dòng rõ ràng để cô giáo áp dụng được ngay."
         )
         try:
             return ask_ai_fn(profile, key, [{'role': 'user', 'content': prompt}])
@@ -158,11 +157,13 @@ def generate_parent_message(scenario: str, child_name: str, details: str, class_
             f"- Tên bé: {child_name}\n"
             f"- Chi tiết thực tế ở lớp: {details or 'Bé học tập và vui chơi ở lớp'}\n"
             f"- Lớp: {class_name} - Tên cô giáo: {teacher_name}\n\n"
-            f"YÊU CẦU QUAN TRỌNG VỀ VĂN PHONG:\n"
-            f"1. Lời chào ấm áp, xưng hô 'cô' và 'bố mẹ bé {child_name}'.\n"
-            f"2. Nêu rõ ràng sự việc trung thực, nhận trách nhiệm bao quát của cô, nêu cụ thể các bước sơ cứu/chăm sóc đã thực hiện tại lớp và báo tình trạng bình thường hiện tại của con để bố mẹ yên tâm.\n"
-            f"3. Dặn dò bố mẹ phối hợp theo dõi con buổi tối một cách ân cần.\n"
-            f"4. Sử dụng các emoji phù hợp (❤️, 🌸, 🌿, 🌟) giúp tin nhắn nhẹ nhàng, thân tình, giảm căng thẳng tối đa."
+            f"QUY TẮC BẮT BUỘC:\n"
+            f"- ĐI THẲNG VÀO NỘI DUNG TIN NHẮN: Bắt đầu ngay bằng lời chào bố mẹ, tuyệt đối KHÔNG có lời dẫn đầu ('Sau đây là...', 'Dưới đây là tin nhắn...'), KHÔNG kết bài giải thích thêm.\n"
+            f"- Định dạng sẵn sàng để cô giáo chỉ việc sao chép và gửi Zalo cho phụ huynh.\n"
+            f"- Lời chào ấm áp, xưng hô 'cô' và 'bố mẹ bé {child_name}'.\n"
+            f"- Nêu rõ ràng sự việc trung thực, nhận trách nhiệm bao quát của cô, nêu cụ thể các bước chăm sóc đã thực hiện tại lớp và báo tình trạng bình thường hiện tại của con để bố mẹ yên tâm.\n"
+            f"- Dặn dò bố mẹ phối hợp theo dõi con buổi tối một cách ân cần.\n"
+            f"- Sử dụng các emoji phù hợp (❤️, 🌸, 🌿, 🌟) giúp tin nhắn nhẹ nhàng, thân tình, giảm căng thẳng tối đa."
         )
         try:
             return ask_ai_fn(profile, key, [{'role': 'user', 'content': prompt}])
@@ -326,11 +327,12 @@ def generate_creative_content(genre: str, children_names: str, topic: str, age: 
             f"- Chủ đề/Bài học: {topic}\n"
             f"- Tên các bé nhân vật chính xuất hiện trong câu chuyện/bài thơ: {children_names}\n"
             f"- Độ tuổi độc giả nhỏ tuổi: {age}\n\n"
-            f"YÊU CẦU NGHỆ THUẬT SƯ PHẠM:\n"
-            f"1. Nội dung trong sáng, ngôn từ giàu hình ảnh, nhịp điệu tươi vui, ngộ nghĩnh.\n"
-            f"2. Đưa tên các bé ({children_names}) vào một cách tự nhiên, đáng yêu, giúp các bé cảm thấy tự hào và thích thú khi nghe cô đọc.\n"
-            f"3. Lồng ghép bài học giáo dục nhẹ nhàng (vệ sinh, chia sẻ, vâng lời, dũng cảm).\n"
-            f"4. Kèm theo 3 câu hỏi gợi mở đố vui sau khi kể xong."
+            f"QUY TẮC BẮT BUỘC:\n"
+            f"- ĐI THẲNG VÀO TÁC PHẨM: Bắt đầu ngay bằng Tiêu đề Markdown (# TÊN TÁC PHẨM), tuyệt đối KHÔNG có lời mào đầu ('Sau đây là tác phẩm...'), KHÔNG kết bài giải thích thừa.\n"
+            f"- Trình bày Markdown đẹp mắt, ngắt khổ rõ ràng, giàu vần điệu và cảm xúc.\n"
+            f"- Đưa tên các bé ({children_names}) vào một cách tự nhiên, đáng yêu, giúp các bé hào hứng khi nghe cô đọc.\n"
+            f"- Lồng ghép bài học giáo dục nhẹ nhàng (vệ sinh, chia sẻ, vâng lời, dũng cảm).\n"
+            f"- Cuối bài kèm 3 câu hỏi ngắn đố vui để cô giáo trò chuyện tương tác cùng trẻ."
         )
         try:
             return ask_ai_fn(profile, key, [{'role': 'user', 'content': prompt}])
@@ -414,11 +416,13 @@ def generate_situation_coaching(situation: str, details: str = '', age: str = ''
             f"- Tình huống: {situation}\n"
             f"- Chi tiết bổ sung: {details or 'Tình huống thường nhật tại lớp học mầm non'}\n"
             f"- Nhóm tuổi: {age}\n\n"
-            f"YÊU CẦU NỘI DUNG:\n"
-            f"1. Hiểu đúng tâm lý của trẻ ở giai đoạn này (nguyên nhân sâu xa).\n"
-            f"2. Các bước xử lý ngay tại chỗ (bước 1, bước 2, bước 3) với hành động và lời nói cụ thể của cô.\n"
-            f"3. Điều TUYỆT ĐỐI KHÔNG LÀM (tránh đòn roi, dọa nạt, cô lập trẻ).\n"
-            f"4. Cách trao đổi xoa dịu phụ huynh nếu có liên quan."
+            f"QUY TẮC BẮT BUỘC:\n"
+            f"- ĐI THẲNG VÀO CẨM NANG HƯỚNG DẪN: Bắt đầu ngay bằng Tiêu đề Markdown (# HƯỚNG DẪN XỬ LÝ SƯ PHẠM: ...), tuyệt đối KHÔNG có lời mào đầu, KHÔNG kết bài sáo rỗng.\n"
+            f"- Trình bày Markdown rõ ràng với tiêu đề (#, ##), danh sách các bước đánh số (1, 2, 3), từ khóa in đậm.\n"
+            f"1. Hiểu đúng tâm lý của trẻ ở giai đoạn này (nguyên nhân sâu xa ngắn gọn trong 2-3 gạch đầu dòng).\n"
+            f"2. Quy trình xử lý tại chỗ 3 bước chuẩn sư phạm: có hành động và câu nói thoại cụ thể của cô (đặt trong ngoặc kép hoặc in nghiêng).\n"
+            f"3. Những điều TUYỆT ĐỐI TRÁNH (dùng biểu tượng ❌).\n"
+            f"4. Kịch bản trao đổi chân tình cùng phụ huynh (nếu liên quan)."
         )
         try:
             return ask_ai_fn(profile, key, [{'role': 'user', 'content': prompt}])

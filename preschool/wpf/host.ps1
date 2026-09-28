@@ -1348,13 +1348,13 @@ function Show-Materials {
 
 function Launch-Situation-AI($sitName='Trẻ mới đi học khóc nhiều') {
  $age = if($script:data.profile.age){$script:data.profile.age}else{'Mẫu giáo 3–4 tuổi'}
- (F 'ChatPrompt').Text = "Hãy hướng dẫn sư phạm thực chiến cho giáo viên mầm non (nhóm lớp: $age) xử lý tình huống sau:`n`n- Tình huống: $sitName`n`nYêu cầu giải pháp:`n1. Hiểu đúng tâm lý của trẻ ở giai đoạn này`n2. Quy trình xử lý tại chỗ 3 bước (lời nói, hành động cụ thể của cô)`n3. Những điều TUYỆT ĐỐI KHÔNG ĐƯỢC LÀM`n4. Kịch bản trao đổi chân tình, xoa dịu phụ huynh cuối ngày."
+ (F 'ChatPrompt').Text = "Hãy hướng dẫn sư phạm thực chiến cho giáo viên mầm non (nhóm lớp: $age) xử lý tình huống:`n`n- Tình huống: $sitName`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề Markdown '# HƯỚNG DẪN XỬ LÝ SƯ PHẠM: ...', không mở bài dài dòng, không kết bài sáo rỗng.`n- Trình bày mạch lạc với các phần:`n  1. Hiểu đúng tâm lý của trẻ (nguyên nhân sâu xa ngắn gọn)`n  2. Quy trình xử lý tại chỗ 3 bước chuẩn sư phạm (hành động và câu nói thoại dỗ dành cụ thể của cô)`n  3. Những điều TUYỆT ĐỐI TRÁNH (dùng biểu tượng ❌)`n  4. Kịch bản ngắn trao đổi chân tình cùng phụ huynh cuối ngày."
  Show-Page 'chat'
 }
 
 function Launch-AdvMethod-AI($methodName='STEAM (Mô hình 5E)') {
  $age = if($script:data.profile.age){$script:data.profile.age}else{'Mẫu giáo 4–5 tuổi'}
- (F 'ChatPrompt').Text = "Hãy đóng vai Chuyên gia Giáo dục Mầm non, thiết kế chi tiết 01 Kế hoạch hoạt động giáo dục theo phương pháp tiên tiến sau:`n`n- Căn cứ pháp lý: Chương trình GDMN mới (VBHN 01/VBHN-BGDĐT & Thông tư 51/2020/TT-BGDĐT)`n- Phương pháp áp dụng: $methodName`n- Độ tuổi: $age`n- Yêu cầu cấu trúc:`n  1. Mục tiêu tích hợp (Kiến thức Khoa học/Giác quan, Kỹ năng công nghệ/kỹ thuật/toán/thực hành, Thái độ/Nghệ thuật theo phương pháp $methodName)`n  2. Chuẩn bị môi trường học tập mở, học liệu tự nhiên và vật liệu tái chế an toàn`n  3. Tiến trình tổ chức hoạt động chi tiết từng bước (cô gợi mở, đặt câu hỏi thế nào; trẻ trải nghiệm, thao tác gì)`n  4. Quan sát, hỗ trợ cá nhân trẻ nhút nhát và khơi gợi tư duy chủ động`n  5. Kết thúc, củng cố và điều chỉnh sau hoạt động.`n`nHãy tạo kế hoạch hoạt động hoàn chỉnh, sáng tạo, thực tế và sẵn sàng áp dụng ngay."
+ (F 'ChatPrompt').Text = "Hãy thiết kế chi tiết 01 Kế hoạch hoạt động giáo dục theo phương pháp tiên tiến sau:`n`n- Phương pháp áp dụng: $methodName`n- Độ tuổi: $age`n- Căn cứ: Chương trình GDMN mới (VBHN 01/VBHN-BGDĐT & Thông tư 51/2020/TT-BGDĐT)`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề Markdown '# KẾ HOẠCH TỔ CHỨC HOẠT ĐỘNG: ...', không viết lời mào đầu, không kết bài thừa.`n- Trình bày phân cấp rõ ràng theo các phần:`n  1. Mục tiêu tích hợp (Kiến thức, Kỹ năng, Thái độ)`n  2. Chuẩn bị môi trường học tập mở, học liệu an toàn`n  3. Tiến trình tổ chức hoạt động chi tiết từng bước (lời thoại gợi mở của cô + thao tác trải nghiệm của trẻ)`n  4. Quan sát, hỗ trợ cá nhân trẻ nhút nhát`n  5. Kết thúc, củng cố sáng tạo và điều chỉnh sau hoạt động.`n`nNội dung sáng tạo, thực tế, có thể áp dụng trực tiếp tại lớp."
  Show-Page 'chat'
 }
 
@@ -1366,13 +1366,13 @@ function Launch-SchoolStandards-AI($levelNum=2) {
   3 {'Mức 3 (Đạt chuẩn kiểm định Cấp độ 3 & Đạt Chuẩn Quốc gia Mức độ 2)'}
   default {'Mức 2'}
  }
- (F 'ChatPrompt').Text = "Hãy thực hiện nghiệp vụ ĐÁNH GIÁ CHUẨN TRƯỜNG HỌC THEO THÔNG TƯ 19/2018/TT-BGDĐT VÀ THÔNG TƯ 13/2020/TT-BGDĐT:`n`n- Đơn vị: $schoolName`n- MỨC ĐỘ ĐÁNH GIÁ: $levelDesc`n`nNHIỆM VỤ CỦA BẠN (TỰ ĐỘNG LỌC NỘI DUNG THEO MỨC ĐỘ $levelNum):`n1. Tự động trích xuất và lọc đúng các tiêu chuẩn, tiêu chí và chỉ báo yêu cầu cho riêng Mức độ $levelNum trong 5 Tiêu chuẩn:`n   + Tiêu chuẩn 1: Tổ chức và quản lý nhà trường (10 tiêu chí)`n   + Tiêu chuẩn 2: Cán bộ quản lý, giáo viên, nhân viên (4 tiêu chí)`n   + Tiêu chuẩn 3: Cơ sở vật chất và thiết bị dạy học (6 tiêu chí - theo Thông tư 13/2020)`n   + Tiêu chuẩn 4: Quan hệ giữa nhà trường, gia đình và xã hội (2 tiêu chí)`n   + Tiêu chuẩn 5: Hoạt động và kết quả nuôi dưỡng, chăm sóc, giáo dục trẻ (5 tiêu chí)`n2. Đối chiếu thực trạng và đánh giá cụ thể từng tiêu chí (Đạt / Chưa đạt).`n3. Tổng hợp rõ ràng: Điểm mạnh nổi bật, Điểm yếu / Tồn tại cần khắc phục.`n4. Xây dựng Kế hoạch cải tiến chất lượng (giải pháp, lộ trình, người phụ trách).`n5. Lập Danh mục mã hóa minh chứng cần thu thập theo định dạng chuẩn [H1-1.01-01], [H2-2.01-01]... để nhà trường chuẩn bị hồ sơ kiểm định."
+ (F 'ChatPrompt').Text = "Hãy thực hiện nghiệp vụ ĐÁNH GIÁ CHUẨN TRƯỜNG HỌC THEO THÔNG TƯ 19/2018/TT-BGDĐT VÀ THÔNG TƯ 13/2020/TT-BGDĐT:`n`n- Đơn vị: $schoolName`n- MỨC ĐỘ ĐÁNH GIÁ: $levelDesc`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề Markdown '# BÁO CÁO TỰ ĐÁNH GIÁ CHUẨN QUỐC GIA - $levelDesc', không mở bài hay giải thích thừa.`n- Lọc đúng các tiêu chuẩn, tiêu chí và chỉ báo yêu cầu cho riêng Mức độ $levelNum trong 5 Tiêu chuẩn.`n- Đối chiếu thực trạng và đánh giá cụ thể từng tiêu chí (Đạt / Chưa đạt).`n- Tổng hợp ngắn gọn: Điểm mạnh nổi bật, Điểm yếu / Tồn tại cần khắc phục.`n- Kế hoạch cải tiến chất lượng và Danh mục mã hóa minh chứng chuẩn [H1-1.01-01]..."
  Show-Page 'chat'
 }
 
 function Launch-SchoolStandards-FillAI {
  $schoolName = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
- (F 'ChatPrompt').Text = "Hãy hoàn thiện BÁO CÁO VÀ BẢNG TỰ ĐÁNH GIÁ TRƯỜNG MẦM NON ĐẠT CHUẨN QUỐC GIA (Thông tư 19/2018/TT-BGDĐT & Thông tư 13/2020/TT-BGDĐT) cho cơ sở: $schoolName.`n`nYêu cầu lập bảng tổng hợp tự đánh giá đầy đủ 5 Tiêu chuẩn (25 Tiêu chí) đối chiếu qua cả 3 Mức độ: Mức 1 (Tối thiểu), Mức 2 (Chuẩn QG Mức 1), Mức 3 (Chuẩn QG Mức 2). Kèm theo phân tích Điểm mạnh, Điểm yếu, Kế hoạch cải tiến chất lượng và Danh mục mã minh chứng đầy đủ theo bảng mẫu chuẩn của Bộ GD&ĐT để nhà trường nộp Phòng GD&ĐT."
+ (F 'ChatPrompt').Text = "Hãy hoàn thiện BÁO CÁO VÀ BẢNG TỰ ĐÁNH GIÁ TRƯỜNG MẦM NON ĐẠT CHUẨN QUỐC GIA (Thông tư 19/2018/TT-BGDĐT & Thông tư 13/2020/TT-BGDĐT) cho cơ sở: $schoolName.`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề Markdown '# BẢNG TỔNG HỢP VÀ BÁO CÁO TỰ ĐÁNH GIÁ CHUẨN QUỐC GIA', không mở bài hay kết bài thừa.`n- Lập bảng tổng hợp tự đánh giá đầy đủ 5 Tiêu chuẩn (25 Tiêu chí) đối chiếu qua cả 3 Mức độ: Mức 1 (Tối thiểu), Mức 2 (Chuẩn QG Mức 1), Mức 3 (Chuẩn QG Mức 2).`n- Kèm phân tích Điểm mạnh, Điểm yếu, Kế hoạch cải tiến chất lượng và Danh mục mã minh chứng [H1-1.01-01]..."
  Show-Page 'chat'
 }
 
@@ -1380,20 +1380,20 @@ function Launch-PartyReview-AI {
  $name = if($script:data.profile.name){$script:data.profile.name}else{'Nguyễn Thị Lan'}
  $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
  $class = if($script:data.profile.classes){$script:data.profile.classes}else{'Lớp Mẫu giáo Lớn'}
- (F 'ChatPrompt').Text = "Hãy soạn thảo BẢN KIỂM ĐIỂM ĐẢNG VIÊN CUỐI NĂM (MẪU 02-HD/BTCTW THEO QUY ĐỊNH 124-QĐ/TW) cho Giáo viên Mầm non:`n`n- Họ và tên Đảng viên: $name`n- Chi bộ: $school`n- Chức vụ chuyên môn: Giáo viên mầm non phụ trách $class`n`nYÊU CẦU VĂN PHONG VÀ CẤU TRÚC ĐẢNG CHUẨN MỰC:`n1. Phần I: Ưu điểm, kết quả công tác:`n   + Về tư tưởng chính trị, phẩm chất đạo đức lối sống, ý thức tổ chức kỷ luật, trách nhiệm nêu gương của nhà giáo.`n   + Về thực hiện chức trách nhiệm vụ được giao: Công tác nuôi dưỡng, chăm sóc, giáo dục trẻ; đổi mới phương pháp dạy học (STEAM, lấy trẻ làm trung tâm); bảo đảm an toàn tuyệt đối cho trẻ; quan hệ với phụ huynh.`n2. Phần II: Hạn chế, khuyết điểm và nguyên nhân thực tế trong công tác nuôi dạy trẻ.`n3. Phần III: Kết quả khắc phục khuyết điểm đã chỉ ra ở kỳ trước.`n4. Phần IV: Phương hướng, biện pháp khắc phục trong năm tiếp theo.`n5. Phần V: Tự nhận mức xếp loại chất lượng (Hoàn thành tốt nhiệm vụ / Hoàn thành xuất sắc nhiệm vụ).`n`nSoạn chi tiết, chân thành, sâu sát thực tế trường mầm non và đúng thể thức Đảng."
+ (F 'ChatPrompt').Text = "Hãy soạn thảo BẢN KIỂM ĐIỂM ĐẢNG VIÊN CUỐI NĂM (MẪU 02-HD/BTCTW THEO QUY ĐỊNH 124-QĐ/TW) cho Giáo viên Mầm non:`n`n- Họ và tên Đảng viên: $name`n- Chi bộ: $school`n- Chức vụ chuyên môn: Giáo viên mầm non phụ trách $class`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Quốc hiệu, Tiêu ngữ và Tiêu đề '# BẢN KIỂM ĐIỂM ĐẢNG VIÊN NĂM ...', không có lời mào đầu của AI.`n- Trình bày đúng thể thức văn bản Đảng gồm 5 phần:`n  I. Ưu điểm, kết quả công tác (Tư tưởng chính trị, đạo đức nhà giáo, thực hiện nhiệm vụ nuôi dạy và bảo đảm an toàn cho trẻ)`n  II. Hạn chế, khuyết điểm và nguyên nhân thực tế trong công tác nuôi dạy trẻ`n  III. Kết quả khắc phục khuyết điểm đã chỉ ra ở kỳ trước`n  IV. Phương hướng, biện pháp khắc phục trong năm tiếp theo`n  V. Tự nhận mức xếp loại chất lượng (Hoàn thành tốt nhiệm vụ / Hoàn thành xuất sắc nhiệm vụ).`n`nSoạn chi tiết, chân thành, sâu sát thực tế trường mầm non và đúng thể thức Đảng."
  Show-Page 'chat'
 }
 
 function Launch-PartyCommitment-AI {
  $name = if($script:data.profile.name){$script:data.profile.name}else{'Nguyễn Thị Lan'}
  $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
- (F 'ChatPrompt').Text = "Hãy soạn BẢN CAM KẾT TU DƯỠNG, RÈN LUYỆN, PHẤN ĐẤU NĂM CỦA ĐẢNG VIÊN (Giáo viên mầm non tại $school, đồng chí $name) theo Quy định của Đảng:`n`nNội dung cam kết gồm 4 phần cốt lõi:`n1. Về tư tưởng chính trị: Kiên định mục tiêu lý tưởng, chấp hành chủ trương, chính sách.`n2. Về phẩm chất đạo đức, lối sống: Giữ gìn tư cách nhà giáo mầm non mẫu mực, trung thực, giản dị, yêu thương trẻ, chống tiêu cực lãng phí.`n3. Về thực hiện nhiệm vụ chuyên môn: Đảm bảo an toàn tuyệt đối tính mạng và sức khỏe cho trẻ, tích cực đổi mới phương pháp giáo dục tiên tiến, hoàn thành xuất sắc nhiệm vụ nuôi dạy trẻ.`n4. Về tổ chức kỷ luật và trách nhiệm nêu gương: Chấp hành Điều lệ Đảng, giữ gìn đoàn kết nội bộ, nêu gương sáng cho đồng nghiệp và phụ huynh.`n`nSoạn trang trọng, chuẩn thể thức văn bản Đảng."
+ (F 'ChatPrompt').Text = "Hãy soạn BẢN CAM KẾT TU DƯỠNG, RÈN LUYỆN, PHẤN ĐẤU NĂM CỦA ĐẢNG VIÊN (Giáo viên mầm non tại $school, đồng chí $name) theo Quy định của Đảng:`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề '# BẢN CAM KẾT TU DƯỠNG, RÈN LUYỆN, PHẤN ĐẤU NĂM ...', không mở bài hay giải thích thừa.`n- Trình bày 4 nội dung cam kết cốt lõi:`n  1. Về tư tưởng chính trị: Kiên định mục tiêu lý tưởng, chấp hành chủ trương, chính sách.`n  2. Về phẩm chất đạo đức, lối sống: Giữ gìn tư cách nhà giáo mầm non mẫu mực, yêu thương trẻ.`n  3. Về thực hiện nhiệm vụ chuyên môn: Đảm bảo an toàn tuyệt đối cho trẻ, tích cực đổi mới phương pháp giáo dục tiên tiến.`n  4. Về tổ chức kỷ luật và trách nhiệm nêu gương: Nêu gương sáng cho đồng nghiệp và phụ huynh.`n- Kèm kế hoạch hành động và chữ ký người cam kết."
  Show-Page 'chat'
 }
 
 function Launch-PartyMinutes-AI {
  $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
- (F 'ChatPrompt').Text = "Hãy soạn BIÊN BẢN VÀ NGHỊ QUYẾT SINH HOẠT CHI BỘ ĐỊNH KỲ THÁNG CỦA CHI BỘ TRƯỜNG MẦM NON ($school):`n`nCấu trúc chuẩn:`n1. Thời gian, địa điểm, thành phần, chủ trì (Bí thư Chi bộ, Hiệu trưởng) và thư ký.`n2. Thông tin tình hình thời sự và quán triệt các văn bản chỉ đạo mới của Đảng ủy và ngành GD mầm non.`n3. Đánh giá công tác lãnh đạo của Chi bộ trong tháng qua: Công tác nuôi dạy trẻ, an toàn trường học, vệ sinh dinh dưỡng bán trú, công tác tư tưởng chính trị và xây dựng Đảng.`n4. Phương hướng nhiệm vụ trọng tâm tháng tới: Triển khai phương pháp giáo dục tiên tiến STEAM, chuẩn bị rà soát kiểm định trường chuẩn quốc gia, công tác phát triển đảng viên.`n5. Ý kiến thảo luận đóng góp của các đảng viên giáo viên.`n6. Kết luận của Bí thư Chi bộ và biểu quyết thông qua Nghị quyết Chi bộ.`n`nSoạn chi tiết, trang trọng, chuẩn mực sinh hoạt chi bộ trường học."
+ (F 'ChatPrompt').Text = "Hãy soạn BIÊN BẢN VÀ NGHỊ QUYẾT SINH HOẠT CHI BỘ ĐỊNH KỲ THÁNG CỦA CHI BỘ TRƯỜNG MẦM NON ($school):`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề '# CHI BỘ TRƯỜNG MẦM NON... - BIÊN BẢN SINH HOẠT CHI BỘ', không mở bài hay kết bài thừa.`n- Cấu trúc chuẩn mực:`n  1. Thời gian, địa điểm, thành phần, chủ trì và thư ký`n  2. Quán triệt văn bản và thông tin thời sự mới`n  3. Đánh giá công tác lãnh đạo tháng qua (nuôi dạy trẻ, an toàn trường học, dinh dưỡng bán trú, tư tưởng chính trị)`n  4. Phương hướng nhiệm vụ trọng tâm tháng tới (chuyên môn STEAM, kiểm định chuẩn quốc gia, phát triển đảng)`n  5. Ý kiến thảo luận của các đảng viên giáo viên`n  6. Kết luận của Bí thư Chi bộ và biểu quyết thông qua Nghị quyết Chi bộ."
  Show-Page 'chat'
 }
 
@@ -1726,7 +1726,7 @@ function Show-Legal {
 
     $doc=$i.Tag
 
-    (F 'ChatPrompt').Text="Hãy giải thích chi tiết quy định này và hướng dẫn những điểm giáo viên mầm non cần lưu ý khi thực hiện tại nhóm lớp:`n`nVăn bản: "+$doc.number+" ("+$doc.issuer+")`nTiêu đề: "+$doc.title+"`n`nNội dung chính:`n"+$doc.summary
+    (F 'ChatPrompt').Text="Hãy tóm tắt ngắn gọn và hướng dẫn những điểm giáo viên mầm non cần thực hiện tại nhóm lớp theo văn bản sau:`n`n- Văn bản: "+$doc.number+" ("+$doc.issuer+")`n- Tiêu đề: "+$doc.title+"`n- Nội dung gốc: "+$doc.summary+"`n`nQUY TẮC BẮT BUỘC:`n- Đi thẳng vào các điểm cốt lõi, không mở bài hay kết bài thừa.`n- Trình bày 3 phần rõ ràng: 1. Mục đích & Điểm mới chính; 2. Những việc cô giáo mầm non cần làm ngay tại lớp; 3. Những điều cần tránh."
 
     Show-Page 'chat'
 
@@ -1937,7 +1937,7 @@ if($bTop){$bTop.Add_Click({Check-Update})}
 
 (F 'BtnSaveDoc').Add_Click({Save-Document})
 
-(F 'BtnDocAI').Add_Click({(F 'ChatPrompt').Text="Hãy hoàn thiện dự thảo sau theo thông tin đã có. Hỏi lại hoặc giữ [CẦN BỔ SUNG] nếu thiếu. Không bịa ghi nhận về trẻ.`n`n"+(F 'DocTitle').Text+"`n"+(F 'DocBody').Text;Show-Page 'chat'})
+(F 'BtnDocAI').Add_Click({(F 'ChatPrompt').Text="Hãy hoàn thiện dự thảo văn bản sau đây. Đi thẳng vào văn bản hoàn chỉnh, không mở bài hay giải thích thừa. Giữ [CẦN BỔ SUNG] nếu thiếu dữ liệu, không bịa thông tin về trẻ.`n`n# "+(F 'DocTitle').Text+"`n`n"+(F 'DocBody').Text;Show-Page 'chat'})
 
 (F 'BtnImport').Add_Click({$path=Pick;if($path){$r=Api 'read' @{path=$path};Open-Editor ([IO.Path]::GetFileNameWithoutExtension($path)) $r.text}})
 

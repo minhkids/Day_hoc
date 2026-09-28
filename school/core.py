@@ -308,8 +308,19 @@ def ask_ai(profile, key, messages, memory='', post=None):
         raise ValueError('Chưa nhập tên mô hình AI trong Cài đặt.')
     if not key and provider != 'API tương thích':
         raise ValueError('Chưa có API key. Mở Cài đặt để nhập khóa của bạn.')
-    public_profile = {k: v for k, v in profile.items() if k in DEFAULTS and k not in ('endpoint', 'ioffice')}
-    system = SYSTEM + '\nHỒ SƠ CƠ QUAN:\n' + json.dumps(public_profile, ensure_ascii=False) + '\nBỘ NHỚ THAM KHẢO:\n' + memory
+    active_profile = {k: str(v).strip() for k, v in profile.items() if k in DEFAULTS and k not in ('endpoint', 'ioffice', 'provider', 'model', 'provider_routing') and str(v).strip()}
+    parts = [SYSTEM]
+    if active_profile:
+        labels = {
+            'name': 'Họ tên', 'agency': 'Đơn vị / Trường', 'classes': 'Nhóm lớp',
+            'age': 'Độ tuổi', 'year': 'Năm học', 'position': 'Chức vụ',
+            'role': 'Vai trò', 'location': 'Địa bàn', 'parent': 'Cơ quan cấp trên'
+        }
+        profile_lines = [f"- {labels.get(k, k)}: {v}" for k, v in active_profile.items()]
+        parts.append('HỒ SƠ THÔNG TIN:\n' + '\n'.join(profile_lines))
+    if memory and memory.strip():
+        parts.append('BỘ NHỚ THAM KHẢO:\n' + memory.strip())
+    system = '\n\n'.join(parts)
     headers = {'Content-Type': 'application/json'}
     if provider == 'Gemini':
         url = 'https://generativelanguage.googleapis.com/v1beta/models/' + quote(model, safe='-._') + ':generateContent'
