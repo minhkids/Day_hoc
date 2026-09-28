@@ -1,0 +1,315 @@
+[
+    {
+        "kind":  "reference_only_buttons",
+        "items":  [
+                      {
+                          "name":  "BtnVanBanMoi",
+                          "label":  "System.Windows.Controls.TextBlock"
+                      },
+                      {
+                          "name":  "BtnHuongDanTheThuc",
+                          "label":  "Hướng dẫn trình bày"
+                      },
+                      {
+                          "name":  "BtnXemTruoc",
+                          "label":  "System.Windows.Controls.StackPanel"
+                      },
+                      {
+                          "name":  "BtnXemTaiLai",
+                          "label":  "System.Windows.Controls.TextBlock"
+                      },
+                      {
+                          "name":  "BtnXemToanMan",
+                          "label":  "System.Windows.Controls.StackPanel"
+                      },
+                      {
+                          "name":  "BtnXemThuMuc",
+                          "label":  "System.Windows.Controls.TextBlock"
+                      },
+                      {
+                          "name":  "BtnXemDongGoi",
+                          "label":  "System.Windows.Controls.StackPanel"
+                      },
+                      {
+                          "name":  "BtnXemAn",
+                          "label":  "System.Windows.Controls.TextBlock"
+                      },
+                      {
+                          "name":  "BtnMoDiem",
+                          "label":  "Mở file"
+                      },
+                      {
+                          "name":  "BtnVbTuCongViec",
+                          "label":  "Lập việc tháng này"
+                      },
+                      {
+                          "name":  "BtnCapNhatMoc",
+                          "label":  "Cập nhật mốc năm học"
+                      },
+                      {
+                          "name":  "BtnMoLichNamHoc",
+                          "label":  "Mở file lịch năm học"
+                      },
+                      {
+                          "name":  "BtnSangDonVi",
+                          "label":  "Kiểm tra, đánh giá"
+                      },
+                      {
+                          "name":  "BtnKichHoat",
+                          "label":  "Kích hoạt / nhập mã mới"
+                      },
+                      {
+                          "name":  "BtnCapNhatFile",
+                          "label":  "Cập nhật từ file cài đặt"
+                      },
+                      {
+                          "name":  "BtnLienHe",
+                          "label":  "System.Windows.Controls.StackPanel"
+                      }
+                  ]
+    },
+    {
+        "name":  "BtnGiaoViecMoiBen",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnChatMoi",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnChuTo",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnChuNho",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnCotViec",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnPhongTo",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnBoQuyTrinh",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecSoan",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecNV",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecKT",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecCN",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnTraCuu",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSangCongViec",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnXemTienDo",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnXemDuAn",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnXemViecHan",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnMoCongViec",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSoTheoDoi",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSoTheoDoi2",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnThemViec",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnMoFileViec",
+        "notices":  [
+                        "Export path: E:\\git_hub\\Day_hoc\\reports\\exe-audit\\teacher\\data\\van-ban-da-soan\\Công việc giáo viên-v2.xlsx"
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnLapLichTuan",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnTaoDuAn",
+        "notices":  [
+                        "Đã tạo dự án trống. Chọn dự án và mở thư mục để chỉnh sửa."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSaoLuu",
+        "notices":  [
+                        "Đã sao lưu. API key không nằm trong bản sao lưu."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSaoLuuChan",
+        "notices":  [
+                        "Đã sao lưu. API key không nằm trong bản sao lưu."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnViecThang",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnTroChoiKT",
+        "notices":  [
+
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnHuongDan",
+        "notices":  [
+                        "Chọn nhóm nghiệp vụ bên trái, bấm ô chức năng rồi bổ sung yêu cầu và Gửi. Cài đặt → Khai báo để nhập hồ sơ giáo viên và OpenRouter. Hội thoại chỉ giữ trong phiên; bấm Lưu để giữ bản nháp."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "format":  "docx",
+        "exists":  true,
+        "kind":  "export"
+    },
+    {
+        "format":  "xlsx",
+        "exists":  true,
+        "kind":  "export"
+    },
+    {
+        "format":  "pptx",
+        "exists":  true,
+        "kind":  "export"
+    },
+    {
+        "format":  "md",
+        "exists":  true,
+        "kind":  "export"
+    },
+    {
+        "name":  "BtnMoDiem",
+        "notices":  [
+                        "Chức năng Mở file của bản tham chiếu chưa có trong bản độc lập. Các chức năng soạn bài, mẫu, công việc, lưu/xuất và dự án đã được nối."
+                    ],
+        "kind":  "reference_button_click"
+    },
+    {
+        "name":  "BtnCapNhatMoc",
+        "notices":  [
+                        "Chức năng Cập nhật mốc năm học của bản tham chiếu chưa có trong bản độc lập. Các chức năng soạn bài, mẫu, công việc, lưu/xuất và dự án đã được nối."
+                    ],
+        "kind":  "reference_button_click"
+    },
+    {
+        "name":  "BtnMoLichNamHoc",
+        "notices":  [
+                        "Chức năng Mở file lịch năm học của bản tham chiếu chưa có trong bản độc lập. Các chức năng soạn bài, mẫu, công việc, lưu/xuất và dự án đã được nối."
+                    ],
+        "kind":  "reference_button_click"
+    },
+    {
+        "name":  "BtnHuongDanTheThuc",
+        "notices":  [
+                        "Chức năng Hướng dẫn trình bày của bản tham chiếu chưa có trong bản độc lập. Các chức năng soạn bài, mẫu, công việc, lưu/xuất và dự án đã được nối."
+                    ],
+        "kind":  "reference_button_click"
+    }
+]

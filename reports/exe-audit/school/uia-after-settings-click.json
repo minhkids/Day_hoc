@@ -1,0 +1,682 @@
+﻿[
+    {
+        "id":  "",
+        "name":  "Thông tin trường học \u0026 Ban Giám hiệu",
+        "type":  "ControlType.Window"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "Tên trường học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Cấp học (Tiểu học / THCS / THPT / Mầm non)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Họ và tên Hiệu trưởng",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Chức vụ người đứng đầu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Họ tên các Phó Hiệu trưởng",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Tên Chi bộ / Đảng ủy trường",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Năm học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Địa danh (Tỉnh / Huyện / Xã)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Địa chỉ hệ thống iOffice nhà trường",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Lưu thông tin trường học",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Lưu thông tin trường học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "ImgLogo",
+        "name":  "",
+        "type":  "ControlType.Image"
+    },
+    {
+        "id":  "",
+        "name":  "TRỢ LÝ",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "QUẢN TRỊ TRƯỜNG HỌC",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Đồng hành cùng nhà trường",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "CuonMenu",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "NavTrangChu",
+        "name":  "Trang chủ",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Trang chủ",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavNhiemVu",
+        "name":  "Việc của tôi",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Việc của tôi",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavTroChuyen",
+        "name":  "Trò chuyện AI",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Trò chuyện AI",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavBanGiamHieu",
+        "name":  "Ban giám hiệu",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Ban giám hiệu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavSoanVanBan",
+        "name":  "Soạn văn bản",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Soạn văn bản",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavCongViec",
+        "name":  "Công việc và lịch",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Công việc và lịch",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavThuVien",
+        "name":  "Thư viện văn bản",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Thư viện văn bản",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavCongTacDang",
+        "name":  "Công tác Đảng",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Công tác Đảng",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavTienIch",
+        "name":  "Công cụ tiện ích",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Công cụ tiện ích",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavCaiDat",
+        "name":  "Cài đặt",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Cài đặt",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Vì học sinh",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "thân yêu!",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Trợ lý Quản trị trường học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtPhuDe",
+        "name":  "Soạn thảo nhanh – Đúng quy định – Hiệu quả mỗi ngày",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTimNhanh",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "GoiYTimNhanh",
+        "name":  "Nhập nội dung cần hỗ trợ (ví dụ: soạn kế hoạch tháng 9...)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtVietTat",
+        "name":  "HT",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTenNguoiDung",
+        "name":  "Thầy/cô Hiệu trưởng",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtChucVu",
+        "name":  "Hiệu trưởng",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtChao",
+        "name":  "Chào buổi trưa, thầy/cô!",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtCauNoi",
+        "name":  "“Kế hoạch rõ ràng – Hành động kịp thời – Kết quả bền vững”",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtNgay",
+        "name":  "Thứ Ba, 22 tháng 9 năm 2026",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtNamHoc",
+        "name":  "Năm học 2026 – 2027",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Chức năng chính",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Soạn văn bản",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Công văn, tờ trình, thông báo, quyết định...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Mẫu văn bản",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Mẫu theo NĐ 30/2020 và các quy định mới.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Trò chuyện AI",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Hỏi đáp, tư vấn, hỗ trợ công việc quản lý nhà trường.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Lập kế hoạch",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Kế hoạch năm học, tháng, chuyên đề, phân công...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Biên bản họp",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Họp tổ chuyên môn, Hội đồng sư phạm, họp cha mẹ học sinh.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Lịch công tác tuần",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Lịch tuần của Ban giám hiệu, phân công, nhắc việc.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Tổng hợp số liệu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Thống kê học sinh, kết quả đánh giá, đội ngũ, cơ sở vật chất.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Tra cứu quy định",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Điều lệ trường, Thông tư, Nghị định, Công văn...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Xử lý văn bản đến",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Đọc, tóm tắt, trích việc phải làm từ văn bản của Sở, UBND xã...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Đoàn kết một mái trường",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Tận tâm vì học sinh thân yêu!",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Công việc hôm nay",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnXemViec",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "AUDIT task (22/09/2026)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "AUDIT task (22/09/2026)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "AUDIT task (22/09/2026)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "AUDIT task (22/09/2026)",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Văn bản gần đây",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnXemVanBan",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "AUDIT v?n b?n",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Xuất Word",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Xuất Word",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Kỷ cương – Trách nhiệm – Sáng tạo",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Vì một môi trường giáo dục hạnh phúc!",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTrangThai",
+        "name":  "Đang kiểm tra...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtPhienBan",
+        "name":  "Phiên bản",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnCapNhatChan",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Kiểm tra cập nhật",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnHuongDan",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Hướng dẫn",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnMoThuMuc",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Mở thư mục làm việc",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnSaoLuuChan",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Sao lưu dữ liệu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnLienHe",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Liên hệ hỗ trợ",
+        "type":  "ControlType.Text"
+    }
+]

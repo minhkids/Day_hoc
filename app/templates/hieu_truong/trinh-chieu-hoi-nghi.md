@@ -1,0 +1,69 @@
+﻿---
+loai: trinh-chieu
+tieu_de: "Hội nghị viên chức năm học [20..-20..]"
+phu_de: "[Trường ...]"
+co_quan: "[UBND XÃ ... - TRƯỜNG ...]"
+nguoi_trinh_bay: "[Họ và tên - chức vụ]"
+ngay: "[dd/mm/yyyy]"
+kieu: the
+mau: rung
+phong: Calibri
+phong_tieu_de: Calibri
+chan_trang: "[Trường ...]"
+---
+
+<!-- Mẫu sẵn: HỘI NGHỊ VIÊN CHỨC
+     Cú pháp đầy đủ (thẻ, các bước, danh sách đánh số, dải nhấn, ô số liệu, biểu đồ, hai cột, trang phân đoạn): xem mau\trinh-chieu.md
+     Chép mẫu này vào .tro-ly của thư mục tương ứng rồi điền; xoá các dòng chưa dùng. -->
+
+# Chương trình hội nghị
+
+1. [Báo cáo kết quả thực hiện nghị quyết hội nghị năm trước]
+2. [Báo cáo kế hoạch năm học và các chỉ tiêu]
+3. [Báo cáo công khai tài chính, quy chế chi tiêu nội bộ]
+4. [Thảo luận, kiến nghị]
+5. [Thông qua nghị quyết hội nghị]
+
+::: ghi chu
+Nhắc thư ký ghi biên bản và tổng hợp ý kiến thảo luận.
+:::
+
+# = Phần I. Kết quả thực hiện nghị quyết năm trước
+
+# Các chỉ tiêu đã thực hiện
+
+| Chỉ tiêu nghị quyết | Kế hoạch | Thực hiện | Đánh giá |
+|---|---|---|---|
+| | | | |
+
+# = Phần II. Kế hoạch năm học mới
+
+# Chỉ tiêu năm học [20..-20..]
+
+::: so-lieu
+[số] | lớp học
+[số] | học sinh
+[số] | chỉ tiêu chất lượng
+:::
+
+- [Nhiệm vụ, giải pháp chính]
+
+# Quy chế, dân chủ, chế độ
+
+- [Quy chế thực hiện dân chủ trong nhà trường]
+- [Chế độ làm việc, định mức, kiêm nhiệm]
+- [Thi đua, khen thưởng]
+
+# Công khai tài chính
+
+| Nội dung | Dự toán | Thực hiện | Ghi chú |
+|---|---|---|---|
+| | | | |
+| Tổng | | | |
+
+# Thảo luận và nghị quyết
+
+1. [Nội dung xin ý kiến 1]
+2. [Nội dung xin ý kiến 2]
+
+> Hội nghị biểu quyết thông qua nghị quyết với tỉ lệ [..]%.

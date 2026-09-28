@@ -1,0 +1,25 @@
+[Unit]
+Description=Tro Ly - Shared School Workspace
+After=network.target
+
+[Service]
+Type=simple
+User=troly-school
+Group=troly-school
+WorkingDirectory=/opt/troly-school
+EnvironmentFile=/etc/troly-school.env
+ExecStart=/usr/bin/python3 /opt/troly-school/server.py
+Restart=on-failure
+RestartSec=5
+StateDirectory=troly-school
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/troly-school
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

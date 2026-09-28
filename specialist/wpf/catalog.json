@@ -1,0 +1,732 @@
+{
+  "missions": [
+    {
+      "Icon": "",
+      "N": "NsHuongDan",
+      "MoTa": "Hướng dẫn nhiệm vụ năm học, hướng dẫn chuyên đề cho các đơn vị.",
+      "Hanh": "lenh:/huong-dan-nhiem-vu Hướng dẫn nhiệm vụ năm học",
+      "Mau": "#EF6C00",
+      "Tieu": "Hướng dẫn nhiệm vụ năm học"
+    },
+    {
+      "Icon": "",
+      "N": "NsChuongTrinh",
+      "MoTa": "Thực hiện chương trình, kế hoạch giáo dục; đánh giá trẻ, học sinh.",
+      "Hanh": "lenh:/nhiem-vu Chương trình, kế hoạch giáo dục",
+      "Mau": "#1E5FD8",
+      "Tieu": "Chương trình, kế hoạch giáo dục"
+    },
+    {
+      "Icon": "",
+      "N": "NsBoiDuong",
+      "MoTa": "Tập huấn chuyên đề, bồi dưỡng thường xuyên cán bộ quản lý, giáo viên.",
+      "Hanh": "lenh:/boi-duong Tập huấn, bồi dưỡng cấp tỉnh",
+      "Mau": "#00838F",
+      "Tieu": "Tập huấn, bồi dưỡng"
+    },
+    {
+      "Icon": "",
+      "N": "NsHoiThi",
+      "MoTa": "Hội thi giáo viên dạy giỏi, giao lưu học sinh, hội thi mầm non.",
+      "Hanh": "lenh:/hoi-thi Hội thi, giao lưu cấp tỉnh",
+      "Mau": "#E0313F",
+      "Tieu": "Hội thi, giao lưu"
+    },
+    {
+      "Icon": "",
+      "N": "NsDoiNgu",
+      "MoTa": "Đánh giá chuẩn nghề nghiệp, nhu cầu giáo viên, cán bộ quản lý.",
+      "Hanh": "lenh:/nhiem-vu Đội ngũ, chuẩn nghề nghiệp",
+      "Mau": "#7B3FE4",
+      "Tieu": "Đội ngũ, chuẩn nghề nghiệp"
+    },
+    {
+      "Icon": "",
+      "N": "NsCDS",
+      "MoTa": "Học bạ số, cơ sở dữ liệu ngành, ứng dụng công nghệ, trí tuệ nhân tạo.",
+      "Hanh": "lenh:/nhiem-vu Chuyển đổi số, dữ liệu ngành",
+      "Mau": "#40546B",
+      "Tieu": "Chuyển đổi số, dữ liệu ngành"
+    },
+    {
+      "Icon": "",
+      "N": "NsThamMuu",
+      "MoTa": "Tờ trình kèm dự thảo quyết định, kế hoạch, chỉ thị của UBND tỉnh.",
+      "Hanh": "lenh:/tham-muu Tham mưu UBND tỉnh (trang Nhiệm vụ)",
+      "Mau": "#00838F",
+      "Tieu": "Tham mưu UBND tỉnh"
+    },
+    {
+      "Icon": "",
+      "N": "NsPhieuTrinh",
+      "MoTa": "Phiếu trình giải quyết công việc lên lãnh đạo phòng, lãnh đạo Sở.",
+      "Hanh": "lenh:/tham-muu Phiếu trình giải quyết công việc",
+      "Mau": "#1E5FD8",
+      "Tieu": "Phiếu trình, trình ký"
+    },
+    {
+      "Icon": "",
+      "N": "NsGopY",
+      "MoTa": "Góp ý dự thảo văn bản của Bộ, UBND tỉnh, các sở, ngành.",
+      "Hanh": "lenh:/gop-y-du-thao Góp ý dự thảo của Bộ, tỉnh",
+      "Mau": "#7B3FE4",
+      "Tieu": "Góp ý dự thảo"
+    },
+    {
+      "Icon": "",
+      "N": "NsTuyenSinh",
+      "MoTa": "Hướng dẫn, theo dõi, báo cáo tuyển sinh mầm non, lớp 1.",
+      "Hanh": "lenh:/tuyen-sinh Hướng dẫn tuyển sinh",
+      "Mau": "#1E5FD8",
+      "Tieu": "Tuyển sinh"
+    },
+    {
+      "Icon": "",
+      "N": "NsToChuc",
+      "MoTa": "Sắp xếp trường, phân hiệu, điểm trường; cho phép hoạt động giáo dục.",
+      "Hanh": "lenh:/to-chuc-truong Mạng lưới trường, lớp",
+      "Mau": "#2E7D32",
+      "Tieu": "Mạng lưới trường, lớp"
+    },
+    {
+      "Icon": "",
+      "N": "NsKiemTra",
+      "MoTa": "Mở trang Kiểm tra: kiểm tra chuyên môn, chuẩn quốc gia, phổ cập.",
+      "Hanh": "trang:KiemTra",
+      "Mau": "#E0313F",
+      "Tieu": "Kiểm tra, đánh giá"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "NsDonVi",
+      "MoTa": "Mở trang Đơn vị, báo cáo: yêu cầu, theo dõi, tổng hợp.",
+      "Hanh": "trang:DonVi",
+      "Mau": "#2E7D32",
+      "Tieu": "Báo cáo của đơn vị"
+    },
+    {
+      "Icon": "",
+      "N": "NsBaoCao",
+      "MoTa": "Báo cáo định kỳ, chuyên đề, theo yêu cầu của Bộ, UBND tỉnh.",
+      "Hanh": "lenh:/bao-cao Báo cáo Bộ, UBND tỉnh",
+      "Mau": "#1E5FD8",
+      "Tieu": "Báo cáo Bộ, UBND tỉnh"
+    },
+    {
+      "Icon": "",
+      "N": "NsSoKet",
+      "MoTa": "Sơ kết học kì I, tổng kết năm học cấp học phụ trách.",
+      "Hanh": "lenh:/bao-cao Sơ kết, tổng kết năm học cấp tỉnh",
+      "Mau": "#EF6C00",
+      "Tieu": "Sơ kết, tổng kết"
+    },
+    {
+      "Icon": "",
+      "N": "NsViecThang",
+      "MoTa": "Danh sách việc của chuyên viên theo tháng, ghi vào Quản lý công việc.",
+      "Hanh": "lenh:/nhiem-vu Việc tháng của chuyên viên",
+      "Mau": "#C62828",
+      "Tieu": "Việc tháng này"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "NsThongKe",
+      "MoTa": "Tổng hợp số liệu cấp học toàn tỉnh từ file Excel, CSV.",
+      "Hanh": "lenh:/tong-hop Thống kê số liệu toàn tỉnh",
+      "Mau": "#00838F",
+      "Tieu": "Thống kê, số liệu"
+    },
+    {
+      "Icon": "",
+      "N": "NsPhatBieu",
+      "MoTa": "Bài phát biểu, thông báo kết luận của lãnh đạo Sở tại hội nghị.",
+      "Hanh": "lenh:/phat-bieu Phát biểu của lãnh đạo Sở",
+      "Mau": "#C62828",
+      "Tieu": "Phát biểu, kết luận"
+    },
+    {
+      "Icon": "",
+      "N": "NsThamDinh",
+      "MoTa": "Thẩm quyền, căn cứ còn hiệu lực, hồ sơ, nội dung, thể thức của văn bản.",
+      "Hanh": "lenh:/tham-dinh Thẩm định trước khi trình ký (Sở)",
+      "Mau": "#2E7D32",
+      "Tieu": "Thẩm định trước khi trình"
+    },
+    {
+      "Icon": "",
+      "N": "NsTraCuu",
+      "MoTa": "Hỏi quy định giáo dục mầm non, tiểu học; trả lời kèm điều, khoản.",
+      "Hanh": "lenh:/tra-cuu Tư vấn quy định giáo dục",
+      "Mau": "#1E5FD8",
+      "Tieu": "Tư vấn quy định"
+    },
+    {
+      "Icon": "",
+      "N": "NsCapNhat",
+      "MoTa": "Văn bản mới, văn bản hết hiệu lực; ghi vào bộ nhớ để dùng ngay.",
+      "Hanh": "lenh:/cap-nhat-can-cu Cập nhật căn cứ giáo dục",
+      "Mau": "#40546B",
+      "Tieu": "Cập nhật căn cứ"
+    }
+  ],
+  "units": [
+    {
+      "Icon": "",
+      "N": "DvYeuCau",
+      "MoTa": "Công văn, đề cương, biểu mẫu báo cáo gửi các đơn vị.",
+      "Hanh": "lenh:/tong-hop-don-vi Yêu cầu báo cáo",
+      "Mau": "#1E5FD8",
+      "Tieu": "Yêu cầu báo cáo"
+    },
+    {
+      "Icon": "",
+      "N": "DvTheoDoi",
+      "MoTa": "Đối chiếu đơn vị đã nộp, chưa nộp theo từng đợt.",
+      "Hanh": "lenh:/tong-hop-don-vi Theo dõi nộp báo cáo",
+      "Mau": "#E09A00",
+      "Tieu": "Theo dõi nộp"
+    },
+    {
+      "Icon": "",
+      "N": "DvDonDoc",
+      "MoTa": "Công văn, tin nhắn đôn đốc đơn vị chưa nộp.",
+      "Hanh": "lenh:/tong-hop-don-vi Đôn đốc báo cáo",
+      "Mau": "#E0313F",
+      "Tieu": "Đôn đốc"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "DvTongHop",
+      "MoTa": "Gộp báo cáo, số liệu các đơn vị thành báo cáo chung.",
+      "Hanh": "lenh:/tong-hop-don-vi Tổng hợp báo cáo đơn vị",
+      "Mau": "#2E7D32",
+      "Tieu": "Tổng hợp báo cáo"
+    },
+    {
+      "Icon": "",
+      "N": "DvDanhSach",
+      "MoTa": "Cập nhật đơn vị, đầu mối, số trường, chuẩn quốc gia.",
+      "Hanh": "lenh:/ghi-nho Danh sách đơn vị",
+      "Mau": "#7B3FE4",
+      "Tieu": "Danh sách đơn vị"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "DvSoLieu",
+      "MoTa": "Thống kê số liệu các đơn vị từ file Excel, CSV.",
+      "Hanh": "lenh:/tong-hop Số liệu các đơn vị",
+      "Mau": "#00838F",
+      "Tieu": "Số liệu tổng hợp"
+    }
+  ],
+  "tools": [
+    {
+      "Icon": "",
+      "N": "TiVb",
+      "MoTa": "Quét sổ văn bản đến trên iOffice đang mở trong Chrome, chia việc theo ngày.",
+      "Hanh": "vb",
+      "Mau": "#1E5FD8",
+      "Tieu": "Lấy văn bản mới (iOffice)"
+    },
+    {
+      "Icon": "",
+      "N": "TiVBDen",
+      "MoTa": "Thả file Word, PDF, ảnh vào để tóm tắt và trích việc.",
+      "Hanh": "trang:VanBanDen",
+      "Mau": "#E09A00",
+      "Tieu": "Xử lý văn bản đến"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "TiTongHop",
+      "MoTa": "Tổng hợp số liệu báo cáo của các đơn vị từ Excel, CSV.",
+      "Hanh": "trang:TongHop",
+      "Mau": "#2E7D32",
+      "Tieu": "Tổng hợp số liệu"
+    },
+    {
+      "Icon": "",
+      "N": "TiTraCuu",
+      "MoTa": "Hỏi đáp quy định; danh mục căn cứ pháp lý đã đối chiếu.",
+      "Hanh": "trang:TraCuu",
+      "Mau": "#40546B",
+      "Tieu": "Tra cứu quy định"
+    },
+    {
+      "Icon": "",
+      "N": "TiRaSoat",
+      "MoTa": "Kiểm tra thể thức NĐ 30, căn cứ, số liệu, chính tả; tạo bản đã sửa.",
+      "Hanh": "rasoat",
+      "Mau": "#0E8A4F",
+      "Tieu": "Rà soát văn bản"
+    },
+    {
+      "Icon": "",
+      "N": "TiThamDinh",
+      "MoTa": "Xét thẩm quyền, căn cứ, hồ sơ, nội dung trước khi ký; giáo dục, văn hóa, y tế.",
+      "Hanh": "lenh:/tham-dinh Thẩm định, phê duyệt",
+      "Mau": "#2E7D32",
+      "Tieu": "Thẩm định, phê duyệt"
+    },
+    {
+      "Icon": "",
+      "N": "TiCapNhatCC",
+      "MoTa": "Tra văn bản mới, văn bản hết hiệu lực trên trang chính thống, ghi vào bộ nhớ.",
+      "Hanh": "lenh:/cap-nhat-can-cu Cập nhật căn cứ pháp lý",
+      "Mau": "#40546B",
+      "Tieu": "Cập nhật căn cứ pháp lý"
+    },
+    {
+      "Icon": "",
+      "N": "TiGopY",
+      "MoTa": "Góp ý dự thảo văn bản của Bộ, UBND tỉnh, các sở, UBND xã.",
+      "Hanh": "lenh:/gop-y-du-thao Góp ý dự thảo",
+      "Mau": "#7B3FE4",
+      "Tieu": "Góp ý dự thảo"
+    },
+    {
+      "Icon": "",
+      "N": "TiThamMuu",
+      "MoTa": "Tờ trình kèm dự thảo văn bản; phiếu trình lãnh đạo.",
+      "Hanh": "lenh:/tham-muu Tham mưu, trình ký",
+      "Mau": "#00838F",
+      "Tieu": "Tham mưu, trình ký"
+    },
+    {
+      "Icon": "",
+      "N": "TiHDNV",
+      "MoTa": "Hướng dẫn nhiệm vụ năm học, chuyên đề; kế hoạch triển khai.",
+      "Hanh": "lenh:/huong-dan-nhiem-vu Hướng dẫn, triển khai nhiệm vụ",
+      "Mau": "#EF6C00",
+      "Tieu": "Hướng dẫn, triển khai nhiệm vụ"
+    },
+    {
+      "Icon": "",
+      "N": "TiTuyenSinh",
+      "MoTa": "Kế hoạch, phê duyệt, báo cáo tuyển sinh mầm non, lớp 1, lớp 6.",
+      "Hanh": "lenh:/tuyen-sinh Tuyển sinh",
+      "Mau": "#1E5FD8",
+      "Tieu": "Tuyển sinh"
+    },
+    {
+      "Icon": "",
+      "N": "TiToChuc",
+      "MoTa": "Thành lập, sáp nhập, phân hiệu; bổ nhiệm, điều động cán bộ quản lý.",
+      "Hanh": "lenh:/to-chuc-truong Tổ chức, sắp xếp trường",
+      "Mau": "#2E7D32",
+      "Tieu": "Tổ chức, sắp xếp trường"
+    },
+    {
+      "Icon": "",
+      "N": "TiPhatBieu",
+      "MoTa": "Bài phát biểu khai giảng, tổng kết, hội nghị; thông báo kết luận.",
+      "Hanh": "lenh:/phat-bieu Phát biểu, kết luận",
+      "Mau": "#C62828",
+      "Tieu": "Phát biểu, kết luận"
+    },
+    {
+      "Icon": "",
+      "N": "TiHoiThi",
+      "MoTa": "Hội thi giáo viên dạy giỏi, giao lưu học sinh, hội thi mầm non.",
+      "Hanh": "lenh:/hoi-thi Hội thi, giao lưu",
+      "Mau": "#E0313F",
+      "Tieu": "Hội thi, giao lưu"
+    },
+    {
+      "Icon": "",
+      "N": "TiBoiDuong",
+      "MoTa": "Kế hoạch tập huấn, giấy triệu tập, bồi dưỡng thường xuyên.",
+      "Hanh": "lenh:/boi-duong Tập huấn, bồi dưỡng",
+      "Mau": "#00838F",
+      "Tieu": "Tập huấn, bồi dưỡng"
+    },
+    {
+      "Icon": "",
+      "N": "TiNamHoc",
+      "MoTa": "Lưu trữ năm cũ, cập nhật quy mô, nhân sự, lịch năm học.",
+      "Hanh": "lenh:/nam-hoc-moi",
+      "Mau": "#EF6C00",
+      "Tieu": "Chuyển năm học mới"
+    },
+    {
+      "Icon": "",
+      "N": "TiGhiNho",
+      "MoTa": "Cập nhật thông tin cơ quan, nhân sự, đơn vị, quy ước làm việc.",
+      "Hanh": "lenh:/ghi-nho",
+      "Mau": "#40546B",
+      "Tieu": "Ghi nhớ thông tin"
+    },
+    {
+      "Icon": "",
+      "N": "TiXuatWord",
+      "MoTa": "Chọn văn bản đã soạn để xuất lại file Word đúng thể thức.",
+      "Hanh": "xuatword",
+      "Mau": "#1E5FD8",
+      "Tieu": "Xuất Word từ file .md"
+    },
+    {
+      "Icon": "",
+      "N": "TiSaoLuu",
+      "MoTa": "Nén bộ nhớ và toàn bộ văn bản đã soạn ra một file .zip.",
+      "Hanh": "saoluu",
+      "Mau": "#0E8A4F",
+      "Tieu": "Sao lưu dữ liệu"
+    },
+    {
+      "Icon": "",
+      "N": "TiDonRac",
+      "MoTa": "Xóa tệp tạm, bộ nhớ đệm trình duyệt, báo lỗi cũ cho máy nhẹ hơn.",
+      "Hanh": "donrac",
+      "Mau": "#00838F",
+      "Tieu": "Dọn rác máy tính"
+    },
+    {
+      "Icon": "",
+      "N": "TiSuaMay",
+      "MoTa": "Chẩn đoán ổ đĩa, bộ nhớ, mạng, virus, lỗi hệ thống; gợi ý và sửa nhanh.",
+      "Hanh": "suamay",
+      "Mau": "#5E35B1",
+      "Tieu": "Kiểm tra và sửa máy"
+    },
+    {
+      "Icon": "",
+      "N": "TiHuongDan",
+      "MoTa": "Cách dùng phần mềm, xử lý sự cố thường gặp.",
+      "Hanh": "huongdan",
+      "Mau": "#7B3FE4",
+      "Tieu": "Hướng dẫn sử dụng"
+    }
+  ],
+  "documents": [
+    {
+      "Tieu": "Công văn",
+      "MoTa": "Mẫu 1.5 - NĐ 30",
+      "Lenh": "/cong-van Soạn công văn",
+      "N": "LvCongVan"
+    },
+    {
+      "Tieu": "Quyết định",
+      "MoTa": "Mẫu 1.2, 1.3 - NĐ 30",
+      "Lenh": "/cong-van Soạn quyết định",
+      "N": "LvQuyetDinh"
+    },
+    {
+      "Tieu": "Kế hoạch",
+      "MoTa": "Mẫu 1.4 - NĐ 30",
+      "Lenh": "/ke-hoach Lập kế hoạch",
+      "N": "LvKeHoach"
+    },
+    {
+      "Tieu": "Báo cáo",
+      "MoTa": "Mẫu 1.4 - NĐ 30",
+      "Lenh": "/bao-cao Soạn báo cáo",
+      "N": "LvBaoCao"
+    },
+    {
+      "Tieu": "Hướng dẫn",
+      "MoTa": "Mẫu 1.4 - NĐ 30",
+      "Lenh": "/huong-dan-nhiem-vu Soạn hướng dẫn",
+      "N": "LvHuongDan"
+    },
+    {
+      "Tieu": "Thông báo",
+      "MoTa": "Mẫu 1.4 - NĐ 30",
+      "Lenh": "/cong-van Soạn thông báo",
+      "N": "LvThongBao"
+    },
+    {
+      "Tieu": "Tờ trình",
+      "MoTa": "Mẫu 1.4 - kèm dự thảo",
+      "Lenh": "/tham-muu Soạn tờ trình",
+      "N": "LvToTrinh"
+    },
+    {
+      "Tieu": "Phiếu trình",
+      "MoTa": "Trình lãnh đạo xem xét, ký",
+      "Lenh": "/cong-van Soạn phiếu trình",
+      "N": "LvPhieuTrinh"
+    },
+    {
+      "Tieu": "Giấy mời",
+      "MoTa": "Mẫu 1.7 - NĐ 30",
+      "Lenh": "/cong-van Soạn giấy mời",
+      "N": "LvGiayMoi"
+    },
+    {
+      "Tieu": "Giấy triệu tập",
+      "MoTa": "Tập huấn, hội nghị",
+      "Lenh": "/cong-van Soạn giấy triệu tập",
+      "N": "LvTrieuTap"
+    },
+    {
+      "Tieu": "Biên bản",
+      "MoTa": "Mẫu 1.9 - NĐ 30",
+      "Lenh": "/bien-ban Lập biên bản",
+      "N": "LvBienBan"
+    },
+    {
+      "Tieu": "Lịch công tác tuần",
+      "MoTa": "Bảng lịch có phân công",
+      "Lenh": "/lich-tuan Lập lịch công tác tuần",
+      "N": "LvLichTuan"
+    }
+  ],
+  "home": [
+    {
+      "Hanh": "trang:SoanVanBan",
+      "MoTa": "Công văn, quyết định, hướng dẫn, tờ trình, phiếu trình...",
+      "Nen": "#EEF4FF",
+      "Tieu": "Soạn văn bản",
+      "C2": "#1E5FD8",
+      "C1": "#4C8DFF",
+      "Icon": "",
+      "N": "TcSoan"
+    },
+    {
+      "Hanh": "trang:Mau",
+      "MoTa": "Mẫu theo Nghị định 30/2020 cho văn bản của cơ quan.",
+      "Nen": "#EAF8F0",
+      "Tieu": "Mẫu văn bản",
+      "C2": "#0E8A4F",
+      "C1": "#2DBE78",
+      "Icon": "",
+      "N": "TcMau"
+    },
+    {
+      "Hanh": "chat",
+      "MoTa": "Hỏi đáp, tư vấn, hỗ trợ công việc quản lý giáo dục.",
+      "Nen": "#F4EFFF",
+      "Tieu": "Trò chuyện AI",
+      "C2": "#7B3FE4",
+      "C1": "#A775FF",
+      "Icon": "",
+      "N": "TcChat"
+    },
+    {
+      "Hanh": "lenh:/huong-dan-nhiem-vu Hướng dẫn nhiệm vụ",
+      "N": "TcHuongDan",
+      "VT": {
+        "so": [
+          "Hướng dẫn nhiệm vụ",
+          "Hướng dẫn nhiệm vụ năm học, chuyên đề cho cấp học phụ trách.",
+          "lenh:/huong-dan-nhiem-vu Hướng dẫn nhiệm vụ"
+        ],
+        "ubnd": [
+          "Làm slide báo cáo về giáo dục trước HĐND xã",
+          "Lập bảng Excel theo dõi các trường trên địa bàn",
+          "Phát biểu, kết luận",
+          "Bài phát biểu khai giảng, tổng kết; thông báo kết luận.",
+          "lenh:/phat-bieu Phát biểu, kết luận"
+        ],
+        "vhxh": [
+          "Làm slide báo cáo kết quả kiểm tra các trường",
+          "Lập biểu mẫu Excel số liệu gửi các trường",
+          "Triển khai nhiệm vụ năm học",
+          "Kế hoạch, hướng dẫn các trường thực hiện nhiệm vụ năm học.",
+          "lenh:/huong-dan-nhiem-vu Triển khai nhiệm vụ năm học"
+        ]
+      },
+      "C2": "#EF6C00",
+      "Icon": "",
+      "Nen": "#FFF4EA",
+      "C1": "#FFA24A",
+      "Tieu": "Hướng dẫn nhiệm vụ",
+      "MoTa": "Hướng dẫn nhiệm vụ năm học, chuyên đề cho cấp học phụ trách."
+    },
+    {
+      "Hanh": "trang:DonVi",
+      "N": "TcDonVi",
+      "VT": {
+        "xa": [
+          "Đơn vị, báo cáo",
+          "Yêu cầu, theo dõi, tổng hợp báo cáo các trường trên địa bàn."
+        ],
+        "so": [
+          "Đơn vị, báo cáo",
+          "Yêu cầu, theo dõi, tổng hợp báo cáo các xã, phường."
+        ]
+      },
+      "C2": "#2E7D32",
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "Nen": "#EDF7EC",
+      "C1": "#4CAF50",
+      "Tieu": "Đơn vị, báo cáo",
+      "MoTa": "Yêu cầu, theo dõi, tổng hợp báo cáo các xã, phường."
+    },
+    {
+      "Hanh": "trang:KiemTra",
+      "N": "TcKiemTra",
+      "VT": {
+        "xa": [
+          "Kiểm tra, đánh giá",
+          "Kiểm tra các trường, chuẩn quốc gia, phổ cập giáo dục."
+        ],
+        "so": [
+          "Kiểm tra, đánh giá",
+          "Kiểm tra chuyên môn, chuẩn quốc gia, phổ cập giáo dục."
+        ]
+      },
+      "C2": "#E0313F",
+      "Icon": "",
+      "Nen": "#FFEFF1",
+      "C1": "#FF6F7A",
+      "Tieu": "Kiểm tra, đánh giá",
+      "MoTa": "Kiểm tra chuyên môn, chuẩn quốc gia, phổ cập giáo dục."
+    },
+    {
+      "Hanh": "lenh:/tham-muu Tham mưu UBND tỉnh",
+      "N": "TcThamMuu",
+      "VT": {
+        "so": [
+          "Tham mưu UBND tỉnh",
+          "Tờ trình, dự thảo quyết định, kế hoạch trình UBND tỉnh.",
+          "lenh:/tham-muu Tham mưu UBND tỉnh"
+        ],
+        "ubnd": [
+          "Văn bản chỉ đạo",
+          "Quyết định, kế hoạch, công văn chỉ đạo các trường trên địa bàn.",
+          "lenh:/cong-van Văn bản chỉ đạo của UBND xã"
+        ],
+        "vhxh": [
+          "Tham mưu UBND xã",
+          "Tờ trình, dự thảo quyết định, kế hoạch trình UBND xã, phường.",
+          "lenh:/tham-muu Tham mưu UBND xã"
+        ]
+      },
+      "C2": "#00838F",
+      "Icon": "",
+      "Nen": "#E8F7F9",
+      "C1": "#2CC3D6",
+      "Tieu": "Tham mưu UBND tỉnh",
+      "MoTa": "Tờ trình, dự thảo quyết định, kế hoạch trình UBND tỉnh."
+    },
+    {
+      "Hanh": "trang:TraCuu",
+      "MoTa": "Luật, Nghị định, Thông tư, Điều lệ trường, chương trình...",
+      "Nen": "#F1F4F8",
+      "Tieu": "Tra cứu quy định",
+      "C2": "#40546B",
+      "C1": "#7C90A6",
+      "Icon": "",
+      "N": "TcTraCuu"
+    },
+    {
+      "Hanh": "trang:VanBanDen",
+      "N": "TcVBDen",
+      "VT": {
+        "xa": [
+          "Xử lý văn bản đến",
+          "Đọc, tóm tắt, trích việc từ văn bản của Sở, UBND tỉnh, UBND xã..."
+        ],
+        "so": [
+          "Xử lý văn bản đến",
+          "Đọc, tóm tắt, trích việc từ văn bản của Bộ, UBND tỉnh, các sở..."
+        ]
+      },
+      "C2": "#E09A00",
+      "Icon": "",
+      "Nen": "#FFF8E7",
+      "C1": "#FFC943",
+      "Tieu": "Xử lý văn bản đến",
+      "MoTa": "Đọc, tóm tắt, trích việc từ văn bản của Bộ, UBND tỉnh, các sở..."
+    }
+  ],
+  "inspections": [
+    {
+      "Icon": "",
+      "N": "KtKeHoach",
+      "MoTa": "Kế hoạch kiểm tra năm học, đợt kiểm tra chuyên đề.",
+      "Hanh": "lenh:/kiem-tra Kế hoạch kiểm tra",
+      "Mau": "#1E5FD8",
+      "Tieu": "Kế hoạch kiểm tra"
+    },
+    {
+      "Icon": "",
+      "N": "KtQuyetDinh",
+      "MoTa": "Quyết định thành lập đoàn, đề cương làm việc, lịch kiểm tra.",
+      "Hanh": "lenh:/kiem-tra Quyết định thành lập đoàn, đề cương",
+      "Mau": "#0E8A4F",
+      "Tieu": "Quyết định, đề cương"
+    },
+    {
+      "Icon": "",
+      "N": "KtDuGio",
+      "MoTa": "Phiếu dự giờ, quan sát hoạt động, kiểm tra hồ sơ.",
+      "Hanh": "lenh:/kiem-tra Phiếu dự giờ, quan sát",
+      "Mau": "#EF6C00",
+      "Tieu": "Phiếu dự giờ, quan sát"
+    },
+    {
+      "Icon": "",
+      "N": "KtBienBan",
+      "MoTa": "Biên bản làm việc, kiểm tra tại đơn vị từ ghi chép.",
+      "Hanh": "lenh:/kiem-tra Biên bản kiểm tra",
+      "Mau": "#7B3FE4",
+      "Tieu": "Biên bản kiểm tra"
+    },
+    {
+      "Icon": "",
+      "N": "KtKetLuan",
+      "MoTa": "Thông báo kết quả, kết luận kiểm tra gửi đơn vị.",
+      "Hanh": "lenh:/kiem-tra Thông báo kết quả kiểm tra",
+      "Mau": "#E0313F",
+      "Tieu": "Thông báo kết quả"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "KtBaoCao",
+      "MoTa": "Báo cáo tổng hợp kết quả đợt kiểm tra.",
+      "Hanh": "lenh:/kiem-tra Báo cáo tổng hợp kiểm tra",
+      "Mau": "#2E7D32",
+      "Tieu": "Báo cáo tổng hợp"
+    },
+    {
+      "Icon": "",
+      "N": "KdKeHoach",
+      "MoTa": "Kế hoạch, hướng dẫn bảo đảm chất lượng, chuẩn quốc gia (TT 57/2026).",
+      "Hanh": "lenh:/chuan-chat-luong Kế hoạch, hướng dẫn bảo đảm chất lượng, chuẩn quốc gia",
+      "Mau": "#2E7D32",
+      "Tieu": "Kế hoạch, hướng dẫn"
+    },
+    {
+      "Icon": "",
+      "N": "KdThamDinh",
+      "MoTa": "Quyết định hội đồng, phiếu ý kiến, biên bản, thông báo kết quả.",
+      "Hanh": "lenh:/chuan-chat-luong Hội đồng thẩm định chuẩn quốc gia",
+      "Mau": "#00838F",
+      "Tieu": "Hội đồng thẩm định"
+    },
+    {
+      "Icon": "",
+      "N": "KdCongNhan",
+      "MoTa": "Quyết định công nhận, thu hồi; báo cáo năm (Mẫu số 7).",
+      "Hanh": "lenh:/chuan-chat-luong Tờ trình, quyết định công nhận",
+      "Mau": "#1E5FD8",
+      "Tieu": "Công nhận, báo cáo năm"
+    },
+    {
+      "Icon": "",
+      "N": "PcKeHoach",
+      "MoTa": "Kế hoạch phổ cập giáo dục mầm non, tiểu học, xóa mù chữ.",
+      "Hanh": "lenh:/pho-cap Kế hoạch phổ cập",
+      "Mau": "#40546B",
+      "Tieu": "Kế hoạch phổ cập"
+    },
+    {
+      "Icon": "",
+      "N": "PcKiemTra",
+      "MoTa": "Kiểm tra, công nhận xã, phường đạt chuẩn phổ cập.",
+      "Hanh": "lenh:/pho-cap Kiểm tra công nhận phổ cập",
+      "Mau": "#E09A00",
+      "Tieu": "Kiểm tra công nhận"
+    },
+    {
+      "Icon": "PATH:M0,20 L4,20 L4,9 L0,9 Z M7,20 L11,20 L11,3 L7,3 Z M14,20 L18,20 L18,12 L14,12 Z",
+      "N": "PcBaoCao",
+      "MoTa": "Báo cáo kết quả phổ cập, xóa mù chữ; tổng hợp số liệu.",
+      "Hanh": "lenh:/pho-cap Báo cáo phổ cập",
+      "Mau": "#00838F",
+      "Tieu": "Báo cáo phổ cập"
+    }
+  ]
+}

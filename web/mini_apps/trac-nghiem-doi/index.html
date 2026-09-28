@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đấu Trường Trắc Nghiệm Đội</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="thanh-dau">
+  <div class="khoi-tieu-de">
+    <h1 id="tieuDe">⚔️ Đấu Trường Trắc Nghiệm</h1>
+    <span class="phu" id="monLop"></span>
+  </div>
+  
+  <div class="thanh-dieu-khien-lop">
+    <label for="chonLop">📚 <strong>Chọn Lớp / Đề:</strong></label>
+    <select id="chonLop" title="Chọn gói câu hỏi theo lớp học hoặc đề tự tạo">
+      <option value="lop-6">Lớp 6 (Toán & KHTN)</option>
+      <option value="lop-7">Lớp 7 (Toán & KHTN)</option>
+      <option value="lop-8" selected>Lớp 8 (Toán & Hằng Đẳng Thức)</option>
+      <option value="lop-9">Lớp 9 (Toán, Lý, Hóa, Sinh)</option>
+      <option value="lop-10">Lớp 10 (THPT - Kiến Thức Trọng Tâm)</option>
+      <option value="lop-11">Lớp 11 (THPT - Lượng Giác, Giải Tích)</option>
+      <option value="lop-12">Lớp 12 (Ôn Thi Tốt Nghiệp THPT)</option>
+      <option value="do-vui">💡 Đố Vui Trí Tuệ & Khởi Động</option>
+      <option value="tu-nhap">✏️ Đề Tự Tạo Của Tôi</option>
+    </select>
+  </div>
+
+  <div class="nhom-nut-dau">
+    <button class="nut nut-nho nut-sang" id="nutNhapCauHoi" type="button" title="Tự nhập hoặc dán danh sách câu hỏi của thầy/cô">✏️ Tự nhập câu hỏi</button>
+    <button class="nut nut-nho" id="nutAm" type="button" title="Bật/tắt âm thanh (phím M)">Âm thanh: Bật</button>
+    <button class="nut nut-nho" id="nutToanManHinh" type="button" title="Toàn màn hình (phím F)">Toàn màn hình</button>
+  </div>
+</header>
+
+<main class="noi-dung">
+  <!-- Màn 1: chuẩn bị -->
+  <section id="manBatDau" class="man man-giua">
+    <div class="the-khung">
+      <h2>⚔️ Chuẩn bị thi đấu đối kháng</h2>
+      <p class="mo-ta-lop" id="moTaLopHienTai"></p>
+      
+      <div class="hang-cau-hinh">
+        <label>Số đội <select id="soDoi"></select></label>
+        <label>Giây mỗi câu <input id="thoiGian" type="number" min="5" max="300" step="5"></label>
+        <label>Điểm mỗi câu <input id="diemMoiCau" type="number" min="1" max="100"></label>
+        <label class="hop-chon"><input id="xaoTron" type="checkbox"> Xáo trộn câu hỏi</label>
+        <label class="hop-chon"><input id="tuDongDapAn" type="checkbox" checked> Tự chấm khi bấm</label>
+      </div>
+
+      <p class="nhan-nho">Tên các đội thi (bấm trực tiếp để sửa tên):</p>
+      <div id="tenDoi" class="ten-doi"></div>
+      
+      <p class="thong-tin" id="soCau"></p>
+      <div class="hang-nut-bat-dau">
+        <button class="nut nut-chinh nut-lon" id="nutBatDau" type="button">🚀 Bắt đầu thi đấu</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Màn 2: câu hỏi -->
+  <section id="manHoi" class="man" hidden>
+    <div class="hang-tren">
+      <div class="so-cau" id="soThuTu">Câu 1/10</div>
+      <div class="thanh-gio"><div id="thanhGio"></div></div>
+      <div class="so-giay" id="soGiay">20</div>
+    </div>
+    
+    <div class="cau-hoi" id="cauHoi"></div>
+    <div class="phuong-an" id="phuongAn"></div>
+    
+    <!-- Thanh chọn đội trả lời / cộng điểm nhanh -->
+    <div class="thanh-tra-loi-doi" id="thanhTraLoiDoi">
+      <span class="nhan-chon-doi">🎯 Đội giành quyền trả lời:</span>
+      <div class="danh-sach-nut-doi" id="danhSachNutDoi"></div>
+    </div>
+
+    <div class="hang-nut">
+      <div class="giai-thich" id="giaiThich"></div>
+      <button class="nut" id="nutDungGio" type="button">⏸ Tạm dừng</button>
+      <button class="nut" id="nutHienDapAn" type="button">💡 Hiện đáp án (Space)</button>
+      <button class="nut nut-chinh" id="nutTiep" type="button">Tiếp theo ➜ (Enter)</button>
+    </div>
+    
+    <div class="bang-diem" id="bangDiem"></div>
+  </section>
+
+  <!-- Màn 3: xếp hạng -->
+  <section id="manKetThuc" class="man man-giua" hidden>
+    <div class="the-khung">
+      <h2>🏆 Bảng Xếp Hạng Chung Cuộc</h2>
+      <ol class="xep-hang" id="xepHang"></ol>
+      <div class="hang-nut-ket-thuc">
+        <button class="nut nut-chinh nut-lon" id="nutChoiLai" type="button">🔄 Chơi lại</button>
+        <button class="nut nut-lon" id="nutDoiLop" type="button">📚 Chọn lớp khác</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal: Tự nhập câu hỏi -->
+<div id="modalNhapCauHoi" class="hop-thoai-nen" hidden>
+  <div class="hop-thoai-noi-dung the-khung-lon">
+    <div class="hop-thoai-dau">
+      <h3>✏️ Tự Nhập & Quản Lý Câu Hỏi</h3>
+      <button class="nut-dong" id="nutDongModal" type="button">✕</button>
+    </div>
+
+    <div class="tab-dieu-huong">
+      <button class="tab-nut kich-hoat" id="tabDanVanBan" type="button">📋 Dán đề nhanh (Word / Văn bản)</button>
+      <button class="tab-nut" id="tabDanhSachCau" type="button">📝 Soạn từng câu hỏi</button>
+    </div>
+
+    <!-- Tab 1: Dán nhanh văn bản -->
+    <div id="noiDungDanVanBan" class="tab-noi-dung">
+      <div class="huong-dan-dan">
+        <p>💡 <strong>Cách soạn nhanh:</strong> Thầy cô chỉ cần dán đề trắc nghiệm thông thường (có thể copy từ Word, Zalo, Notepad...). Hệ thống tự động nhận diện câu hỏi, các phương án A, B, C, D và đáp án đúng!</p>
+        <pre class="vi-du-mau">Câu 1: Thủ đô của Việt Nam là gì?
+A. TP. Hồ Chí Minh
+B. Hà Nội
+C. Đà Nẵng
+D. Hải Phòng
+Đáp án: B
+Giải thích: Hà Nội là thủ đô của nước CHXHCN Việt Nam.</pre>
+      </div>
+      <textarea id="txtVanBanDe" rows="12" placeholder="Dán nội dung đề trắc nghiệm của thầy/cô vào đây..."></textarea>
+      
+      <div class="hang-nut-modal">
+        <button class="nut nut-chinh" id="nutPhanTichDe" type="button">⚡ Nạp và Sử dụng Đề này ngay</button>
+        <button class="nut" id="nutNapViDu" type="button">📄 Dán mẫu thử nghiệm</button>
+        <button class="nut" id="nutXoaTrang" type="button">🗑 Xóa trắng</button>
+      </div>
+    </div>
+
+    <!-- Tab 2: Quản lý danh sách câu hỏi -->
+    <div id="noiDungDanhSachCau" class="tab-noi-dung" hidden>
+      <div class="bieu-mau-them-cau">
+        <h4>Thêm / Chỉnh sửa câu hỏi:</h4>
+        <input type="text" id="formHoi" placeholder="Nhập nội dung câu hỏi..." style="width: 100%; margin-bottom: 8px;">
+        <div class="luoi-nhap-pa">
+          <div><label>A:</label> <input type="text" id="formPA0" placeholder="Phương án A"></div>
+          <div><label>B:</label> <input type="text" id="formPA1" placeholder="Phương án B"></div>
+          <div><label>C:</label> <input type="text" id="formPA2" placeholder="Phương án C"></div>
+          <div><label>D:</label> <input type="text" id="formPA3" placeholder="Phương án D"></div>
+        </div>
+        <div class="hang-dap-an-giai-thich">
+          <label>Đáp án đúng:
+            <select id="formDapAn">
+              <option value="0">A</option>
+              <option value="1">B</option>
+              <option value="2">C</option>
+              <option value="3">D</option>
+            </select>
+          </label>
+          <input type="text" id="formGiaiThich" placeholder="Giải thích đáp án (không bắt buộc)..." style="flex: 1;">
+          <button class="nut nut-chinh" id="nutLuuCauHoi" type="button">➕ Thêm câu</button>
+        </div>
+      </div>
+
+      <h4>Danh sách câu hỏi hiện tại (<span id="demSoCauHoi">0</span> câu):</h4>
+      <div id="dsCauHoiHienTai" class="danh-sach-cau-cu-the"></div>
+    </div>
+
+    <div class="hop-thoai-chan">
+      <div class="nhom-nut-tep">
+        <button class="nut nut-nho" id="nutXuatFile" type="button">💾 Xuất file (.json)</button>
+        <label class="nut nut-nho nut-tep">
+          📂 Nhập file (.json)
+          <input type="file" id="inpFileDe" accept=".json,.txt" hidden>
+        </label>
+        <button class="nut nut-nho nut-canh-bao" id="nutKhoiPhucMacDinh" type="button">🔄 Đặt lại mặc định</button>
+      </div>
+      <button class="nut nut-chinh" id="nutDongVaChoi" type="button">Áp dụng & Chơi ngay</button>
+    </div>
+  </div>
+</div>
+
+<footer class="goi-y-phim" id="goiYPhim">
+  Phím tắt: <kbd>1</kbd>-<kbd>4</kbd> hoặc <kbd>A</kbd>-<kbd>D</kbd>: Chọn phương án | <kbd>Space</kbd>: Hiện đáp án | <kbd>Enter</kbd>: Tiếp | <kbd>M</kbd>: Âm thanh | <kbd>F</kbd>: Toàn màn hình
+</footer>
+
+<script src="du-lieu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

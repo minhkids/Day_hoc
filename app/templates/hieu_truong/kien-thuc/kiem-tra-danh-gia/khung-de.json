@@ -1,0 +1,332 @@
+{
+  "phien_ban": "1.1",
+  "cap_nhat": "2026-09-18",
+  "ghi_chu": "Khung đề kiểm tra định kỳ theo cấp học - môn - lớp - đợt. Thời điểm, thang điểm, số mức lấy từ Thông tư 27/2020 (tiểu học) và Thông tư 22/2021, Công văn 7991 (trung học). TỈ LỆ MỨC VÀ SỐ CÂU LÀ KHUNG THAM KHẢO: hướng dẫn của Sở GD&ĐT, kế hoạch của trường (can-cu-dia-phuong.md, ghi-nho.md, 07_MAU_RIENG) luôn được ưu tiên. Mạch nội dung là mạch của Chương trình GDPT 2018 - phạm vi bài học cụ thể phải đối chiếu kế hoạch dạy học của khối.",
+  "dot": {
+    "gk1": { "ten": "Giữa học kỳ I", "tuan": 9, "thu_tu": 1 },
+    "ck1": { "ten": "Cuối học kỳ I", "tuan": 18, "thu_tu": 2 },
+    "gk2": { "ten": "Giữa học kỳ II", "tuan": 27, "thu_tu": 3 },
+    "ck2": { "ten": "Cuối năm học", "tuan": 35, "thu_tu": 4 }
+  },
+  "cap": {
+    "th": {
+      "ten": "Tiểu học",
+      "can_cu": "Điều 5, Điều 7 Thông tư 27/2020/TT-BGDĐT (sửa đổi bởi Thông tư 10/2025/TT-BGDĐT)",
+      "muc": ["Mức 1", "Mức 2", "Mức 3"],
+      "mo_ta_muc": {
+        "Mức 1": "Nhận biết, nhắc lại hoặc mô tả được nội dung đã học và áp dụng trực tiếp để giải quyết một số tình huống, vấn đề quen thuộc trong học tập",
+        "Mức 2": "Kết nối, sắp xếp được một số nội dung đã học để giải quyết vấn đề có nội dung tương tự",
+        "Mức 3": "Vận dụng các nội dung đã học để giải quyết một số vấn đề mới hoặc đưa ra phản hồi hợp lý trong học tập và cuộc sống"
+      },
+      "ti_le_muc": { "Mức 1": 40, "Mức 2": 40, "Mức 3": 20 },
+      "ti_le_muc_ghi_chu": "Thông tư 27/2020 không ấn định tỉ lệ. Khung 40-40-20 là mức phổ biến trong hướng dẫn của các Sở; phải ghi giả định và [CẦN KIỂM TRA: tỉ lệ các mức theo hướng dẫn của Sở GD&ĐT].",
+      "thang_diem": "10, không cho điểm thập phân",
+      "dang_cau_hoi": ["Trắc nghiệm nhiều lựa chọn", "Đúng - Sai", "Nối", "Điền khuyết", "Tự luận"],
+      "ban_dac_ta": false,
+      "ghi_chu_cap": "Không dùng khung ma trận, bản đặc tả theo Công văn 7991 (văn bản của cấp trung học).",
+      "mon": [
+        {
+          "ma": "tieng-viet", "ten": "Tiếng Việt", "lop": [1, 2, 3, 4, 5],
+          "dot": ["ck1", "ck2"], "dot_them": { "lop": [4, 5], "dot": ["gk1", "gk2"] },
+          "thoi_gian": { "1": 40, "2": 40, "3": 40, "4": 40, "5": 40 },
+          "thoi_gian_ghi_chu": "Hai bài kiểm tra: Bài kiểm tra đọc (đọc thành tiếng kiểm tra riêng từng học sinh + đọc hiểu làm trên giấy) và Bài kiểm tra viết. Thời gian trên là của phần làm trên giấy mỗi bài.",
+          "mach": ["Đọc thành tiếng", "Đọc hiểu văn bản", "Kiến thức tiếng Việt (từ, câu, chính tả)", "Viết (chính tả, đoạn - bài văn)", "Nói và nghe"],
+          "cau_truc": "Môn Tiếng Việt có HAI bài kiểm tra, mỗi bài thang điểm 10: (1) Bài kiểm tra đọc = đọc thành tiếng (kiểm tra riêng, có tiêu chí) + đọc hiểu, kiến thức tiếng Việt (bài đọc mới kèm câu hỏi). Tỉ lệ điểm đọc thành tiếng / đọc hiểu: lớp 1: 7/3; lớp 2, 3: 6/4; lớp 4, 5: 4/6, riêng cuối năm lớp 4, 5: 3/7. (2) Bài kiểm tra viết (chính tả, đoạn hoặc bài văn theo yêu cầu cần đạt của lớp).",
+          "luu_y": "Ngữ liệu đọc hiểu là văn bản MỚI, không lấy nguyên bài trong sách giáo khoa; ghi rõ tác giả, nguồn nếu trích.",
+          "goi_y": [
+            {
+              "lop": [4, 5], "dot": ["ck2"], "ti_le_ghi": "Bài kiểm tra đọc: đọc thành tiếng 3 điểm / đọc hiểu 7 điểm (cuối năm lớp 4, 5)",
+              "dang": [
+                { "ten": "Bài đọc - Đọc thành tiếng, trả lời câu hỏi (kiểm tra riêng)", "so_cau": 1, "diem_cau": 3.0 },
+                { "ten": "Bài đọc - Đọc hiểu: khoanh A, B, C, D", "so_cau": 6, "diem_cau": 0.5 },
+                { "ten": "Bài đọc - Đọc hiểu, kiến thức tiếng Việt: đúng - sai, nối, điền (4 ý)", "so_cau": 1, "diem_cau": 1.0 },
+                { "ten": "Bài đọc - Đọc hiểu, kiến thức tiếng Việt: tự luận ngắn", "so_cau": 3, "diem_cau": 1.0 },
+                { "ten": "Bài viết - bài văn (bài kiểm tra riêng, thang 10)", "so_cau": 1, "diem_cau": 10.0 }
+              ],
+              "chiet_diem": [
+                "Hai bài kiểm tra, mỗi bài 10 điểm: Bài kiểm tra đọc và Bài kiểm tra viết. Điểm môn theo hướng dẫn của trường [CẦN KIỂM TRA: cách tính điểm môn từ hai bài, làm tròn].",
+                "Đọc thành tiếng 3 điểm: tốc độ, giọng đọc 1; đọc đúng tiếng, từ, ngắt nghỉ 1; trả lời câu hỏi về nội dung đoạn đọc 1.",
+                "Đọc hiểu, kiến thức tiếng Việt 7 điểm: khoanh 0,5 điểm/câu; đúng - sai, nối 0,25 điểm/ý; câu tự luận ngắn 1 điểm (viết câu đúng yêu cầu, đủ ý 1; đúng ý chưa trọn câu 0,5).",
+                "Bài viết 10 điểm: mở bài 1; thân bài 6 (nội dung 4, kĩ năng 1, cảm xúc 1); kết bài 1; chữ viết, chính tả 1; dùng từ, đặt câu 0,5; sáng tạo 0,5."
+              ]
+            },
+            {
+              "lop": [4, 5], "ti_le_ghi": "Bài kiểm tra đọc: đọc thành tiếng 4 điểm / đọc hiểu 6 điểm (giữa kỳ I, cuối kỳ I, giữa kỳ II lớp 4, 5)",
+              "dang": [
+                { "ten": "Bài đọc - Đọc thành tiếng, trả lời câu hỏi (kiểm tra riêng)", "so_cau": 1, "diem_cau": 4.0 },
+                { "ten": "Bài đọc - Đọc hiểu: khoanh A, B, C, D", "so_cau": 4, "diem_cau": 0.5 },
+                { "ten": "Bài đọc - Đọc hiểu, kiến thức tiếng Việt: đúng - sai, nối, điền (4 ý)", "so_cau": 1, "diem_cau": 1.0 },
+                { "ten": "Bài đọc - Đọc hiểu, kiến thức tiếng Việt: tự luận ngắn", "so_cau": 3, "diem_cau": 1.0 },
+                { "ten": "Bài viết - bài văn (bài kiểm tra riêng, thang 10)", "so_cau": 1, "diem_cau": 10.0 }
+              ],
+              "chiet_diem": [
+                "Hai bài kiểm tra, mỗi bài 10 điểm: Bài kiểm tra đọc và Bài kiểm tra viết. Điểm môn theo hướng dẫn của trường [CẦN KIỂM TRA: cách tính điểm môn từ hai bài, làm tròn].",
+                "Đọc thành tiếng 4 điểm: tốc độ, giọng đọc 1; đọc đúng tiếng, từ 1; ngắt nghỉ đúng dấu câu, cụm từ 1; trả lời câu hỏi về nội dung đoạn đọc 1.",
+                "Đọc hiểu, kiến thức tiếng Việt 6 điểm: khoanh 0,5 điểm/câu; đúng - sai, nối 0,25 điểm/ý; câu tự luận ngắn 1 điểm (đủ ý, đúng câu 1; đúng ý chưa trọn câu 0,5).",
+                "Bài viết 10 điểm: mở bài 1; thân bài 6 (nội dung 4, kĩ năng 1, cảm xúc 1); kết bài 1; chữ viết, chính tả 1; dùng từ, đặt câu 0,5; sáng tạo 0,5."
+              ]
+            },
+            {
+              "lop": [2, 3], "ti_le_ghi": "Bài kiểm tra đọc: đọc thành tiếng 6 điểm / đọc hiểu 4 điểm",
+              "dang": [
+                { "ten": "Bài đọc - Đọc thành tiếng, trả lời câu hỏi (kiểm tra riêng)", "so_cau": 1, "diem_cau": 6.0 },
+                { "ten": "Bài đọc - Đọc hiểu: khoanh A, B, C, D", "so_cau": 4, "diem_cau": 0.5 },
+                { "ten": "Bài đọc - Đọc hiểu, kiến thức tiếng Việt: nối, điền, trả lời ngắn", "so_cau": 2, "diem_cau": 1.0 },
+                { "ten": "Bài viết - chính tả và đoạn văn ngắn (bài kiểm tra riêng, thang 10)", "so_cau": 1, "diem_cau": 10.0 }
+              ],
+              "chiet_diem": [
+                "Hai bài kiểm tra, mỗi bài 10 điểm: Bài kiểm tra đọc và Bài kiểm tra viết. Điểm môn theo hướng dẫn của trường [CẦN KIỂM TRA: cách tính điểm môn từ hai bài, làm tròn].",
+                "Đọc thành tiếng 6 điểm: tốc độ, giọng đọc 1,5; đọc đúng tiếng, từ 1,5; ngắt nghỉ đúng 1,5; trả lời câu hỏi về nội dung đoạn đọc 1,5 [CẦN KIỂM TRA: tiêu chí theo hướng dẫn của trường].",
+                "Đọc hiểu 4 điểm: khoanh 0,5 điểm/câu; nối, điền 0,25 điểm/ý; trả lời ngắn 1 điểm.",
+                "Bài viết 10 điểm: chính tả (nghe - viết) và đoạn văn ngắn, chia điểm theo hướng dẫn của trường [CẦN KIỂM TRA]."
+              ]
+            },
+            {
+              "lop": [1], "ti_le_ghi": "Bài kiểm tra đọc: đọc thành tiếng 7 điểm / đọc hiểu 3 điểm",
+              "dang": [
+                { "ten": "Bài đọc - Đọc thành tiếng (âm, vần, tiếng, từ, câu, đoạn) và trả lời câu hỏi (kiểm tra riêng)", "so_cau": 1, "diem_cau": 7.0 },
+                { "ten": "Bài đọc - Đọc hiểu: khoanh, nối, điền từ", "so_cau": 3, "diem_cau": 1.0 },
+                { "ten": "Bài viết - chính tả (nhìn - viết, nghe - viết) và bài tập (bài kiểm tra riêng, thang 10)", "so_cau": 1, "diem_cau": 10.0 }
+              ],
+              "chiet_diem": [
+                "Hai bài kiểm tra, mỗi bài 10 điểm: Bài kiểm tra đọc và Bài kiểm tra viết. Điểm môn theo hướng dẫn của trường [CẦN KIỂM TRA: cách tính điểm môn từ hai bài, làm tròn].",
+                "Đọc thành tiếng 7 điểm: đọc đúng âm, vần, tiếng, từ; tốc độ; ngắt nghỉ; trả lời câu hỏi - chia điểm theo hướng dẫn của trường [CẦN KIỂM TRA].",
+                "Đọc hiểu 3 điểm: mỗi câu 1 điểm; câu có 2 ý 0,5 điểm/ý, 4 ý 0,25 điểm/ý."
+              ]
+            }
+          ]
+        },
+        {
+          "ma": "toan", "ten": "Toán", "lop": [1, 2, 3, 4, 5],
+          "dot": ["ck1", "ck2"], "dot_them": { "lop": [4, 5], "dot": ["gk1", "gk2"] },
+          "thoi_gian": { "1": 35, "2": 35, "3": 40, "4": 40, "5": 40 },
+          "mach": ["Số và phép tính", "Hình học và Đo lường", "Một số yếu tố thống kê và xác suất", "Giải bài toán có lời văn"],
+          "mach_ghi_chu": "Mạch thống kê và xác suất có từ lớp 2.",
+          "cau_truc": "Phần I trắc nghiệm (khoanh A, B, C, D; đúng - sai; nối; điền số, điền dấu); Phần II tự luận (tính, bài toán có lời văn, câu vận dụng). Tỉ lệ điểm trắc nghiệm / tự luận: lớp 1, 2: 7/3; lớp 3, 4, 5: 6/4.",
+          "goi_y": [
+            {
+              "lop": [3, 4, 5], "ti_le_tn": 60,
+              "dang": [
+                { "ten": "Trắc nghiệm khoanh A, B, C, D", "so_cau": 6, "diem_cau": 0.5 },
+                { "ten": "Trắc nghiệm đúng - sai, nối, điền số (mỗi câu 4 ý)", "so_cau": 3, "diem_cau": 1.0 },
+                { "ten": "Tự luận: tính (đặt tính rồi tính, tính giá trị biểu thức)", "so_cau": 1, "diem_cau": 1.0 },
+                { "ten": "Tự luận: bài toán có lời văn (2 - 3 bước giải)", "so_cau": 1, "diem_cau": 2.0 },
+                { "ten": "Tự luận: vận dụng, giải quyết vấn đề (Mức 3)", "so_cau": 1, "diem_cau": 1.0 }
+              ],
+              "chiet_diem": [
+                "Khoanh A, B, C, D: mỗi câu đúng 0,5 điểm; khoanh từ 2 chữ trở lên không cho điểm.",
+                "Đúng - sai, nối, điền (4 ý): mỗi ý đúng 0,25 điểm.",
+                "Câu tính 1 điểm: 2 phép x 0,5 điểm hoặc 4 phép x 0,25 điểm; đặt tính đúng mà kết quả sai không cho điểm phép đó.",
+                "Bài toán có lời văn 2 điểm: chiết theo từng bước, mỗi bước = câu lời giải 0,25 + phép tính 0,25 (bước khó phép tính 0,5); đáp số 0,25. Ví dụ 3 bước: 0,5 + 0,5 + 0,75 + đáp số 0,25. Lời giải không khớp phép tính: không cho điểm lời giải; sai hoặc thiếu đơn vị: trừ 0,25 cả bài.",
+                "Câu vận dụng 1 điểm: 2 bước x 0,5 điểm; chỉ ghi đúng đáp số, không trình bày: 0,5 điểm.",
+                "Điểm thành phần là bội số của 0,25. Tổng điểm bài làm tròn thành số nguyên (không cho điểm thập phân) theo hướng dẫn của trường [CẦN KIỂM TRA: cách làm tròn, ví dụ 6,5 -> 7; 6,25 -> 6].",
+                "Hướng dẫn chấm phần tự luận: mỗi bước (lời giải + phép tính) một dòng, điểm ghi ở cột Điểm; cách giải khác đúng vẫn cho đủ điểm."
+              ]
+            },
+            {
+              "lop": [2], "ti_le_tn": 70,
+              "dang": [
+                { "ten": "Trắc nghiệm khoanh A, B, C, D", "so_cau": 6, "diem_cau": 0.5 },
+                { "ten": "Trắc nghiệm đúng - sai, nối, điền số, điền dấu (mỗi câu 4 ý)", "so_cau": 4, "diem_cau": 1.0 },
+                { "ten": "Tự luận: đặt tính rồi tính", "so_cau": 1, "diem_cau": 1.0 },
+                { "ten": "Tự luận: bài toán có lời văn", "so_cau": 1, "diem_cau": 2.0 }
+              ],
+              "chiet_diem": [
+                "Khoanh: 0,5 điểm/câu; đúng - sai, nối, điền: 0,25 điểm/ý.",
+                "Đặt tính rồi tính 1 điểm: 2 phép x 0,5 điểm hoặc 4 phép x 0,25 điểm.",
+                "Bài toán có lời văn 2 điểm: câu lời giải 0,5 + phép tính 1 + đáp số 0,5 (bài 1 bước).",
+                "Tổng điểm bài làm tròn thành số nguyên theo hướng dẫn của trường [CẦN KIỂM TRA]."
+              ]
+            },
+            {
+              "lop": [1], "ti_le_tn": 70,
+              "dang": [
+                { "ten": "Trắc nghiệm: khoanh, nối, đúng - sai, viết số vào ô trống", "so_cau": 7, "diem_cau": 1.0 },
+                { "ten": "Tự luận: tính, điền dấu >, <, =, viết phép tính thích hợp với hình vẽ", "so_cau": 3, "diem_cau": 1.0 }
+              ],
+              "chiet_diem": [
+                "Mỗi bài 1 điểm; bài có 4 ý thì 0,25 điểm/ý, 2 ý thì 0,5 điểm/ý.",
+                "Viết phép tính thích hợp với hình vẽ: đúng phép tính 0,5, đúng kết quả 0,5."
+              ]
+            }
+          ]
+        },
+        {
+          "ma": "ngoai-ngu", "ten": "Ngoại ngữ 1 (Tiếng Anh)", "lop": [3, 4, 5],
+          "dot": ["ck1", "ck2"],
+          "thoi_gian": { "3": 40, "4": 40, "5": 40 },
+          "mach": ["Nghe", "Nói", "Đọc", "Viết", "Ngữ âm - Từ vựng - Ngữ pháp"],
+          "cau_truc": "Bốn kĩ năng Nghe - Nói - Đọc - Viết; phần Nói kiểm tra riêng theo tiêu chí. Phần Nghe cần tệp âm thanh.",
+          "luu_y": "Phần nghe phải có tệp âm thanh hoặc giáo viên đọc theo kịch bản in kèm - ghi [CẦN BỔ SUNG: tệp nghe]."
+        },
+        {
+          "ma": "lich-su-dia-li", "ten": "Lịch sử và Địa lí", "lop": [4, 5],
+          "dot": ["ck1", "ck2"],
+          "thoi_gian": { "4": 40, "5": 40 },
+          "mach": ["Địa phương và các vùng miền của Việt Nam", "Thiên nhiên và con người", "Các sự kiện, nhân vật lịch sử tiêu biểu", "Việt Nam và thế giới"],
+          "cau_truc": "Phần I trắc nghiệm khoảng 60% (6 điểm): khoanh A, B, C, D, nối, đúng - sai, điền từ; Phần II tự luận 40% (4 điểm): câu trả lời ngắn, khai thác lược đồ, bảng số liệu, tranh ảnh, tư liệu; câu cuối Mức 3 liên hệ địa phương.",
+          "luu_y": "Chủ đề cụ thể của lớp 4, lớp 5 lấy theo kế hoạch dạy học của khối - không tự nghĩ ra.",
+          "goi_y": [
+            {
+              "lop": [4, 5], "ti_le_tn": 60,
+              "dang": [
+                { "ten": "Trắc nghiệm khoanh A, B, C, D", "so_cau": 8, "diem_cau": 0.5 },
+                { "ten": "Trắc nghiệm nối, đúng - sai, điền từ (4 ý)", "so_cau": 2, "diem_cau": 1.0 },
+                { "ten": "Tự luận ngắn (Mức 2)", "so_cau": 2, "diem_cau": 1.0 },
+                { "ten": "Tự luận vận dụng, liên hệ thực tế (Mức 3)", "so_cau": 1, "diem_cau": 2.0 }
+              ],
+              "chiet_diem": [
+                "Khoanh 0,5 điểm/câu; nối, đúng - sai, điền 0,25 điểm/ý.",
+                "Tự luận: chia theo ý cần đạt, mỗi ý 0,25 - 0,5 điểm; nêu đúng ý bằng cách diễn đạt khác vẫn cho điểm."
+              ]
+            }
+          ]
+        },
+        {
+          "ma": "khoa-hoc", "ten": "Khoa học", "lop": [4, 5],
+          "dot": ["ck1", "ck2"],
+          "thoi_gian": { "4": 40, "5": 40 },
+          "mach": ["Chất", "Năng lượng", "Thực vật và động vật", "Nấm, vi khuẩn", "Con người và sức khỏe", "Sinh vật và môi trường"],
+          "cau_truc": "Phần I trắc nghiệm khoảng 60% (6 điểm): khoanh A, B, C, D, nối, đúng - sai, điền từ; Phần II tự luận 40% (4 điểm): giải thích hiện tượng, thí nghiệm, vận dụng bảo vệ sức khỏe, môi trường.",
+          "goi_y": [
+            {
+              "lop": [4, 5], "ti_le_tn": 60,
+              "dang": [
+                { "ten": "Trắc nghiệm khoanh A, B, C, D", "so_cau": 8, "diem_cau": 0.5 },
+                { "ten": "Trắc nghiệm nối, đúng - sai, điền từ (4 ý)", "so_cau": 2, "diem_cau": 1.0 },
+                { "ten": "Tự luận ngắn (Mức 2)", "so_cau": 2, "diem_cau": 1.0 },
+                { "ten": "Tự luận vận dụng, giải thích thực tế (Mức 3)", "so_cau": 1, "diem_cau": 2.0 }
+              ],
+              "chiet_diem": [
+                "Khoanh 0,5 điểm/câu; nối, đúng - sai, điền 0,25 điểm/ý.",
+                "Tự luận: chia theo ý cần đạt, mỗi ý 0,25 - 0,5 điểm; nêu đúng ý bằng cách diễn đạt khác vẫn cho điểm."
+              ]
+            }
+          ]
+        },
+        {
+          "ma": "tin-hoc-cong-nghe", "ten": "Tin học và Công nghệ", "lop": [3, 4, 5],
+          "dot": ["ck1", "ck2"],
+          "thoi_gian": { "3": 40, "4": 40, "5": 40 },
+          "mach": ["Tin học: Máy tính và em", "Tin học: Mạng máy tính và Internet", "Tin học: Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin", "Tin học: Đạo đức, pháp luật và văn hóa trong môi trường số", "Tin học: Ứng dụng tin học", "Tin học: Giải quyết vấn đề với sự trợ giúp của máy tính", "Công nghệ: Công nghệ và đời sống", "Công nghệ: Thủ công kĩ thuật"],
+          "cau_truc": "Đề gồm hai phần Tin học và Công nghệ, điểm chia theo số tiết của từng phần trong kế hoạch dạy học. Mỗi phần: trắc nghiệm khoảng 60%, còn lại tự luận hoặc thực hành (Tin học có thể thực hành trên máy).",
+          "goi_y": [
+            {
+              "lop": [3, 4, 5], "ti_le_tn": 60,
+              "dang": [
+                { "ten": "Trắc nghiệm khoanh A, B, C, D", "so_cau": 10, "diem_cau": 0.5 },
+                { "ten": "Trắc nghiệm nối, đúng - sai (4 ý)", "so_cau": 1, "diem_cau": 1.0 },
+                { "ten": "Tự luận ngắn hoặc thực hành", "so_cau": 2, "diem_cau": 2.0 }
+              ],
+              "chiet_diem": [
+                "Khoanh 0,5 điểm/câu; nối, đúng - sai 0,25 điểm/ý.",
+                "Thực hành, tự luận: chia theo thao tác, sản phẩm cần đạt, mỗi thao tác 0,25 - 0,5 điểm."
+              ]
+            }
+          ]
+        }
+      ],
+      "mon_khong_kiem_tra": {
+        "ten": ["Đạo đức", "Âm nhạc", "Mĩ thuật", "Giáo dục thể chất", "Hoạt động trải nghiệm", "Tiếng dân tộc"],
+        "xu_ly": "Đánh giá bằng nhận xét - KHÔNG có bài kiểm tra định kỳ. Chỉ soạn đề ôn tập, phiếu học tập khi thầy/cô yêu cầu và ghi rõ đó là tài liệu ôn tập, không phải đề kiểm tra định kỳ."
+      }
+    },
+    "thcs": {
+      "ten": "Trung học cơ sở",
+      "can_cu": "Điều 5, Điều 6, Điều 7 Thông tư 22/2021/TT-BGDĐT; Phụ lục Công văn 7991/BGDĐT-GDTrH ngày 17/12/2024",
+      "muc": ["Biết", "Hiểu", "Vận dụng"],
+      "mo_ta_muc": {
+        "Biết": "Nhận biết, nhớ lại, nêu được kiến thức đã học",
+        "Hiểu": "Giải thích, so sánh, phân loại, kết nối được kiến thức đã học",
+        "Vận dụng": "Dùng kiến thức, kĩ năng đã học để giải quyết vấn đề mới, tình huống thực tiễn"
+      },
+      "ti_le_muc": { "Biết": 40, "Hiểu": 30, "Vận dụng": 30 },
+      "ti_le_muc_ghi_chu": "Theo Phụ lục Công văn 7991 (bắt buộc với cấp THPT). Cấp THCS áp dụng theo hướng dẫn của Sở GD&ĐT - dùng khung này thì phải ghi rõ giả định.",
+      "thang_diem": "10, điểm bài làm tròn đến 01 chữ số thập phân",
+      "dang_cau_hoi": ["Trắc nghiệm nhiều lựa chọn", "Trắc nghiệm Đúng - Sai", "Trắc nghiệm trả lời ngắn", "Tự luận"],
+      "ti_le_dang": { "Nhiều lựa chọn": 30, "Đúng - Sai": 20, "Trả lời ngắn": 20, "Tự luận": 30 },
+      "ti_le_dang_ghi_chu": "Môn không dùng dạng Trả lời ngắn thì chuyển điểm sang dạng Đúng - Sai (chú thích 3 Phụ lục Công văn 7991).",
+      "ban_dac_ta": true,
+      "so_lan_kiem_tra": "Mỗi môn học 01 bài giữa kỳ và 01 bài cuối kỳ trong mỗi học kỳ (khoản 2 Điều 7 Thông tư 22/2021).",
+      "thoi_gian_quy_tac": "Môn từ 70 tiết/năm trở xuống: 45 phút. Môn trên 70 tiết/năm: 60 - 90 phút (khoản 2 Điều 7 Thông tư 22/2021).",
+      "mon": [
+        {
+          "ma": "ngu-van", "ten": "Ngữ văn", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "trên 70", "thoi_gian": 90,
+          "mach": ["Đọc hiểu văn bản văn học", "Đọc hiểu văn bản nghị luận", "Đọc hiểu văn bản thông tin", "Thực hành tiếng Việt", "Viết", "Nói và nghe"],
+          "cau_truc": "Phần I. Đọc hiểu (ngữ liệu NGOÀI sách giáo khoa) - trắc nghiệm và/hoặc trả lời ngắn; Phần II. Viết (đoạn văn và bài văn). Ngữ văn thường KHÔNG dùng đủ 4 dạng câu hỏi của Công văn 7991.",
+          "luu_y": "Ngữ liệu đọc hiểu lấy ngoài sách giáo khoa, ghi rõ tác giả và nguồn."
+        },
+        {
+          "ma": "toan", "ten": "Toán", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "trên 70", "thoi_gian": 90,
+          "mach": ["Số và Đại số", "Hình học và Đo lường", "Một số yếu tố Thống kê và Xác suất"],
+          "cau_truc": "Đủ 4 dạng câu hỏi theo Công văn 7991; phần tự luận có bài toán thực tiễn và bài hình học có hình vẽ."
+        },
+        {
+          "ma": "ngoai-ngu", "ten": "Ngoại ngữ 1 (Tiếng Anh)", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "trên 70", "thoi_gian": 60,
+          "mach": ["Nghe", "Đọc", "Viết", "Nói", "Ngữ âm - Từ vựng - Ngữ pháp"],
+          "cau_truc": "Nghe - Đọc - Viết làm trên giấy; Nói kiểm tra riêng theo tiêu chí (có thể tính vào đánh giá thường xuyên theo hướng dẫn của trường).",
+          "luu_y": "Phần nghe cần tệp âm thanh - ghi [CẦN BỔ SUNG: tệp nghe]."
+        },
+        {
+          "ma": "khtn", "ten": "Khoa học tự nhiên", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "trên 70", "thoi_gian": 90,
+          "mach": ["Chất và sự biến đổi chất", "Vật sống", "Năng lượng và sự biến đổi", "Trái Đất và bầu trời"],
+          "cau_truc": "Đủ 4 dạng câu hỏi; tỉ lệ điểm giữa các mạch theo số tiết đã dạy của từng mạch đến thời điểm kiểm tra.",
+          "luu_y": "Là môn học tích hợp - đề do nhóm giáo viên dạy các mạch cùng xây dựng, KHÔNG tách thành ba đề riêng."
+        },
+        {
+          "ma": "lich-su-dia-li", "ten": "Lịch sử và Địa lí", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "trên 70", "thoi_gian": 60,
+          "mach": ["Phân môn Lịch sử", "Phân môn Địa lí", "Chủ đề chung"],
+          "cau_truc": "Đề chung một bài kiểm tra, điểm chia theo số tiết của hai phân môn (thường 50 - 50); có câu khai thác lược đồ, bảng số liệu, tư liệu."
+        },
+        {
+          "ma": "gdcd", "ten": "Giáo dục công dân", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "từ 70 trở xuống", "thoi_gian": 45,
+          "mach": ["Giáo dục đạo đức", "Giáo dục kĩ năng sống", "Giáo dục kinh tế", "Giáo dục pháp luật"],
+          "cau_truc": "Trắc nghiệm kết hợp tự luận tình huống; chú trọng câu hỏi xử lý tình huống thực tiễn."
+        },
+        {
+          "ma": "tin-hoc", "ten": "Tin học", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "từ 70 trở xuống", "thoi_gian": 45,
+          "mach": ["Máy tính và xã hội tri thức", "Mạng máy tính và Internet", "Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin", "Đạo đức, pháp luật và văn hóa trong môi trường số", "Ứng dụng tin học", "Giải quyết vấn đề với sự trợ giúp của máy tính"],
+          "cau_truc": "Trắc nghiệm kết hợp tự luận; phần thực hành (nếu có) tổ chức riêng theo kế hoạch của trường."
+        },
+        {
+          "ma": "cong-nghe", "ten": "Công nghệ", "lop": [6, 7, 8, 9], "dot": ["gk1", "ck1", "gk2", "ck2"],
+          "tiet_nam": "từ 70 trở xuống", "thoi_gian": 45,
+          "mach": ["Theo mạch nội dung của từng lớp trong kế hoạch dạy học của tổ"],
+          "cau_truc": "Trắc nghiệm kết hợp tự luận; có câu gắn với thực hành, đời sống gia đình, sản xuất tại địa phương.",
+          "luu_y": "Mạch nội dung Công nghệ khác nhau theo lớp - lấy theo kế hoạch dạy học của tổ, không tự nghĩ ra."
+        }
+      ],
+      "mon_khong_kiem_tra": {
+        "ten": ["Giáo dục thể chất", "Nghệ thuật (Âm nhạc, Mĩ thuật)", "Nội dung giáo dục của địa phương", "Hoạt động trải nghiệm, hướng nghiệp"],
+        "xu_ly": "Đánh giá bằng nhận xét (Đạt - Chưa đạt) theo khoản 3 Điều 5 Thông tư 22/2021. Vẫn có đánh giá định kỳ nhưng KHÔNG dùng ma trận điểm số: soạn nhiệm vụ hoặc bài kiểm tra kèm hướng dẫn và tiêu chí đánh giá (bảng kiểm, rubric) theo mức Đạt - Chưa đạt."
+      }
+    },
+    "thpt": {
+      "ten": "Trung học phổ thông",
+      "can_cu": "Thông tư 22/2021/TT-BGDĐT; Công văn 7991/BGDĐT-GDTrH ngày 17/12/2024 (BẮT BUỘC với cấp THPT)",
+      "muc": ["Biết", "Hiểu", "Vận dụng"],
+      "ti_le_muc": { "Biết": 40, "Hiểu": 30, "Vận dụng": 30 },
+      "thang_diem": "10, điểm bài làm tròn đến 01 chữ số thập phân",
+      "dang_cau_hoi": ["Trắc nghiệm nhiều lựa chọn", "Trắc nghiệm Đúng - Sai", "Trắc nghiệm trả lời ngắn", "Tự luận"],
+      "ti_le_dang": { "Nhiều lựa chọn": 30, "Đúng - Sai": 20, "Trả lời ngắn": 20, "Tự luận": 30 },
+      "ban_dac_ta": true,
+      "thoi_gian_quy_tac": "Môn từ 70 tiết/năm trở xuống: 45 phút. Môn trên 70 tiết/năm: 60 - 90 phút.",
+      "ghi_chu_cap": "Cấu trúc, định dạng đề theo Công văn 7991 là bắt buộc; bám sát định dạng đề thi tốt nghiệp THPT từ năm 2025.",
+      "mon": [],
+      "mon_ghi_chu": "Mạch nội dung, số tiết từng môn lấy theo kế hoạch giáo dục của nhà trường và chương trình môn học (Thông tư 32/2018). Khung dạng câu hỏi, tỉ lệ mức dùng chung cho mọi môn đánh giá bằng điểm số."
+    },
+    "mn": {
+      "ten": "Mầm non",
+      "can_cu": "Chương trình Giáo dục mầm non; Bộ chuẩn phát triển trẻ em 5 tuổi",
+      "khong_co_de": true,
+      "xu_ly": "KHÔNG có đề kiểm tra, không ma trận, không thang điểm 10. Sản phẩm thay thế: phiếu theo dõi - đánh giá sự phát triển của trẻ, phiếu đánh giá theo Bộ chuẩn phát triển trẻ em 5 tuổi, bảng tổng hợp kết quả đánh giá, phiếu hoạt động cho trẻ."
+    }
+  }
+}

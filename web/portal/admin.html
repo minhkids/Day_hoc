@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bảng Quản trị Hệ thống | Trợ lý Giáo dục</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1D4ED8;
+      --primary-dark: #1E40AF;
+      --primary-subtle: #EFF6FF;
+      --success: #16A34A;
+      --success-bg: #DCFCE7;
+      --danger: #DC2626;
+      --danger-bg: #FEE2E2;
+      --warning: #D97706;
+      --warning-bg: #FEF3C7;
+      --slate-900: #0F172A;
+      --slate-800: #1E293B;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate-700);
+      background: #F8FAFC;
+    }
+    .layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+    }
+    aside {
+      background: #0F172A;
+      color: white;
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-box {
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #334155;
+    }
+    .brand-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: white;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #60A5FA;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #94A3B8;
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    nav a:hover {
+      background: #1E293B;
+      color: white;
+    }
+    nav a.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+    }
+    .nav-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .nav-bottom a {
+      font-size: 13.5px;
+      color: #CBD5E1;
+    }
+    .nav-bottom a:hover {
+      color: #F87171;
+    }
+
+    main {
+      padding: 36px 40px;
+      max-width: 1440px;
+      width: 100%;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--slate-900);
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      color: var(--slate-500);
+      font-size: 14.5px;
+      margin-top: 4px;
+    }
+    .admin-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--slate-200);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+    .admin-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #EFF6FF;
+      color: var(--primary);
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .stat {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    }
+    .stat .muted {
+      color: var(--slate-500);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .stat strong {
+      display: block;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-top: 6px;
+    }
+
+    /* Panel & Table */
+    .panel {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+    }
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--slate-200);
+      flex-wrap: wrap;
+    }
+    .toolbar-left {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    input, select {
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      background: white;
+      color: var(--slate-900);
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    input { min-width: 280px; }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .primary {
+      color: white;
+      background: var(--primary);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+    }
+    .primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+    .success { color: #15803D; background: var(--success-bg); }
+    .success:hover { background: #BBF7D0; }
+    .danger { color: #B91C1C; background: var(--danger-bg); }
+    .danger:hover { background: #FECACA; }
+    .plain { color: var(--primary); background: var(--primary-subtle); }
+    .plain:hover { background: #DBEAFE; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--slate-100);
+      vertical-align: middle;
+    }
+    th {
+      color: var(--slate-500);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: #F8FAFC;
+    }
+    td { font-size: 14px; }
+    tr:hover td { background: #FAFCFF; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 9999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge.active { color: #15803D; background: var(--success-bg); }
+    .badge.inactive { color: #B91C1C; background: var(--danger-bg); }
+    .badge-role {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      color: var(--slate-700);
+      margin-top: 4px;
+    }
+
+    .actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      color: var(--slate-500);
+      font-size: 13px;
+      background: #F8FAFC;
+      border-top: 1px solid var(--slate-200);
+    }
+    #message {
+      padding: 10px 24px 0;
+      font-size: 13.5px;
+      color: #DC2626;
+      font-weight: 600;
+    }
+
+    /* Key Management Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      display: grid;
+      place-items: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-card {
+      width: min(560px, calc(100% - 32px));
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+    .modal-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+    .modal-desc {
+      font-size: 13.5px;
+      color: var(--slate-500);
+      margin-bottom: 20px;
+    }
+    .key-box {
+      background: #F8FAFC;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .key-val {
+      font-family: monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      word-break: break-all;
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .layout { display: block; }
+      aside { padding: 18px; }
+      nav { flex-direction: row; overflow-x: auto; gap: 8px; }
+      .stats { grid-template-columns: 1fr; }
+      main { padding: 24px 16px; }
+      .panel { overflow-x: auto; }
+      table { min-width: 780px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <div class="brand-box">
+        <div class="brand-title">TRỢ LÝ GIÁO DỤC</div>
+        <div class="brand-sub">Cổng Quản Trị Hệ Thống</div>
+      </div>
+      <nav>
+        <a class="active" href="admin.html">
+          <span>👥</span> Quản lý tài khoản
+        </a>
+        <a href="admin-account-new.html">
+          <span>➕</span> Tạo tài khoản mới
+        </a>
+      </nav>
+      <div class="nav-bottom">
+        <a href="../index.html">
+          <span>🏠</span> Về trang chủ Web
+        </a>
+        <a href="login.html" id="btnLogout" style="color:#F87171;">
+          <span>🚪</span> Đăng xuất quản trị
+        </a>
+      </div>
+    </aside>
+
+    <main>
+      <div class="header-bar">
+        <div>
+          <h1>Quản lý tài khoản khách hàng</h1>
+          <p class="sub">Kích hoạt, tạm khóa, cấp Access Key và phân quyền sử dụng cho đơn vị trường học.</p>
+        </div>
+        <div class="admin-pill">
+          <div class="admin-avatar">AD</div>
+          <div>
+            <div style="font-weight:700; font-size:13.5px;" id="adminName">Admin Quản trị</div>
+            <div style="font-size:11.5px; color:var(--slate-500);" id="adminEmail">admin@giaoduc.edu.vn</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="stats">
+        <div class="stat">
+          <span class="muted">Tổng tài khoản hệ thống</span>
+          <strong id="total">—</strong>
+        </div>
+        <div class="stat">
+          <span class="muted">Đang hoạt động</span>
+          <strong id="active" style="color:var(--success);">—</strong>
+        </div>
+        <div class="stat">
+          <span class="muted">Đang tạm khóa</span>
+          <strong id="inactive" style="color:var(--danger);">—</strong>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <input id="search" placeholder="Tìm theo email, tên cán bộ hoặc trường..." autocomplete="off">
+            <select id="status">
+              <option value="">Tất cả trạng thái</option>
+              <option value="active">Đang hoạt động</option>
+              <option value="inactive">Đang tạm khóa</option>
+            </select>
+            <select id="roleFilter">
+              <option value="">Tất cả vai trò</option>
+              <option value="Giáo viên">Giáo viên</option>
+              <option value="Hiệu trưởng">Hiệu trưởng</option>
+              <option value="Chuyên viên">Chuyên viên QLNN</option>
+            </select>
+          </div>
+          <button class="primary" id="btnNewAccount">+ Tạo tài khoản</button>
+        </div>
+
+        <div id="message" role="alert"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Cán bộ / Tài khoản</th>
+              <th>Đơn vị trường học</th>
+              <th>Vai trò</th>
+              <th>Trạng thái</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="rows">
+            <tr><td colspan="5">Đang tải dữ liệu...</td></tr>
+          </tbody>
+        </table>
+
+        <div class="footer">
+          <span id="count">0 tài khoản</span>
+          <span>Dữ liệu được mã hóa và cập nhật tự động trong hệ thống.</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Quản lý Access Key -->
+  <div class="modal-overlay" id="keyModal">
+    <div class="modal-card">
+      <div class="modal-title">Quản lý Access Key</div>
+      <div class="modal-desc" id="keyTarget">Cấp và theo dõi mã bản quyền cho tài khoản.</div>
+
+      <div class="key-box">
+        <div style="font-size:12px; color:var(--slate-500); margin-bottom:6px;">Mã Access Key đang kích hoạt:</div>
+        <div class="key-val" id="keyDisplay">—</div>
+        <div style="font-size:11.5px; color:var(--slate-500); margin-top:8px;" id="keyCreated">Ngày cấp: —</div>
+      </div>
+
+      <div style="display:flex; gap:10px;">
+        <button class="primary" id="btnGenNewKey" style="font-size:13px; padding:8px 14px;">Tạo Access Key mới</button>
+        <button class="danger" id="btnRevokeKey" style="font-size:13px; padding:8px 14px;">Thu hồi Key</button>
+      </div>
+
+      <div class="modal-actions">
+        <button class="plain" id="btnCloseModal" style="padding:10px 20px;">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Kiểm tra xác thực phiên quản trị
+    const sessionStr = localStorage.getItem('troly_admin_session');
+    if (!sessionStr) {
+      location.href = 'login.html';
+    }
+    const adminSession = JSON.parse(sessionStr || '{}');
+    if (adminSession.display_name) document.querySelector('#adminName').textContent = adminSession.display_name;
+    if (adminSession.email) document.querySelector('#adminEmail').textContent = adminSession.email;
+
+    // Đăng xuất
+    document.querySelector('#btnLogout').addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('troly_admin_session');
+      location.href = 'login.html';
+    });
+
+    // 2. Dữ liệu tài khoản mẫu chuẩn giáo dục nếu chưa có trong LocalStorage
+    const DEFAULT_ACCOUNTS = [
+      {
+        id: 'acc_01',
+        email: 'gv.nguyenvanan@thptchuyen.edu.vn',
+        display_name: 'Thầy Nguyễn Văn An',
+        organization_name: 'THPT Chuyên Lê Quý Đôn',
+        role: 'Giáo viên',
+        status: 'active',
+        key: 'tv_live_9f82d1a4e5b7c8a1',
+        key_created_at: '15/09/2026'
+      },
+      {
+        id: 'acc_02',
+        email: 'hieutruong.tranthimai@thcslythuongkiet.edu.vn',
+        display_name: 'Cô Trần Thị Mai',
+        organization_name: 'THCS Lý Thường Kiệt',
+        role: 'Hiệu trưởng',
+        status: 'active',
+        key: 'tv_live_4b7c89a0e1f2d3e4',
+        key_created_at: '18/09/2026'
+      },
+      {
+        id: 'acc_03',
+        email: 'cv.lehoangnam@pgdquan1.edu.vn',
+        display_name: 'Đ/c Lê Hoàng Nam',
+        organization_name: 'Phòng GD&ĐT Quận 1',
+        role: 'Chuyên viên',
+        status: 'active',
+        key: 'tv_live_8a3d5e7f1c2b4a69',
+        key_created_at: '20/09/2026'
+      },
+      {
+        id: 'acc_04',
+        email: 'gv.phamthilan@tieuhocnguyendu.edu.vn',
+        display_name: 'Cô Phạm Thị Lan',
+        organization_name: 'Tiểu học Nguyễn Du',
+        role: 'Giáo viên',
+        status: 'inactive',
+        key: 'tv_live_revoked_7f1c',
+        key_created_at: '10/08/2026'
+      },
+      {
+        id: 'acc_05',
+        email: 'hieutruong.dangquocbao@thptnguyentatthanh.edu.vn',
+        display_name: 'Thầy Đặng Quốc Bảo',
+        organization_name: 'THPT Nguyễn Tất Thành',
+        role: 'Hiệu trưởng',
+        status: 'active',
+        key: 'tv_live_3c6e9a1b4d7f8021',
+        key_created_at: '21/09/2026'
+      }
+    ];
+
+    function getAccounts() {
+      const stored = localStorage.getItem('troly_accounts');
+      if (!stored) {
+        localStorage.setItem('troly_accounts', JSON.stringify(DEFAULT_ACCOUNTS));
+        return DEFAULT_ACCOUNTS;
+      }
+      try {
+        return JSON.parse(stored);
+      } catch {
+        return DEFAULT_ACCOUNTS;
+      }
+    }
+
+    function saveAccounts(list) {
+      localStorage.setItem('troly_accounts', JSON.stringify(list));
+    }
+
+    let accounts = [];
+    let currentKeyAccount = null;
+
+    const rows = document.querySelector('#rows');
+    const message = document.querySelector('#message');
+
+    function escapeHtml(v) {
+      return String(v || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    function render() {
+      const q = document.querySelector('#search').value.toLowerCase().trim();
+      const statusFilter = document.querySelector('#status').value;
+      const roleFilter = document.querySelector('#roleFilter').value;
+
+      const list = accounts.filter(a => {
+        const matchStatus = !statusFilter || a.status === statusFilter;
+        const matchRole = !roleFilter || a.role === roleFilter;
+        const matchSearch = !q || (
+          (a.email || '') + ' ' + (a.display_name || '') + ' ' + (a.organization_name || '')
+        ).toLowerCase().includes(q);
+        return matchStatus && matchRole && matchSearch;
+      });
+
+      document.querySelector('#total').textContent = accounts.length;
+      document.querySelector('#active').textContent = accounts.filter(a => a.status === 'active').length;
+      document.querySelector('#inactive').textContent = accounts.filter(a => a.status === 'inactive').length;
+      document.querySelector('#count').textContent = `${list.length} trên tổng số ${accounts.length} tài khoản`;
+
+      if (!list.length) {
+        rows.innerHTML = '<tr><td colspan="5" style="text-align:center; color:var(--slate-500); padding:30px;">Không tìm thấy tài khoản phù hợp.</td></tr>';
+        return;
+      }
+
+      rows.innerHTML = list.map(a => `
+        <tr>
+          <td>
+            <strong>${escapeHtml(a.display_name || 'Chưa đặt tên')}</strong><br>
+            <span style="color:var(--slate-500); font-size:12.5px;">${escapeHtml(a.email)}</span>
+          </td>
+          <td>${escapeHtml(a.organization_name || '—')}</td>
+          <td><span class="badge-role">${escapeHtml(a.role || 'Giáo viên')}</span></td>
+          <td>
+            <span class="badge ${a.status === 'active' ? 'active' : 'inactive'}">
+              ${a.status === 'active' ? '● Đang hoạt động' : '○ Đang tạm khóa'}
+            </span>
+          </td>
+          <td>
+            <div class="actions">
+              <button class="${a.status === 'active' ? 'danger' : 'success'}" data-action="toggle" data-id="${a.id}">
+                ${a.status === 'active' ? 'Tạm khóa' : 'Kích hoạt'}
+              </button>
+              <button class="plain" data-action="keys" data-id="${a.id}">
+                🔑 Quản lý key
+              </button>
+              <button class="danger" data-action="delete" data-id="${a.id}" style="padding:8px 10px;" title="Xóa tài khoản">
+                🗑️
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function load() {
+      try {
+        // Thử fetch API nếu có backend
+        try {
+          const res = await fetch('/api/admin/accounts', { credentials: 'include' });
+          if (res.ok) {
+            const data = await res.json();
+            accounts = data.accounts || data;
+            render();
+            return;
+          }
+        } catch {}
+
+        // Fallback: LocalStorage Data Store
+        accounts = getAccounts();
+        render();
+      } catch (e) {
+        message.textContent = e.message;
+      }
+    }
+
+    // Xử lý các nút thao tác trên từng dòng
+    rows.addEventListener('click', async e => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      const id = btn.dataset.id;
+      const action = btn.dataset.action;
+
+      if (action === 'toggle') {
+        const item = accounts.find(a => a.id === id);
+        if (item) {
+          const newStatus = item.status === 'active' ? 'inactive' : 'active';
+          try {
+            await fetch('/api/admin/accounts/' + id + '/status', {
+              method: 'PATCH',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ status: newStatus })
+            });
+          } catch {}
+          item.status = newStatus;
+          saveAccounts(accounts);
+          render();
+        }
+      } else if (action === 'delete') {
+        const item = accounts.find(a => a.id === id);
+        if (item && confirm(`Xác nhận xóa tài khoản của cán bộ "${item.display_name}" (${item.email})?`)) {
+          try {
+            await fetch('/api/admin/accounts/' + id, { method: 'DELETE' });
+          } catch {}
+          accounts = accounts.filter(a => a.id !== id);
+          saveAccounts(accounts);
+          render();
+        }
+      } else if (action === 'keys') {
+        const item = accounts.find(a => a.id === id);
+        if (item) {
+          currentKeyAccount = item;
+          document.querySelector('#keyTarget').textContent = `Tài khoản: ${item.display_name} (${item.email}) · ${item.organization_name}`;
+          document.querySelector('#keyDisplay').textContent = item.key || 'Chưa cấp Access Key';
+          document.querySelector('#keyCreated').textContent = `Ngày cấp: ${item.key_created_at || 'Chưa có'}`;
+          document.querySelector('#keyModal').classList.add('open');
+        }
+      }
+    });
+
+    // Modal Key
+    document.querySelector('#btnCloseModal').addEventListener('click', () => {
+      document.querySelector('#keyModal').classList.remove('open');
+    });
+
+    document.querySelector('#btnGenNewKey').addEventListener('click', async () => {
+      if (!currentKeyAccount) return;
+      let newKey = '';
+      try {
+        const res = await fetch('/api/admin/accounts/' + currentKeyAccount.id + '/keys', { method: 'POST' });
+        if (res.ok) {
+          const data = await res.json();
+          newKey = data.key;
+        }
+      } catch {}
+
+      if (!newKey) {
+        const randomHex = Array.from(crypto.getRandomValues(new Uint8Array(8)))
+          .map(b => b.toString(16).padStart(2, '0')).join('');
+        newKey = 'tv_live_' + randomHex;
+      }
+
+      currentKeyAccount.key = newKey;
+      currentKeyAccount.key_created_at = new Date().toLocaleDateString('vi-VN');
+      saveAccounts(accounts);
+      document.querySelector('#keyDisplay').textContent = newKey;
+      document.querySelector('#keyCreated').textContent = `Ngày cấp: ${currentKeyAccount.key_created_at}`;
+      alert(`Đã cấp Access Key mới thành công:\n\n${newKey}\n\nVui lòng gửi mã này cho khách hàng kích hoạt phần mềm.`);
+    });
+
+    document.querySelector('#btnRevokeKey').addEventListener('click', async () => {
+      if (!currentKeyAccount) return;
+      if (confirm('Bạn có chắc muốn thu hồi Access Key này? Khách hàng sẽ không thể kết nối AI cho đến khi được cấp key mới.')) {
+        try {
+          await fetch('/api/admin/keys/' + encodeURIComponent(currentKeyAccount.key) + '/revoke', { method: 'POST' });
+        } catch {}
+        currentKeyAccount.key = '(Đã thu hồi)';
+        saveAccounts(accounts);
+        document.querySelector('#keyDisplay').textContent = '(Đã thu hồi)';
+      }
+    });
+
+    // Lắng nghe tìm kiếm và chuyển trang
+    document.querySelector('#search').addEventListener('input', render);
+    document.querySelector('#status').addEventListener('change', render);
+    document.querySelector('#roleFilter').addEventListener('change', render);
+    document.querySelector('#btnNewAccount').addEventListener('click', () => {
+      location.href = 'admin-account-new.html';
+    });
+
+    load();
+  </script>
+</body>
+</html>

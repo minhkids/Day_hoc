@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xưởng Phần Mềm Dạy Học & Minigame Đố Vui</title>
+<style>
+  :root {
+    --nen: #0B1329; --nen-card: #14213D; --nen-card-hover: #1B2B4F;
+    --vien: #2A3F6D; --chu: #F8FAFC; --chu-mo: #94A3B8;
+    --vang: #F2C94C; --xanh: #10B981; --xanh-sang: #34D399; --do: #EF4444;
+    --xanh-duong: #3B82F6; --tim: #8B5CF6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--nen); color: var(--chu);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column;
+  }
+  .header {
+    background: linear-gradient(180deg, #162447 0%, #0F1B36 100%);
+    border-bottom: 2px solid var(--vien); padding: 24px 20px; text-align: center;
+  }
+  .header h1 {
+    font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #fff;
+    margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .header p { color: var(--chu-mo); font-size: clamp(15px, 1.8vw, 18px); max-width: 800px; margin: 0 auto; }
+
+  /* Thanh chọn khối lớp */
+  .thanh-chon-lop-hub {
+    max-width: 1200px; margin: 24px auto 8px; padding: 0 20px; width: 100%;
+  }
+  .khung-lop {
+    background: #121D38; border: 2px solid var(--vien); border-radius: 16px;
+    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+  .nhan-chon-lop { font-size: 18px; font-weight: 700; color: var(--vang); display: flex; align-items: center; gap: 8px; }
+  .danh-sach-nut-lop { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn-lop {
+    font: inherit; font-size: 15px; font-weight: 700; padding: 6px 14px; border-radius: 10px;
+    border: 2px solid var(--vien); background: #1B2B4F; color: #fff; cursor: pointer;
+    transition: all .15s ease;
+  }
+  .btn-lop:hover { border-color: var(--vang); transform: translateY(-2px); }
+  .btn-lop.kich-hoat {
+    background: var(--vang); color: #0B1329; border-color: #fff;
+    box-shadow: 0 0 14px rgba(242, 201, 76, 0.6);
+  }
+
+  .main-container {
+    max-width: 1200px; margin: 16px auto; padding: 0 20px 40px; flex: 1; width: 100%;
+  }
+  .section-title {
+    font-size: 22px; font-weight: 700; color: #fff; margin: 20px 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .grid-apps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px;
+  }
+  .card-app {
+    background: var(--nen-card); border: 2px solid var(--vien); border-radius: 18px;
+    padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    position: relative; overflow: hidden;
+  }
+  .card-app:hover {
+    transform: translateY(-4px); border-color: var(--vang);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45); background: var(--nen-card-hover);
+  }
+  .badge-tag {
+    position: absolute; top: 16px; right: 18px; font-size: 12px; font-weight: 800;
+    padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .badge-hot { background: rgba(239, 68, 68, 0.2); color: #F87171; border: 1px solid #EF4444; }
+  .badge-new { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid #10B981; }
+  .badge-util { background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid #3B82F6; }
+
+  .app-icon { font-size: 40px; margin-bottom: 12px; display: inline-block; }
+  .app-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .app-desc { color: var(--chu-mo); font-size: 15px; margin-bottom: 16px; flex: 1; }
+  .app-features {
+    list-style: none; margin-bottom: 20px; font-size: 14px; color: #CBD5E1;
+  }
+  .app-features li { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .app-features li span { color: var(--xanh-sang); font-weight: 800; }
+
+  .btn-launch {
+    font: inherit; font-size: 17px; font-weight: 700; padding: 12px 20px; border-radius: 12px;
+    border: none; background: var(--vang); color: #0B1329; text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    cursor: pointer; transition: background .15s, transform .1s;
+  }
+  .btn-launch:hover { background: #F7D970; transform: scale(1.02); }
+  .btn-launch:active { transform: scale(0.98); }
+
+  .banner-huong-dan {
+    margin-top: 36px; background: #111E38; border: 2px dashed var(--vien);
+    border-radius: 16px; padding: 20px 24px; display: flex; gap: 18px; align-items: flex-start;
+  }
+  .banner-huong-dan .icon-hd { font-size: 32px; }
+  .banner-huong-dan h4 { color: var(--vang); font-size: 18px; margin-bottom: 6px; }
+  .banner-huong-dan p { color: var(--chu-mo); font-size: 15px; margin-bottom: 4px; }
+
+  .footer {
+    text-align: center; padding: 20px; font-size: 14px; color: var(--chu-mo);
+    border-top: 1px solid var(--vien); background: #0A1024;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>🎮 Xưởng Phần Mềm Dạy Học & Minigame Đố Vui</h1>
+  <p>Bộ công cụ trò chơi dạy học tương tác đa lớp (Lớp 6 đến Lớp 12). Hỗ trợ chọn lớp có sẵn hoặc thầy/cô tự nhập câu hỏi, trình chiếu sắc nét trên máy chiếu lớp học.</p>
+</header>
+
+<div class="thanh-chon-lop-hub">
+  <div class="khung-lop">
+    <div class="nhan-chon-lop">📚 <span>Khối Lớp Muốn Dạy:</span></div>
+    <div class="danh-sach-nut-lop" id="danhSachNutLop">
+      <button class="btn-lop" data-lop="lop-6" type="button">Lớp 6</button>
+      <button class="btn-lop" data-lop="lop-7" type="button">Lớp 7</button>
+      <button class="btn-lop kich-hoat" data-lop="lop-8" type="button">Lớp 8</button>
+      <button class="btn-lop" data-lop="lop-9" type="button">Lớp 9</button>
+      <button class="btn-lop" data-lop="lop-10" type="button">Lớp 10</button>
+      <button class="btn-lop" data-lop="lop-11" type="button">Lớp 11</button>
+      <button class="btn-lop" data-lop="lop-12" type="button">Lớp 12</button>
+      <button class="btn-lop" data-lop="do-vui" type="button">💡 Đố Vui IQ</button>
+    </div>
+  </div>
+</div>
+
+<main class="main-container">
+  <div class="section-title">⚔️ Các Trò Chơi Đố Vui & Thi Đấu Học Tập</div>
+
+  <div class="grid-apps">
+    <!-- 1. Trắc nghiệm thi đua đội -->
+    <div class="card-app">
+      <span class="badge-tag badge-hot">ĐỐ VUI ĐỐI KHÁNG</span>
+      <div>
+        <div class="app-icon">⚔️</div>
+        <div class="app-title">Đấu Trường Trắc Nghiệm</div>
+        <p class="app-desc">Thi đấu trắc nghiệm 2-6 đội đối kháng, đếm ngược thời gian, bấm chọn phương án trực tiếp và tự động cộng điểm cho đội.</p>
+        <ul class="app-features">
+          <li><span>✓</span> Phân loại sẵn đề từ Lớp 6 đến Lớp 12</li>
+          <li><span>✓</span> Có chức năng Tự dán đề từ Word/văn bản</li>
+          <li><span>✓</span> Chọn đội trả lời & phím tắt A-D / 1-4</li>
+        </ul>
+      </div>
+      <a class="btn-launch" href="trac-nghiem-doi/index.html" id="linkTracNghiem">🚀 Mở Đấu Trường Ngay</a>
+    </div>
+
+    <!-- 2. Ô chữ bí mật -->
+    <div class="card-app">
+      <span class="badge-tag badge-new">GIẢI ĐỐ TƯ DUY</span>
+      <div>
+        <div class="app-icon">🧩</div>
+        <div class="app-title">Ô Chữ Bí Mật</div>
+        <p class="app-desc">Trò chơi giải ô chữ hàng ngang và từ khóa hàng dọc cho các tiết ôn tập chương, khởi động hoặc củng cố kiến thức bài học.</p>
+        <ul class="app-features">
+          <li><span>✓</span> Ngân hàng ô chữ chuẩn hóa theo từng lớp</li>
+          <li><span>✓</span> Tự tạo ô chữ riêng cực dễ (tự động căn cột)</li>
+          <li><span>✓</span> Gõ trả lời trực tiếp & gợi ý chữ cái</li>
+        </ul>
+      </div>
+      <a class="btn-launch" href="o-chu/index.html" id="linkOChu">🚀 Mở Trò Chơi Ô Chữ</a>
+    </div>
+
+    <!-- 3. Thẻ ghi nhớ Flashcard -->
+    <div class="card-app">
+      <span class="badge-tag badge-new">ÔN TẬP NHỚ SÂU</span>
+      <div>
+        <div class="app-icon">🎴</div>
+        <div class="app-title">Thẻ Ghi Nhớ & Đố Vui</div>
+        <p class="app-desc">Lật thẻ 2 mặt ôn tập công thức Toán, khái niệm KHTN, từ vựng Tiếng Anh. Có chế độ gõ trả lời thử tài trước khi lật.</p>
+        <ul class="app-features">
+          <li><span>✓</span> Kho thẻ kiến thức trọng tâm Lớp 6-12</li>
+          <li><span>✓</span> Ô gõ câu trả lời kiểm tra độ chính xác</li>
+          <li><span>✓</span> Đánh dấu thẻ đã thuộc, tự nhập thẻ riêng</li>
+        </ul>
+      </div>
+      <a class="btn-launch" href="flashcard/index.html" id="linkFlashcard">🚀 Mở Thẻ Ghi Nhớ</a>
+    </div>
+
+    <!-- 4. Vòng quay may mắn -->
+    <div class="card-app">
+      <span class="badge-tag badge-hot">KHỞI ĐỘNG HÀO HỨNG</span>
+      <div>
+        <div class="app-icon">🎯</div>
+        <div class="app-title">Vòng Quay May Mắn</div>
+        <p class="app-desc">Vòng quay bốc thăm câu hỏi khởi động theo lớp hoặc gọi ngẫu nhiên tên học sinh/nhóm lên bảng với hiệu ứng âm thanh sôi nổi.</p>
+        <ul class="app-features">
+          <li><span>✓</span> Câu hỏi khởi động theo từng khối lớp</li>
+          <li><span>✓</span> Dán danh sách học sinh tùy ý</li>
+          <li><span>✓</span> Tự động loại bỏ mục đã quay trúng</li>
+        </ul>
+      </div>
+      <a class="btn-launch" href="vong-quay/index.html" id="linkVongQuay">🚀 Mở Vòng Quay May Mắn</a>
+    </div>
+
+    <!-- 5. Đồng hồ bấm giờ -->
+    <div class="card-app">
+      <span class="badge-tag badge-util">CÔNG CỤ TIỆN ÍCH</span>
+      <div>
+        <div class="app-icon">⏱️</div>
+        <div class="app-title">Đồng Hồ Bấm Giờ</div>
+        <p class="app-desc">Đồng hồ đếm ngược làm bài thi, thảo luận nhóm với chữ số khổng lồ, thanh tiến trình màu và chuông báo giờ rõ ràng.</p>
+        <ul class="app-features">
+          <li><span>✓</span> Cài đặt thời gian nhanh: 1p, 2p, 5p, 10p, 15p...</li>
+          <li><span>✓</span> Âm thanh tích tắc cảnh báo 10 giây cuối</li>
+        </ul>
+      </div>
+      <a class="btn-launch" href="dong-ho/index.html">🚀 Mở Đồng Hồ Đếm Giờ</a>
+    </div>
+
+    <!-- 6. Trống lớp học -->
+    <div class="card-app">
+      <span class="badge-tag badge-util">CÔNG CỤ TIỆN ÍCH</span>
+      <div>
+        <div class="app-icon">🥁</div>
+        <div class="app-title">Trống Lớp Học</div>
+        <p class="app-desc">Mô phỏng âm thanh tiếng trống trường vào lớp, ra chơi, báo hết giờ làm bài và phát khẩu lệnh nề nếp tiết học.</p>
+        <ul class="app-features">
+          <li><span>✓</span> Tiếng trống giòn giã chân thực</li>
+          <li><span>✓</span> Phím tắt gõ trống 1 nhịp, 3 nhịp, hồi trống</li>
+        </ul>
+      </div>
+      <a class="btn-launch" href="trong/index.html">🚀 Mở Trống Lớp Học</a>
+    </div>
+  </div>
+
+  <div class="banner-huong-dan">
+    <div class="icon-hd">💡</div>
+    <div>
+      <h4>Mẹo Sử Dụng Cho Thầy Cô Trên Lớp:</h4>
+      <p>• <strong>Toàn màn hình:</strong> Nhấn phím <kbd>F</kbd> trong bất kỳ trò chơi nào để mở toàn màn hình máy chiếu, che thanh công cụ trình duyệt.</p>
+      <p>• <strong>Tự tạo đề riêng:</strong> Tại mỗi ứng dụng (Trắc nghiệm, Ô chữ, Flashcard), bấm nút <em>"Tự nhập câu hỏi"</em> để dán đề từ Word. Dữ liệu sẽ tự động lưu lại trong trình duyệt để dùng cho các tiết sau!</p>
+      <p>• <strong>Phím tắt điều khiển:</strong> Dùng <kbd>Space</kbd> và <kbd>Enter</kbd> để lật mở, quay hoặc sang câu tiếp theo mà không cần phải dùng chuột liên tục.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  Xưởng Phần Mềm Dạy Học & Minigame Tương Tác • Thiết kế tối ưu cho máy chiếu & màn hình cảm ứng tương tác phòng học.
+</footer>
+
+<script>
+  (function () {
+    var nutLop = document.querySelectorAll(".btn-lop");
+    var lopHienTai = localStorage.getItem("hub:lop-da-chon") || "lop-8";
+
+    function capNhatLop(maLop) {
+      lopHienTai = maLop;
+      localStorage.setItem("hub:lop-da-chon", maLop);
+
+      // Lưu luôn vào localStorage của các app con để khi mở lên là nhận ngay
+      localStorage.setItem("tn-doi:lop-da-chon", maLop);
+      localStorage.setItem("o-chu:lop-da-chon", maLop);
+      localStorage.setItem("flashcard:lop-da-chon", maLop);
+      localStorage.setItem("vong-quay:lop-da-chon", maLop);
+
+      nutLop.forEach(function (btn) {
+        btn.classList.toggle("kich-hoat", btn.getAttribute("data-lop") === maLop);
+      });
+    }
+
+    nutLop.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        capNhatLop(this.getAttribute("data-lop"));
+      });
+    });
+
+    capNhatLop(lopHienTai);
+  })();
+</script>
+</body>
+</html>

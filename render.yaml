@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: troly-giaoduc-server
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: MODEL
+        value: nvidia/nemotron-3-super-120b-a12b:free
+      - key: PROVIDER
+        value: nvidia
+      - key: OPENROUTER_KEY
+        sync: false

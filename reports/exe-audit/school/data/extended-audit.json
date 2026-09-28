@@ -1,0 +1,389 @@
+[
+    {
+        "name":  "TrangChu",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "NhiemVu",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "SoanVanBan",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "Mau",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "ToChuyenMon",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "BanGiamHieu",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "CongTacDang",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "TroChuyen",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "CongViec",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "Lich",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "TongHop",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "TraCuu",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "ThuVien",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "TienIch",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "VanBanDen",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "CaiDat",
+        "notices":  [
+
+                    ],
+        "kind":  "page"
+    },
+    {
+        "name":  "BtnKhaiBaoNhanh",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnVanBanMoi",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnXemViec",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnXemVanBan",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecSoan",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnRaSoatFile",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGuiHoi",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnChatMoi",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnChuTo",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnChuNho",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnCotViec",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnThemViec",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnLapLichTuan",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnCapNhatMoc",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnViecThang",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnMoCongViec",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecBGH",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnDsTo",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecTo",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnDuyetVBTo",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnXemMau",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSoanTheoMau",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnHuongDanTheThuc",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnKhaiBaoDang",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnDsDangVien",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnToChucDang",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnGiaoViecDang",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnKhaiBao",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnCapNhatTruong",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnHuongDan",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnTraCuu",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnTongHopFile",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSaoLuu",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "name":  "BtnSaoLuuChan",
+        "notices":  [
+                        "Lỗi khi thực hiện: The expression after \u0027\u0026\u0027 in a pipeline element produced an object that was not valid. It must result in a command name, a script block, or a CommandInfo object."
+                    ],
+        "kind":  "button"
+    },
+    {
+        "error":  "\u0027path\u0027",
+        "name":  "backup",
+        "kind":  "api"
+    },
+    {
+        "result":  {
+                       "date":  "22/09/2026",
+                       "title":  "AUDIT task",
+                       "done":  false,
+                       "id":  "f09a7c3157b449eea49d0eda3d9f7b4b"
+                   },
+        "name":  "save",
+        "kind":  "api"
+    },
+    {
+        "pluralTasks":  1,
+        "singularDocuments":  0,
+        "pluralDocuments":  1,
+        "singularTasks":  4,
+        "kind":  "state"
+    },
+    {
+        "renderedChildren":  1,
+        "hasTasksProperty":  false,
+        "backendTaskCount":  4,
+        "kind":  "task_render"
+    },
+    {
+        "backendDocumentCount":  1,
+        "hasDocumentsProperty":  false,
+        "kind":  "document_state"
+    },
+    {
+        "kind":  "backup_correct_parameter",
+        "exists":  true
+    }
+]

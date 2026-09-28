@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vòng Quay May Mắn & Câu Đố</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="thanh-dau">
+  <div class="khoi-tieu-de">
+    <h1 id="tieuDe">🎯 Vòng Quay May Mắn</h1>
+    <span class="phu" id="monLop"></span>
+  </div>
+
+  <div class="thanh-dieu-khien-lop">
+    <label for="chonLop">📚 <strong>Chọn Lớp:</strong></label>
+    <select id="chonLop" title="Chọn gói câu hỏi hoặc mục quay theo lớp">
+      <option value="lop-6">Lớp 6 (Toán & KHTN)</option>
+      <option value="lop-7">Lớp 7 (Kiến Thức Trọng Tâm)</option>
+      <option value="lop-8" selected>Lớp 8 (Hằng Đẳng Thức & Định Lí)</option>
+      <option value="lop-9">Lớp 9 (Ôn Luyện Lớp 9)</option>
+      <option value="lop-10">Lớp 10 (THPT)</option>
+      <option value="lop-11">Lớp 11 (THPT)</option>
+      <option value="lop-12">Lớp 12 (Ôn Thi Tốt Nghiệp)</option>
+      <option value="do-vui">💡 Đố Vui & Thử Thách Khởi Động</option>
+      <option value="goi-nhom">👥 Gọi Nhóm / Tổ Học Tập</option>
+    </select>
+  </div>
+
+  <div class="nhom-nut-dau">
+    <button class="nut nut-nho" id="nutAnBang" type="button" title="Ẩn/hiện bảng danh sách (phím D)">Ẩn danh sách</button>
+    <button class="nut nut-nho" id="nutAm" type="button" title="Bật/tắt âm thanh (phím M)">Âm thanh: Bật</button>
+    <button class="nut nut-nho" id="nutToanManHinh" type="button" title="Toàn màn hình (phím F)">Toàn màn hình</button>
+  </div>
+</header>
+
+<main class="noi-dung bo-cuc">
+  <section class="vung-vong" id="vungVong">
+    <div class="khung-vong" id="khungVong">
+      <canvas id="vong" aria-label="Vòng quay"></canvas>
+      <div class="kim" aria-hidden="true"></div>
+      <button class="nut-quay" id="nutQuay" type="button">QUAY</button>
+    </div>
+  </section>
+
+  <aside class="bang" id="bang">
+    <label for="oDanhSach" class="tieu-de-bang">Danh sách câu đố / Tên học sinh (mỗi dòng một mục):</label>
+    <textarea id="oDanhSach" spellcheck="false" placeholder="Nhập hoặc dán danh sách tại đây..."></textarea>
+    <div class="hang-nut">
+      <button class="nut nut-nho nut-chinh" id="nutCapNhat" type="button">⚡ Cập nhật vòng quay</button>
+      <button class="nut nut-nho" id="nutDatLai" type="button">Đặt lại</button>
+    </div>
+    <label class="hop-chon"><input type="checkbox" id="loaiTen" checked> Loại mục đã quay trúng</label>
+    <div class="tieu-de-bang">Đã quay trúng (<span id="soDaQuay">0</span>):</div>
+    <ol class="da-quay" id="daQuay"></ol>
+  </aside>
+</main>
+
+<div class="lop-phu" id="lopPhu" hidden>
+  <div class="the-ket-qua">
+    <div class="nhan">🎯 KẾT QUẢ VÒNG QUAY</div>
+    <div class="ket-qua" id="ketQua"></div>
+    <button class="nut nut-chinh nut-lon" id="nutDong" type="button">Tiếp tục (Enter / Space)</button>
+  </div>
+</div>
+
+<footer class="goi-y-phim">
+  Phím tắt: <kbd>Space</kbd>: Quay · <kbd>Enter</kbd>: Đóng kết quả · <kbd>D</kbd>: Ẩn/hiện danh sách · <kbd>M</kbd>: Âm thanh · <kbd>F</kbd>: Toàn màn hình
+</footer>
+
+<script src="du-lieu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

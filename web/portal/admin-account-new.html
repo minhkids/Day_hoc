@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tạo Tài Khoản Khách Hàng | Trợ lý Giáo dục</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1D4ED8;
+      --primary-dark: #1E40AF;
+      --slate-900: #0F172A;
+      --slate-700: #334155;
+      --slate-500: #64748B;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate-700);
+      background: radial-gradient(circle at 50% 0%, #E0EDFF 0%, #F8FAFC 70%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--slate-200);
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: var(--white);
+      transform: translateX(-3px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 20px;
+      padding: 36px 40px;
+      width: min(520px, 100%);
+      box-shadow: 0 20px 50px rgba(30, 58, 138, 0.12);
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+    p {
+      color: var(--slate-500);
+      font-size: 13.5px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+    input, select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-family: inherit;
+      color: var(--slate-900);
+      transition: all 0.2s;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    button {
+      padding: 12px 22px;
+      border: 0;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563EB 100%);
+      color: var(--white);
+      flex: 1;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35);
+    }
+    .btn-secondary {
+      background: var(--slate-100);
+      color: var(--slate-700);
+    }
+    .btn-secondary:hover {
+      background: #E2E8F0;
+    }
+    #message {
+      min-height: 22px;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .msg-error { color: #DC2626; }
+    .msg-success { color: #16A34A; }
+  </style>
+</head>
+<body>
+  <a class="back-btn" href="admin.html">
+    <span>←</span> Quay lại danh sách tài khoản
+  </a>
+
+  <main class="card">
+    <h1>Tạo tài khoản cán bộ mới</h1>
+    <p>Tài khoản mới sẽ tự động được cấp mã Access Key và sẵn sàng kết nối vào hệ thống Trợ lý Giáo dục.</p>
+
+    <form id="form">
+      <div class="form-group">
+        <label for="email">Địa chỉ Email đăng nhập (*)</label>
+        <input id="email" name="email" type="email" placeholder="ví dụ: gv.nguyenvana@thpt.edu.vn" required>
+      </div>
+
+      <div class="form-group">
+        <label for="display_name">Họ và tên cán bộ (*)</label>
+        <input id="display_name" name="display_name" placeholder="ví dụ: Thầy Nguyễn Văn A" required>
+      </div>
+
+      <div class="form-group">
+        <label for="organization_name">Đơn vị trường học / Phòng GD&ĐT (*)</label>
+        <input id="organization_name" name="organization_name" placeholder="ví dụ: THPT Chuyên Lê Quý Đôn" required>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Phân hệ Trợ lý AI (*)</label>
+        <select id="role" name="role" required>
+          <option value="Giáo viên">Trợ lý Giáo viên (Dạy học, Đề thi, Kế hoạch bài dạy)</option>
+          <option value="Hiệu trưởng">Trợ lý Hiệu trưởng (Quản trị trường, Kiểm tra nội bộ, CSDL)</option>
+          <option value="Chuyên viên">Trợ lý Chuyên viên QLNN (Tham mưu, Thẩm định, Chuẩn QG)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="temporary_password">Mật khẩu tạm thời (*)</label>
+        <input id="temporary_password" name="temporary_password" type="text" value="Giaoduc@2026" required>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" class="btn-primary">Tạo tài khoản</button>
+        <button type="button" class="btn-secondary" onclick="location.href='admin.html'">Hủy</button>
+      </div>
+    </form>
+
+    <div id="message" role="alert"></div>
+  </main>
+
+  <script>
+    const form = document.querySelector('#form');
+    const message = document.querySelector('#message');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      message.className = '';
+      message.textContent = 'Đang khởi tạo tài khoản...';
+
+      const email = form.email.value.trim();
+      const display_name = form.display_name.value.trim();
+      const organization_name = form.organization_name.value.trim();
+      const role = form.role.value;
+      const password = form.temporary_password.value;
+
+      try {
+        // Sinh ngẫu nhiên access key chuẩn tv_live_xxx
+        const randomHex = Array.from(crypto.getRandomValues(new Uint8Array(8)))
+          .map(b => b.toString(16).padStart(2, '0')).join('');
+        const newKey = 'tv_live_' + randomHex;
+
+        const newAccount = {
+          id: 'acc_' + Date.now(),
+          email: email,
+          display_name: display_name,
+          organization_name: organization_name,
+          role: role,
+          password: password,
+          status: 'active',
+          key: newKey,
+          key_created_at: new Date().toLocaleDateString('vi-VN')
+        };
+
+        // 1. Thử gửi API nếu có backend
+        try {
+          await fetch('/api/admin/accounts', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newAccount)
+          });
+        } catch {}
+
+        // 2. Lưu vào LocalStorage Data Store
+        const stored = localStorage.getItem('troly_accounts');
+        let accounts = [];
+        try {
+          accounts = stored ? JSON.parse(stored) : [];
+        } catch {}
+
+        // Kiểm tra email trùng
+        if (accounts.some(a => a.email.toLowerCase() === email.toLowerCase())) {
+          throw new Error('Email này đã tồn tại trong hệ thống. Vui lòng chọn email khác.');
+        }
+
+        accounts.unshift(newAccount);
+        localStorage.setItem('troly_accounts', JSON.stringify(accounts));
+
+        message.className = 'msg-success';
+        message.textContent = 'Tạo tài khoản thành công! Đang chuyển về bảng quản trị...';
+
+        setTimeout(() => {
+          location.href = 'admin.html';
+        }, 800);
+      } catch (err) {
+        message.className = 'msg-error';
+        message.textContent = err.message;
+      }
+    });
+  </script>
+</body>
+</html>

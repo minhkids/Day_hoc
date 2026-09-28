@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đồng hồ hoạt động nhóm</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="thanh-dau">
+  <h1 id="tieuDe">Đồng hồ hoạt động nhóm</h1>
+  <button class="nut nut-nho" id="nutAm" type="button" title="Bật/tắt chuông (phím M)">Chuông: Bật</button>
+  <button class="nut nut-nho" id="nutToanManHinh" type="button" title="Toàn màn hình (phím F)">Toàn màn hình</button>
+</header>
+
+<main class="noi-dung" id="manChinh">
+  <input class="ten-hoat-dong" id="tenHoatDong" type="text" list="goiYHoatDong" maxlength="60" aria-label="Tên hoạt động">
+  <datalist id="goiYHoatDong"></datalist>
+
+  <div class="vung-dong-ho">
+    <div class="dong-ho" id="dongHo">
+      <svg viewBox="0 0 100 100" class="vong" aria-hidden="true">
+        <circle class="vong-nen" cx="50" cy="50" r="45"></circle>
+        <circle class="vong-chay" id="vongChay" cx="50" cy="50" r="45"></circle>
+      </svg>
+      <div class="so" id="so">05:00</div>
+      <div class="trang-thai" id="trangThai">Sẵn sàng</div>
+    </div>
+  </div>
+
+  <div class="hang-nut">
+    <div class="nhom" id="cacMoc"></div>
+    <div class="nhom">
+      <button class="nut" id="nutBot" type="button" title="Bớt 30 giây (phím −)">−30 giây</button>
+      <button class="nut" id="nutThem" type="button" title="Thêm 30 giây (phím +)">+30 giây</button>
+    </div>
+    <div class="nhom">
+      <button class="nut nut-chinh nut-rong" id="nutChay" type="button">Bắt đầu</button>
+      <button class="nut" id="nutDatLai" type="button">Đặt lại</button>
+    </div>
+  </div>
+</main>
+
+<footer class="goi-y-phim">
+  <kbd>Space</kbd> bắt đầu/tạm dừng · <kbd>R</kbd> đặt lại · <kbd>1</kbd> <kbd>3</kbd> <kbd>5</kbd> <kbd>0</kbd> chọn 1-3-5-10 phút · <kbd>+</kbd> <kbd>−</kbd> thêm/bớt 30 giây · <kbd>F</kbd> toàn màn hình
+</footer>
+
+<script src="du-lieu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

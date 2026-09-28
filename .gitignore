@@ -1,0 +1,19 @@
+# File cấu hình bí mật và khóa cá nhân
+.env
+*.dpapi
+
+# Thư mục cache và đóng gói nặng (chiếm hơn 2.4 GB - không cần đẩy lên Git)
+build/
+releases/
+dist/
+dist-debug/
+exe/
+exe-logo/
+downloads/
+__pycache__/
+*.pyc
+
+# IDE / Công cụ tạm
+.codex/
+*.tmp
+

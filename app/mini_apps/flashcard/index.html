@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thẻ Ghi Nhớ & Đố Vui Ôn Tập</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="thanh-dau">
+  <div class="khoi-tieu-de">
+    <h1 id="tieuDe">🎴 Thẻ Ghi Nhớ</h1>
+    <span class="phu" id="monLop"></span>
+  </div>
+
+  <div class="thanh-dieu-khien-lop">
+    <label for="chonLop">📚 <strong>Chọn Lớp:</strong></label>
+    <select id="chonLop" title="Chọn gói thẻ ghi nhớ theo lớp">
+      <option value="lop-6">Lớp 6 (Toán & KHTN)</option>
+      <option value="lop-7">Lớp 7 (Định Lí & Công Thức)</option>
+      <option value="lop-8" selected>Lớp 8 (Hằng Đẳng Thức)</option>
+      <option value="lop-9">Lớp 9 (Trọng Tâm Lớp 9)</option>
+      <option value="lop-10">Lớp 10 (THPT - Công Thức Gốc)</option>
+      <option value="lop-11">Lớp 11 (THPT - Lượng Giác, Đạo Hàm)</option>
+      <option value="lop-12">Lớp 12 (Ôn Thi Tốt Nghiệp THPT)</option>
+      <option value="do-vui">💡 Đố Vui Trí Tuệ & Phản Xạ</option>
+      <option value="tu-nhap">✏️ Bộ Thẻ Tự Nhập Của Tôi</option>
+    </select>
+  </div>
+
+  <div class="nhom-nut-dau">
+    <button class="nut nut-nho nut-sang" id="nutNhapThe" type="button" title="Tự nhập hoặc dán danh sách thẻ riêng">✏️ Tự nhập thẻ</button>
+    <button class="nut nut-nho" id="nutXaoTron" type="button" title="Xáo trộn thẻ (phím X)">Xáo trộn</button>
+    <button class="nut nut-nho" id="nutLoc" type="button" title="Chỉ ôn thẻ chưa thuộc (phím L)">Chưa thuộc</button>
+    <button class="nut nut-nho" id="nutAm" type="button" title="Bật/tắt âm thanh (phím M)">Âm thanh: Bật</button>
+    <button class="nut nut-nho" id="nutToanManHinh" type="button" title="Toàn màn hình (phím F)">Toàn màn hình</button>
+  </div>
+</header>
+
+<main class="noi-dung">
+  <div class="tien-do">
+    <span id="viTri">Thẻ 1/10</span>
+    <span id="soThuoc" class="so-thuoc">Đã thuộc 0/10</span>
+  </div>
+
+  <div class="vung-the">
+    <div class="the" id="the" role="button" tabindex="-1" aria-label="Bấm để lật thẻ">
+      <div class="the-trong">
+        <div class="mat truoc">
+          <div class="nhan" id="nhan"></div>
+          <div class="chu" id="matTruoc"></div>
+          <div class="nho">Bấm vào thẻ hoặc phím Space để lật đáp án</div>
+        </div>
+        <div class="mat sau">
+          <div class="nhan">Đáp án & Lời giải</div>
+          <div class="chu" id="matSau"></div>
+          <div class="dau-thuoc" id="dauThuoc">✓ Đã thuộc</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Khu vực gõ thử câu trả lời kiểm tra -->
+  <div class="khu-vuc-thu-tai">
+    <input type="text" id="inpTraLoiThu" placeholder="Học sinh có thể gõ câu trả lời vào đây để thử tài..." autocomplete="off">
+    <button class="nut nut-chinh" id="nutKiemTraThu" type="button">Kiểm tra & Lật thẻ</button>
+  </div>
+
+  <div class="hang-nut">
+    <button class="nut" id="nutTruoc" type="button">◀ Thẻ trước (←)</button>
+    <button class="nut" id="nutLat" type="button">🔄 Lật thẻ (Space)</button>
+    <button class="nut nut-xanh" id="nutThuoc" type="button">✓ Đã thuộc (Enter)</button>
+    <button class="nut nut-chinh" id="nutSau" type="button">Thẻ sau (→) ▶</button>
+  </div>
+  <div class="cham" id="cham"></div>
+  <p class="thong-bao" id="thongBao" hidden></p>
+</main>
+
+<!-- Modal: Tự nhập thẻ -->
+<div id="modalNhapThe" class="hop-thoai-nen" hidden>
+  <div class="hop-thoai-noi-dung the-khung-lon">
+    <div class="hop-thoai-dau">
+      <h3>✏️ Tự Nhập Bộ Thẻ Ghi Nhớ & Đố Vui</h3>
+      <button class="nut-dong" id="nutDongModal" type="button">✕</button>
+    </div>
+
+    <div class="modal-body-the">
+      <div class="huong-dan-dan">
+        <p>💡 <strong>Cách nhập nhanh:</strong> Mỗi dòng là 1 thẻ. Dùng dấu gạch đứng <code>|</code> để phân cách giữa <strong>Mặt trước (Câu hỏi)</strong> và <strong>Mặt sau (Đáp án)</strong>.</p>
+        <pre class="vi-du-mau">Số nguyên tố nhỏ nhất là số nào? | Số 2
+(a + b)² bằng gì? | a² + 2ab + b²
+Thủ đô của nước Pháp? | Paris
+Ai phát minh ra bóng đèn điện? | Thomas Edison</pre>
+      </div>
+
+      <textarea id="txtVanBanThe" rows="11" placeholder="Dán danh sách câu hỏi | câu trả lời của thầy/cô vào đây..."></textarea>
+
+      <div class="hang-nut-modal">
+        <button class="nut nut-chinh" id="nutLuuBoThe" type="button">💾 Lưu và Dùng Bộ Thẻ Này</button>
+        <button class="nut" id="nutNapViDuThe" type="button">📄 Dán mẫu thử</button>
+        <button class="nut" id="nutXoaTrangThe" type="button">🗑 Xóa trắng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="goi-y-phim">
+  Phím tắt: <kbd>Space</kbd>: Lật thẻ · <kbd>←</kbd> <kbd>→</kbd>: Chuyển thẻ · <kbd>Enter</kbd>: Đánh dấu đã thuộc · <kbd>X</kbd>: Xáo trộn · <kbd>L</kbd>: Ôn thẻ chưa thuộc · <kbd>M</kbd>: Âm thanh · <kbd>F</kbd>: Toàn màn hình
+</footer>
+
+<script src="du-lieu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

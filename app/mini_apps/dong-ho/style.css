@@ -1,0 +1,76 @@
+/* ===== Phong cách chung Xưởng phần mềm (nền tối, chữ to cho máy chiếu) ===== */
+:root {
+  --nen: #14213D; --nen-2: #1B2B4F; --nen-3: #243A66; --vien: #3A5688;
+  --chu: #FFFFFF; --chu-mo: #B9C4DA;
+  --vang: #F2C94C; --xanh: #2F7A5A; --xanh-sang: #4FC08D; --do: #E85D4A;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--nen); color: var(--chu);
+  font-family: "Segoe UI", system-ui, sans-serif; font-size: 20px; line-height: 1.35;
+  display: flex; flex-direction: column;
+}
+.thanh-dau {
+  display: flex; align-items: center; gap: 12px; padding: 8px 20px;
+  background: var(--nen-2); border-bottom: 3px solid var(--vang); min-height: 64px;
+}
+.thanh-dau h1 { margin: 0; font-size: clamp(22px, 2.4vw, 32px); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nut {
+  font: inherit; font-weight: 600; font-size: 21px; min-height: 54px; padding: 8px 22px;
+  border-radius: 12px; border: 2px solid var(--vien); background: var(--nen-3); color: var(--chu);
+  cursor: pointer; transition: transform .08s, background .15s;
+}
+.nut:hover { background: #2E4A80; }
+.nut:active { transform: scale(.97); }
+.nut:focus-visible { outline: 4px solid var(--vang); outline-offset: 2px; }
+.nut-chinh { background: var(--vang); color: var(--nen); border-color: var(--vang); }
+.nut-chinh:hover { background: #F7D970; }
+.nut-nho { min-height: 44px; font-size: 17px; padding: 6px 14px; white-space: nowrap; }
+.noi-dung { flex: 1; min-height: 0; padding: 10px 22px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+.goi-y-phim { color: var(--chu-mo); font-size: 15px; text-align: center; padding: 4px 10px 8px; }
+kbd { background: var(--nen-3); border: 1px solid var(--vien); border-radius: 6px; padding: 0 7px; color: var(--chu); font-family: inherit; }
+
+/* ===== Riêng đồng hồ ===== */
+.ten-hoat-dong {
+  font: inherit; font-size: clamp(30px, 3.6vw, 46px); font-weight: 700; text-align: center; color: var(--vang);
+  background: transparent; border: 2px dashed transparent; border-radius: 12px; padding: 2px 10px; width: 100%;
+}
+.ten-hoat-dong:hover { border-color: var(--vien); }
+.ten-hoat-dong:focus { outline: none; border-color: var(--vang); background: var(--nen-2); }
+
+.vung-dong-ho { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.dong-ho {
+  position: relative; height: 100%; max-height: 100%; aspect-ratio: 1 / 1; max-width: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  container-type: size;
+}
+.vong { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.vong-nen { fill: var(--nen-2); stroke: var(--nen-3); stroke-width: 6; }
+.vong-chay {
+  fill: none; stroke: var(--xanh-sang); stroke-width: 6; stroke-linecap: round;
+  stroke-dasharray: 282.743; stroke-dashoffset: 0; transition: stroke-dashoffset .25s linear, stroke .3s;
+}
+.so {
+  position: relative; font-size: clamp(64px, 18vh, 170px); font-size: 27cqmin; font-weight: 800; line-height: 1;
+  font-variant-numeric: tabular-nums; letter-spacing: -2px;
+}
+.trang-thai { position: relative; margin-top: 8px; font-size: clamp(22px, 3.2vh, 30px); font-size: max(20px, 6cqmin); color: var(--chu-mo); font-weight: 600; }
+
+.dong-ho.canh-bao .vong-chay { stroke: var(--vang); }
+.dong-ho.canh-bao .so { color: var(--vang); }
+.dong-ho.sap-het .vong-chay { stroke: var(--do); }
+.dong-ho.sap-het .so { color: var(--do); animation: nhip .5s ease-in-out infinite alternate; }
+.dong-ho.het-gio .vong-chay { opacity: 0; }
+.dong-ho.het-gio .vong-nen { fill: var(--do); stroke: #FF9A8B; }
+.dong-ho.het-gio .so { color: #fff; }
+.dong-ho.het-gio .trang-thai { color: #fff; }
+.het-gio-nen { animation: nhay-nen 1s steps(2, jump-none) 4; }
+@keyframes nhip { to { transform: scale(1.05); } }
+@keyframes nhay-nen { 50% { background: #5A1E1A; } }
+
+.hang-nut { display: flex; justify-content: center; align-items: center; gap: 12px 26px; flex-wrap: wrap; }
+.nhom { display: flex; gap: 8px; }
+.nut-moc.chon { border-color: var(--vang); color: var(--vang); }
+.nut-rong { min-width: 160px; }

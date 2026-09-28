@@ -1,0 +1,263 @@
+[
+  {
+    "id": "ht-ke-hoach",
+    "role": "HT",
+    "title": "Kế hoạch năm học, kế hoạch giáo dục",
+    "description": "Kế hoạch năm học, kế hoạch giáo dục nhà trường (Phụ lục 1), kế hoạch tháng, học kì; chỉ tiêu, giải pháp.",
+    "prompt": "/ke-hoach-giao-duc",
+    "icon": "E787",
+    "color": "#1E5FD8"
+  },
+  {
+    "id": "ht-bo-may",
+    "role": "HT",
+    "title": "Tổ chức bộ máy, phân công",
+    "description": "Thành lập tổ chuyên môn, tổ văn phòng, hội đồng; bổ nhiệm tổ trưởng, tổ phó; phân công nhiệm vụ, quy chế làm việc.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E716",
+    "color": "#0E8A4F"
+  },
+  {
+    "id": "ht-doi-ngu",
+    "role": "HT",
+    "title": "Đội ngũ: đánh giá, bồi dưỡng, chế độ",
+    "description": "Đánh giá, xếp loại viên chức; đánh giá giáo viên theo chuẩn; bồi dưỡng; chế độ làm việc, nghỉ phép; tự đánh giá hiệu trưởng.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E77B",
+    "color": "#7B3FE4"
+  },
+  {
+    "id": "ht-tai-chinh",
+    "role": "HT",
+    "title": "Tài chính, tài sản, công khai",
+    "description": "Dự toán, quy chế chi tiêu nội bộ, quản lý tài sản, kiểm kê, các khoản thu, công khai.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "BAR",
+    "color": "#E09A00"
+  },
+  {
+    "id": "ht-dan-chu",
+    "role": "HT",
+    "title": "Dân chủ cơ sở, hội nghị viên chức",
+    "description": "Quy chế thực hiện dân chủ, hội nghị viên chức, tiếp nhận ý kiến, đối thoại.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E8BD",
+    "color": "#00838F"
+  },
+  {
+    "id": "ht-thi-dua",
+    "role": "HT",
+    "title": "Thi đua, khen thưởng",
+    "description": "Kế hoạch, phát động thi đua; hội đồng thi đua - khen thưởng; hồ sơ đề nghị khen thưởng.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E734",
+    "color": "#C62828"
+  },
+  {
+    "id": "ht-kiem-tra",
+    "role": "HT",
+    "title": "Kiểm tra nội bộ",
+    "description": "Kế hoạch kiểm tra nội bộ năm, tháng; ban kiểm tra; dự giờ, kiểm tra hồ sơ, chuyên đề; báo cáo kết quả.",
+    "prompt": "/kiem-tra-noi-bo",
+    "icon": "E9D5",
+    "color": "#40546B"
+  },
+  {
+    "id": "ht-chat-luong",
+    "role": "HT",
+    "title": "Bảo đảm chất lượng, chuẩn quốc gia",
+    "description": "Tự đánh giá, kế hoạch cải tiến chất lượng, minh chứng, công nhận chuẩn quốc gia (Thông tư 57/2026).",
+    "prompt": "/bao-dam-chat-luong",
+    "icon": "E73E",
+    "color": "#2E7D32"
+  },
+  {
+    "id": "ht-hoc-sinh",
+    "role": "HT",
+    "title": "Quản lý học sinh, kết quả giáo dục",
+    "description": "Tiếp nhận, chuyển trường; khen thưởng, kỷ luật học sinh; xét hoàn thành chương trình tiểu học; hồ sơ học sinh.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E8EF",
+    "color": "#EF6C00"
+  },
+  {
+    "id": "ht-phoi-hop",
+    "role": "HT",
+    "title": "Phối hợp gia đình, xã hội; báo cáo",
+    "description": "Ban đại diện cha mẹ học sinh, phối hợp UBND xã, Sở GD&ĐT; báo cáo cấp trên; xử lý văn bản đến.",
+    "prompt": "/bao-cao",
+    "icon": "E8A5",
+    "color": "#1E5FD8"
+  },
+  {
+    "id": "pht-dieu-hanh",
+    "role": "PHT",
+    "title": "Kế hoạch công tác, giao ban, báo cáo",
+    "description": "Kế hoạch công tác năm, tháng, tuần của lĩnh vực và địa điểm được giao; giao ban; báo cáo Hiệu trưởng; điều hành khi được ủy quyền; dạy 4 tiết, sinh hoạt tổ.",
+    "prompt": "/ke-hoach",
+    "icon": "E8F1",
+    "color": "#0B2B6B"
+  },
+  {
+    "id": "pht-phan-hieu",
+    "role": "PHT",
+    "title": "Quản lý phân hiệu, điểm trường",
+    "description": "Điều hành tại chỗ theo ủy quyền: nề nếp, sĩ số, trực, dạy thay; chuyên môn, cơ sở vật chất, an toàn tại phân hiệu; phối hợp địa phương; báo cáo, hồ sơ, bàn giao sau sáp nhập.",
+    "prompt": "/ke-hoach",
+    "icon": "E80F",
+    "color": "#5E35B1"
+  },
+  {
+    "id": "pht-chuong-trinh",
+    "role": "PHT",
+    "title": "Chương trình, phân công, thời khóa biểu",
+    "description": "Thực hiện chương trình, kế hoạch dạy học các khối, phân công chuyên môn, thời khóa biểu, dạy 2 buổi/ngày, dạy thay.",
+    "prompt": "/phan-cong-chuyen-mon",
+    "icon": "E82D",
+    "color": "#1E5FD8"
+  },
+  {
+    "id": "pht-to-chuyen-mon",
+    "role": "PHT",
+    "title": "Chỉ đạo tổ chuyên môn, sinh hoạt chuyên môn",
+    "description": "Giao việc, duyệt hồ sơ các tổ; sinh hoạt chuyên môn cấp trường; bồi dưỡng giáo viên; chuyên đề, hội giảng.",
+    "prompt": "/chi-dao-to",
+    "icon": "E716",
+    "color": "#E0313F"
+  },
+  {
+    "id": "pht-danh-gia-hs",
+    "role": "PHT",
+    "title": "Đánh giá học sinh",
+    "description": "Nhận xét thường xuyên, kiểm tra định kỳ, duyệt đề, tổng hợp kết quả cuối kì, cuối năm; khen thưởng học sinh.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E9D5",
+    "color": "#7B3FE4"
+  },
+  {
+    "id": "pht-hoat-dong",
+    "role": "PHT",
+    "title": "Hoạt động giáo dục, trải nghiệm",
+    "description": "Hoạt động trải nghiệm, ngày lễ, câu lạc bộ, STEM, kỹ năng sống, giáo dục địa phương, văn hóa đọc, Đội.",
+    "prompt": "/ke-hoach",
+    "icon": "E7BE",
+    "color": "#C62828"
+  },
+  {
+    "id": "pht-csvc",
+    "role": "PHT",
+    "title": "Cơ sở vật chất, thiết bị, thư viện",
+    "description": "Phòng học, công trình, thiết bị dạy học, sách giáo khoa, thư viện; kế hoạch mua sắm, sửa chữa.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E80F",
+    "color": "#EF6C00"
+  },
+  {
+    "id": "pht-ban-tru",
+    "role": "PHT",
+    "title": "Bán trú, y tế, an toàn trường học",
+    "description": "Bán trú, an toàn thực phẩm, y tế học đường, phòng chống tai nạn thương tích, bạo lực học đường, phòng cháy.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E95E",
+    "color": "#2E7D32"
+  },
+  {
+    "id": "pht-tuyen-sinh",
+    "role": "PHT",
+    "title": "Tuyển sinh, phổ cập giáo dục",
+    "description": "Tuyển sinh lớp 1, huy động trẻ đến trường; phổ cập giáo dục tiểu học, xóa mù chữ, giáo dục bắt buộc; hồ sơ phổ cập.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E774",
+    "color": "#40546B"
+  },
+  {
+    "id": "pht-chuyen-doi-so",
+    "role": "PHT",
+    "title": "Ứng dụng CNTT, chuyển đổi số, dữ liệu",
+    "description": "Cơ sở dữ liệu ngành, học bạ số, sổ điểm điện tử, hồ sơ điện tử, chữ ký số; học liệu số; năng lực số, AI; an toàn dữ liệu cá nhân.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E774",
+    "color": "#00897B"
+  },
+  {
+    "id": "pht-tu-van-hs",
+    "role": "PHT",
+    "title": "Tư vấn tâm lý, công tác xã hội, hỗ trợ học sinh",
+    "description": "Tư vấn tâm lý học sinh, công tác xã hội trong trường; giáo dục đạo đức, lối sống; học sinh hoàn cảnh khó khăn, chính sách; giáo dục hòa nhập.",
+    "prompt": "/ban-giam-hieu",
+    "icon": "E95E",
+    "color": "#AD1457"
+  },
+  {
+    "id": "tt-ke-hoach",
+    "role": "TT",
+    "title": "Kế hoạch hoạt động của tổ",
+    "description": "Kế hoạch năm học, kế hoạch tháng của tổ; đề xuất phân công giáo viên, tài liệu, học liệu.",
+    "prompt": "/to-chuyen-mon",
+    "icon": "E787",
+    "color": "#1E5FD8"
+  },
+  {
+    "id": "tt-khdh",
+    "role": "TT",
+    "title": "Kế hoạch dạy học các môn",
+    "description": "Kế hoạch dạy học các môn học, hoạt động giáo dục theo khối lớp (Phụ lục 2 Công văn 2345).",
+    "prompt": "/khgd-mon-hoc",
+    "icon": "E82D",
+    "color": "#00838F"
+  },
+  {
+    "id": "tt-sinh-hoat",
+    "role": "TT",
+    "title": "Sinh hoạt tổ, nghiên cứu bài học",
+    "description": "Sinh hoạt tổ ít nhất 2 tuần/lần; nghiên cứu bài học, dạy minh họa; biên bản, sổ ghi chép hoạt động của tổ.",
+    "prompt": "/shcm",
+    "icon": "E716",
+    "color": "#E0313F"
+  },
+  {
+    "id": "tt-de-kiem-tra",
+    "role": "TT",
+    "title": "Ra đề kiểm tra định kỳ",
+    "description": "Ma trận, đề, đáp án, hướng dẫn chấm theo Thông tư 27/2020; giữa kì (lớp 4, 5), cuối kì I, cuối năm.",
+    "prompt": "/de-kiem-tra",
+    "icon": "E9D5",
+    "color": "#7B3FE4"
+  },
+  {
+    "id": "tt-ho-tro-gv",
+    "role": "TT",
+    "title": "Dự giờ, bồi dưỡng giáo viên trong tổ",
+    "description": "Dự giờ, góp ý kế hoạch bài dạy; chuyên đề của tổ, sinh hoạt cụm; hỗ trợ giáo viên mới.",
+    "prompt": "/to-chuyen-mon",
+    "icon": "E890",
+    "color": "#EF6C00"
+  },
+  {
+    "id": "tt-hoc-sinh",
+    "role": "TT",
+    "title": "Chất lượng học sinh của tổ",
+    "description": "Theo dõi kết quả học tập các lớp trong tổ; hỗ trợ học sinh gặp khó khăn, bồi dưỡng học sinh có năng khiếu.",
+    "prompt": "/to-chuyen-mon",
+    "icon": "E8EF",
+    "color": "#2E7D32"
+  },
+  {
+    "id": "tt-danh-gia-gv",
+    "role": "TT",
+    "title": "Góp ý đánh giá giáo viên của tổ",
+    "description": "Giáo viên tự đánh giá, tổ góp ý, tổng hợp đánh giá theo chuẩn nghề nghiệp (Thông tư 30/2026).",
+    "prompt": "/to-chuyen-mon",
+    "icon": "E77B",
+    "color": "#40546B"
+  },
+  {
+    "id": "tt-bao-cao",
+    "role": "TT",
+    "title": "Báo cáo, hồ sơ của tổ",
+    "description": "Báo cáo tháng, học kì, năm học của tổ; hồ sơ tổ phải nộp; sổ ghi chép hoạt động.",
+    "prompt": "/to-chuyen-mon",
+    "icon": "BAR",
+    "color": "#0E8A4F"
+  }
+]

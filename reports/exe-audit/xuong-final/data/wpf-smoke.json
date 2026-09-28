@@ -1,0 +1,23 @@
+{
+    "errors":  [
+
+               ],
+    "pages":  [
+                  "TrangChu",
+                  "SoanVanBan",
+                  "Mau",
+                  "TroChuyen",
+                  "NhiemVu",
+                  "KiemTra",
+                  "ChuNhiem",
+                  "Xuong",
+                  "CongViec",
+                  "Lich",
+                  "TongHop",
+                  "TraCuu",
+                  "ThuVien",
+                  "TienIch",
+                  "VanBanDen",
+                  "CaiDat"
+              ]
+}

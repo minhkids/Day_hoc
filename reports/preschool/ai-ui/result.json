@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "home",
+    "activities",
+    "plans",
+    "children",
+    "observations",
+    "care",
+    "parents",
+    "professional",
+    "legal",
+    "materials",
+    "library",
+    "calendar",
+    "chat",
+    "settings"
+  ],
+  "errors": [],
+  "actions": [
+    "home-shortcut",
+    "template-disclosure",
+    "child-detail-groups",
+    "legal-category-filter",
+    "compact-layout",
+    "settings",
+    "template",
+    "document-save",
+    "child-create-convert",
+    "observation-create-edit",
+    "care-save",
+    "task-save",
+    "legal-search",
+    "export-docx-pptx-xlsx",
+    "journal-export"
+  ],
+  "ai_mock": true,
+  "mock_calls": [
+    {
+      "url": "https://openrouter.ai/api/v1/chat/completions",
+      "model": "mock/preschool",
+      "preschool_context": true
+    }
+  ]
+}

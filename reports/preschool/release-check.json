@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "date": "2026-09-24",
+  "unit_tests": 6,
+  "wpf": {
+    "pages": [
+      "home",
+      "activities",
+      "plans",
+      "observations",
+      "care",
+      "parents",
+      "professional",
+      "materials",
+      "library",
+      "calendar",
+      "chat",
+      "settings"
+    ],
+    "errors": [],
+    "actions": [
+      "settings",
+      "template",
+      "document-save",
+      "observation-create-edit",
+      "care-save",
+      "task-save",
+      "export-docx-pptx-xlsx",
+      "journal-export"
+    ],
+    "ai_mock": false
+  },
+  "ai_ui": "passed with mocked provider; real OpenRouter unverified",
+  "games": {
+    "colors": "passed",
+    "timer": "passed",
+    "browser": "153.0.8010.53"
+  },
+  "installer_self_check": "passed",
+  "installer_lifecycle": "not run for this variant",
+  "source_and_package_assets_match": [
+    "exe\\TroLyGiaoVienMamNon\\_internal\\wpf\\host.ps1",
+    "exe\\TroLyGiaoVienMamNon\\_internal\\wpf\\icon.ico",
+    "exe\\TroLyGiaoVienMamNon\\_internal\\wpf\\layout.xaml",
+    "exe\\TroLyGiaoVienMamNon\\_internal\\wpf\\logo.png",
+    "exe\\TroLyGiaoVienMamNon\\_internal\\wpf\\school-link.ps1",
+    "exe\\TroLyGiaoVienMamNon\\_internal\\games\\dong-ho.html",
+    "exe\\TroLyGiaoVienMamNon\\_internal\\games\\mau-sac.html"
+  ],
+  "setup_bytes": 36724736,
+  "setup_sha256": "d0ca7a9a4a31abed7ce5e258edc0bb64ee5cd25f2bd3fcef1c51806eaf462724"
+}

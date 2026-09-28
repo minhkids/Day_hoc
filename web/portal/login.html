@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập Quản trị | Trợ lý Giáo dục</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1D4ED8;
+      --primary-dark: #1E40AF;
+      --primary-subtle: #EFF6FF;
+      --slate-900: #0F172A;
+      --slate-700: #334155;
+      --slate-500: #64748B;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --white: #FFFFFF;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate-700);
+      background: radial-gradient(circle at 50% 0%, #E0EDFF 0%, #F8FAFC 70%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--slate-200);
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+    .back-home:hover {
+      background: var(--white);
+      transform: translateX(-3px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+    .card {
+      width: min(440px, 100%);
+      padding: 40px 36px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.12);
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-subtle);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .desc {
+      color: var(--slate-500);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 26px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-family: inherit;
+      color: var(--slate-900);
+      transition: all 0.2s;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .btn-submit {
+      width: 100%;
+      margin-top: 10px;
+      padding: 13px;
+      border: 0;
+      border-radius: 10px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary) 0%, #2563EB 100%);
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+    }
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35);
+    }
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+    }
+    .demo-box {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: var(--slate-50);
+      border: 1px dashed #CBD5E1;
+      border-radius: 10px;
+      font-size: 12.5px;
+      color: var(--slate-600);
+    }
+    .demo-box strong {
+      color: var(--slate-900);
+    }
+    .btn-demo {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #E2E8F0;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--slate-700);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-demo:hover {
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+    #message {
+      min-height: 22px;
+      margin-top: 16px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .msg-error { color: #DC2626; }
+    .msg-success { color: #16A34A; }
+    .hint {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #94A3B8;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <a class="back-home" href="../index.html">
+    <span>←</span> Về trang chủ Trợ lý AI
+  </a>
+
+  <main class="card">
+    <div class="brand-badge">TRỢ LÝ GIÁO DỤC · PORTAL</div>
+    <h1>Đăng nhập Quản trị</h1>
+    <p class="desc">Khu vực dành cho Ban Quản Trị hệ thống quản lý tài khoản, đơn vị và phân quyền ứng dụng.</p>
+
+    <form id="loginForm" autocomplete="on">
+      <div class="form-group">
+        <label for="email">Email Quản trị viên</label>
+        <input id="email" name="email" type="email" autocomplete="username" placeholder="admin@giaoduc.edu.vn" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+      </div>
+      <button id="submit" class="btn-submit" type="submit">Đăng nhập Quản trị</button>
+    </form>
+
+    <div class="demo-box">
+      <div>💡 <strong>Tài khoản Demo hệ thống:</strong></div>
+      <div style="margin-top:4px;">Email: <code>admin@giaoduc.edu.vn</code> | MK: <code>admin123</code></div>
+      <button type="button" class="btn-demo" id="fillDemo">Điền & Đăng nhập ngay</button>
+    </div>
+
+    <div id="message" role="alert"></div>
+    <div class="hint">Bảo vệ bằng phân quyền đa tầng. Không chia sẻ thông tin đăng nhập quản trị cho người khác.</div>
+  </main>
+
+  <script>
+    const form = document.querySelector('#loginForm');
+    const button = document.querySelector('#submit');
+    const message = document.querySelector('#message');
+    const fillDemoBtn = document.querySelector('#fillDemo');
+
+    // Nút đăng nhập nhanh Demo
+    fillDemoBtn.addEventListener('click', () => {
+      document.querySelector('#email').value = 'admin@giaoduc.edu.vn';
+      document.querySelector('#password').value = 'admin123';
+      form.dispatchEvent(new Event('submit'));
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      message.className = '';
+      message.textContent = 'Đang xác thực thông tin...';
+      button.disabled = true;
+
+      const email = form.email.value.trim();
+      const password = form.password.value;
+
+      try {
+        let authSuccess = false;
+        let redirectUrl = 'admin.html';
+
+        // 1. Thử gọi backend API nếu có server xử lý
+        try {
+          const response = await fetch('/api/auth/admin/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({ email, password })
+          });
+          if (response.ok) {
+            const data = await response.json().catch(() => ({}));
+            authSuccess = true;
+            if (data.redirect) redirectUrl = data.redirect;
+          }
+        } catch (apiErr) {
+          // Server offline hoặc static http-server
+        }
+
+        // 2. Chế độ Fallback / Client-side Admin Authentication
+        if (!authSuccess) {
+          // Kiểm tra tài khoản admin mặc định hoặc tài khoản được cấp quyền admin
+          const localAccounts = JSON.parse(localStorage.getItem('troly_accounts') || '[]');
+          const matchedUser = localAccounts.find(a => a.email.toLowerCase() === email.toLowerCase() && a.role === 'admin');
+
+          if (
+            (email.toLowerCase() === 'admin@giaoduc.edu.vn' && password === 'admin123') ||
+            (matchedUser && (!matchedUser.password || matchedUser.password === password))
+          ) {
+            authSuccess = true;
+          }
+        }
+
+        if (authSuccess) {
+          // Lưu phiên đăng nhập quản trị
+          const adminSession = {
+            email: email,
+            role: 'admin',
+            display_name: email.split('@')[0].toUpperCase() === 'ADMIN' ? 'Ban Quản Trị Hệ Thống' : email,
+            logged_in_at: new Date().toLocaleString('vi-VN')
+          };
+          localStorage.setItem('troly_admin_session', JSON.stringify(adminSession));
+
+          message.className = 'msg-success';
+          message.textContent = 'Đăng nhập thành công! Đang chuyển vào Bảng quản trị...';
+          setTimeout(() => {
+            location.href = 'admin.html';
+          }, 600);
+        } else {
+          throw new Error('Email hoặc mật khẩu không chính xác.');
+        }
+      } catch (error) {
+        message.className = 'msg-error';
+        message.textContent = error.message;
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

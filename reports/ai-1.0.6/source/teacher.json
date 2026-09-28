@@ -1,0 +1,41 @@
+﻿{
+    "checks":  [
+                   {
+                       "status":  "passed",
+                       "seconds":  0.0502441,
+                       "name":  "nonblocking_send"
+                   },
+                   {
+                       "status":  "passed",
+                       "name":  "draft_via_send_button",
+                       "chars":  427
+                   }
+               ],
+    "pages":  [
+                  "TrangChu",
+                  "TroChuyen",
+                  "SoanVanBan",
+                  "KiemTra",
+                  "ChuNhiem",
+                  "NhiemVu",
+                  "Lich",
+                  "Xuong",
+                  "ThuVien",
+                  "TienIch",
+                  "CaiDat"
+              ],
+    "app":  "teacher",
+    "errors":  [
+                   "System.Management.Automation.RuntimeException: Review button lost its selected attachment\nat \u003cScriptBlock\u003e, E:\\git_hub\\Day_hoc\\scripts\\verify-ai.ps1: line 79\r\nat \u003cScriptBlock\u003e, E:\\git_hub\\Day_hoc\\teacher\\wpf\\host.ps1: line 526"
+               ],
+    "model":  "inclusionai/ling-3.0-flash-vl:free",
+    "buttons":  [
+                    "BtnGiaoViecSoan",
+                    "BtnGiaoViecNV",
+                    "BtnGiaoViecKT",
+                    "BtnGiaoViecCN",
+                    "BtnTraCuu",
+                    "BtnViecMoiNho",
+                    "BtnRaSoatFile"
+                ]
+}

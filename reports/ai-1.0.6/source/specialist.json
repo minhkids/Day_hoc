@@ -1,0 +1,45 @@
+﻿{
+    "checks":  [
+                   {
+                       "status":  "passed",
+                       "name":  "draft_via_send_button",
+                       "chars":  590
+                   },
+                   {
+                       "name":  "docx_attachment",
+                       "status":  "passed"
+                   },
+                   {
+                       "name":  "conversation_history",
+                       "status":  "passed"
+                   },
+                   {
+                       "name":  "export_word",
+                       "status":  "passed"
+                   }
+               ],
+    "pages":  [
+                  "TrangChu",
+                  "NhiemVu",
+                  "TroChuyen",
+                  "SoanVanBan",
+                  "DonVi",
+                  "KiemTra",
+                  "CongViec",
+                  "ThuVien",
+                  "TienIch",
+                  "CaiDat"
+              ],
+    "app":  "specialist",
+    "errors":  [
+
+               ],
+    "model":  "inclusionai/ling-3.0-flash-vl:free",
+    "buttons":  [
+                    "BtnGiaoViecSoan",
+                    "BtnGiaoViecNV",
+                    "BtnGiaoViecKT",
+                    "BtnGiaoViecDV",
+                    "BtnTraCuu"
+                ]
+}

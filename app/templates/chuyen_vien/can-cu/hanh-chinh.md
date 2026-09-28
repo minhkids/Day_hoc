@@ -1,0 +1,155 @@
+# Hành chính dùng chung (tổ chức chính quyền, ban hành văn bản, văn thư, cán bộ công chức viên chức, thi đua, khiếu nại - tố cáo, dân chủ cơ sở, ngân sách, xử lý vi phạm hành chính, dữ liệu cá nhân) - kho căn cứ pháp lý
+
+> **Rà soát: 12/9/2026** (vanban.chinhphu.vn, xaydungchinhsach.chinhphu.vn, baochinhphu.vn, congbao.chinhphu.vn, trang các Bộ; luatvietnam.vn để đối chiếu). Thuộc kho `mau/can-cu/`; mục lục, quy tắc chung ở `mau/can-cu-phap-ly.md`.
+> **Mức xác minh (cột cuối):** **Đã XM** = đã đối chiếu trang chính thống hoặc từ 2 nguồn → được trích làm căn cứ; **1 nguồn** = mới thấy ở một nguồn không chính thống, hoặc còn điểm chưa đối chiếu (ghi trong ngoặc) → dùng để tư vấn, khi đưa vào văn bản ghi `[CẦN KIỂM TRA]` phần chưa chắc; **Chưa XM** → không trích làm căn cứ, chỉ nêu khi được hỏi, kèm lưu ý phải kiểm tra.
+> **Số điều, khoản:** chỉ trích khi ghi chú cho biết đã đọc bản gốc; còn lại ghi "theo [văn bản], quy định về ..." và nhắc đối chiếu. **Không dùng** văn bản trong `het-hieu-luc.md`. Văn bản mới hơn kho: `09_BO_NHO_TRO_LY/can-cu-bo-sung.md`. Việc gì ai quyết định: `tham-quyen.md`.
+> **Tìm nhanh:** tệp dài - dùng Grep theo số hiệu (ví dụ `142/2025`) hoặc từ khóa (ví dụ `bán trú`, `lễ hội`) trong tệp này, rồi chỉ đọc mục đó.
+> **Lưu ý:** Nhiều trang toàn văn là bản quét; trích nguyên văn dài phải đối chiếu bản PDF có chữ ký trên vanban.chinhphu.vn. Luật 72/2025/QH15 Điều 54: chậm nhất 01/3/2027 phải sửa các văn bản quy phạm pháp luật cho phù hợp. Thể thức ký văn bản của UBND xã, trình tự thẩm định: `tham-quyen.md` mục 4, 5.
+
+**Các nhóm:** A · B · C · D · E · F · G · H · I · J · K
+
+## A. Tổ chức chính quyền địa phương, bộ máy, phân cấp, quy chế làm việc
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 72/2025/QH15 | 16/6/2025 | Luật Tổ chức chính quyền địa phương | 16/6/2025 (trang Sở Nội vụ Đắk Lắk). luatvietnam ghi 01/7/2025, xem ghi chú (1) | Còn hiệu lực. Thay Luật TCCQĐP ngày 19/02/2025 (số 65/2025/QH15 - chưa đối chiếu) | Căn cứ đầu tiên của mọi quyết định của UBND và Chủ tịch UBND xã. Điều 13 (phân cấp), Điều 14 (ủy quyền phải bằng văn bản, không ủy quyền tiếp), Điều 22 (nhiệm vụ UBND cấp xã), Điều 23 (Chủ tịch UBND cấp xã), khoản 2 Điều 40 (việc tập thể UBND phải thảo luận, quyết định theo đa số). Điều 54: chậm nhất 01/3/2027 phải sửa các VBQPPL cho phù hợp | xaydungchinhsach.chinhphu.vn/toan-van-luat-so-72-2025-qh15-...-119250618161434371.htm; ttltls.sonoivu.daklak.gov.vn/van-ban/luat-to-chuc-chinh-quyen-dia-phuong-379.html; luatvietnam.vn | Đã XM (số, ngày, Điều 13, 14, 22, 23); hiệu lực: 1 nguồn |
+| Nghị định 150/2025/NĐ-CP | 12/6/2025 | Quy định tổ chức các cơ quan chuyên môn thuộc UBND tỉnh, thành phố trực thuộc trung ương và UBND xã, phường, đặc khu | 16/6/2025 | Còn hiệu lực, sửa đổi bởi NĐ 370/2025/NĐ-CP | Điều 15: cơ quan chuyên môn của UBND xã gồm Văn phòng HĐND và UBND, Phòng Kinh tế (phường: Phòng Kinh tế, Hạ tầng và Đô thị), Phòng Văn hóa - Xã hội. Phòng VH-XH tham mưu nội vụ, giáo dục và đào tạo (mầm non, tiểu học, THCS), văn hóa, khoa học và thông tin, y tế. Dùng khi giao phòng thẩm định hồ sơ giáo dục, nhân sự, thi đua trình UBND xã | xaydungchinhsach.chinhphu.vn/nghi-dinh-150-nd-cp-...-119250613093743964.htm; luatvietnam.vn/...-402760-d1.html | Đã XM |
+| Nghị định 370/2025/NĐ-CP | 31/12/2025 | Sửa đổi, bổ sung một số điều của NĐ 150/2025/NĐ-CP | 01/01/2026 | Còn hiệu lực | Phòng thuộc UBND xã có con dấu, tài khoản riêng; số phó trưởng phòng; UBND tỉnh quyết định số phòng (luatvietnam: bình quân không quá 4,5 phòng/xã). Dùng khi xác định phòng có ký, đóng dấu văn bản của phòng hay không, phòng nào tham mưu | baochinhphu.vn/quy-dinh-moi-ve-to-chuc-cac-co-quan-chuyen-mon-dia-phuong-102260101140735906.htm; luatvietnam.vn | Đã XM (số, ngày, hiệu lực); chi tiết sửa đổi: 1 nguồn |
+| Nghị định 315/2025/NĐ-CP | 08/12/2025 | Ban hành Quy chế làm việc mẫu của UBND xã, phường, đặc khu | 08/12/2025 | Còn hiệu lực. QĐ 77/2006/QĐ-TTg hết hiệu lực từ ngày NĐ này có hiệu lực | Ban hành, sửa Quy chế làm việc của UBND xã. Điều 3 (phạm vi giải quyết công việc của tập thể UBND, dẫn khoản 2 Điều 40 Luật 72; xử lý công việc trên môi trường điện tử), Điều 4 khoản 2 (Chủ tịch thay mặt UBND quyết định rồi báo cáo UBND tại phiên họp gần nhất), Điều 12 (Văn phòng trả hồ sơ trình không đúng quy định trong không quá 02 ngày làm việc), Điều 13 khoản 2 (việc không phức tạp: 02 ngày làm việc để cho ý kiến hoặc ký), Điều 15 (thẩm quyền ký văn bản) | baochinhphu.vn/quy-che-lam-viec-mau-...-102251208221421638.htm; luatvietnam.vn/...-420824-d1.html | Đã XM (số, ngày, hiệu lực); số điều: 1 nguồn (luatvietnam) |
+| Quy chế làm việc của UBND xã (quyết định của từng xã) | Theo từng xã | Quy chế làm việc của UBND xã | Theo QĐ | Phải cập nhật theo NĐ 315/2025 | Căn cứ trực tiếp khi ký thay, xác định lĩnh vực của từng Phó Chủ tịch, việc giao Chánh Văn phòng ký thừa lệnh | Hồ sơ của UBND xã | 1 nguồn (văn bản địa phương) |
+| Nghị định 142/2025/NĐ-CP | 12/6/2025 | Quy định về phân định thẩm quyền của chính quyền địa phương hai cấp trong lĩnh vực quản lý nhà nước của Bộ Giáo dục và Đào tạo | 01/7/2025 | Còn hiệu lực | Chủ tịch UBND xã thành lập, cho phép thành lập, cho phép hoạt động giáo dục, đình chỉ, sáp nhập, chia, tách, giải thể nhà trẻ, trường mầm non, tiểu học, THCS | vanban.chinhphu.vn (theo danh mục) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Nghị định 143/2025/NĐ-CP | 12/6/2025 | Về phân quyền, phân cấp trong lĩnh vực quản lý nhà nước của Bộ Giáo dục và Đào tạo | chưa đối chiếu | Còn hiệu lực (chưa đối chiếu) | Kiểm tra thẩm quyền đã phân cấp trong lĩnh vực giáo dục; đọc bản gốc trước khi trích | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) (số, ngày) |
+| Thông tư 09/2025, 10/2025, 12/2025, 13/2025/TT-BGDĐT | 12/6/2025 | Phân quyền, phân cấp, phân định thẩm quyền quản lý nhà nước của chính quyền địa phương 2 cấp đối với giáo dục mầm non (09), giáo dục phổ thông (10), nhà giáo và cán bộ quản lý (12), lĩnh vực giáo dục (13) | 01/7/2025 | Còn hiệu lực; **có thời hạn** (TT 10/2025 theo tóm tắt đến 01/3/2027 - theo dõi) | Thẩm định hồ sơ giáo dục thuộc thẩm quyền cấp xã (tuyển sinh, công nhận tốt nghiệp THCS, hội thi giáo viên dạy giỏi cấp xã...) | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Thông tư 15/2025/TT-BGDĐT, sửa đổi bởi TT 45/2026/TT-BGDĐT | 24/7/2025; 10/6/2026 | Chức năng, nhiệm vụ của Sở GD&ĐT và Phòng Văn hóa - Xã hội trong lĩnh vực giáo dục; TT 45/2026 sửa đổi | 24/7/2025; TT 45: hiệu lực ngày ký | Còn hiệu lực. TT 15/2025 thay TT 12/2020 | Điều 5, 6: nhiệm vụ Phòng VH-XH. TT 45/2026: Chủ tịch UBND xã bổ nhiệm, miễn nhiệm, điều động, cách chức hiệu trưởng, phó hiệu trưởng trường mầm non, tiểu học, THCS | Danh mục phần mềm (xaydungchinhsach, luatvietnam) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Thông tư 10/2025/TT-BNV, sửa đổi bởi TT 06/2026/TT-BNV | chưa đối chiếu; 29/4/2026 | Hướng dẫn nhiệm vụ của cơ quan chuyên môn cấp xã lĩnh vực nội vụ (đối chiếu trích yếu) | chưa đối chiếu | Còn hiệu lực (chưa đối chiếu) | Nhiệm vụ nội vụ của Phòng VH-XH (tổ chức bộ máy, CBCCVC, thi đua, văn thư - lưu trữ) | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) (TT 06/2026); TT 10/2025: chưa đối chiếu |
+
+Ghi chú (1) - hiệu lực Luật 72/2025/QH15: trang Sở Nội vụ Đắk Lắk ghi hiệu lực 16/6/2025; luatvietnam.vn ghi 01/7/2025; chính quyền 2 cấp (không còn cấp huyện) vận hành từ 01/7/2025. Chưa đọc được điều khoản hiệu lực trong bản gốc. Khi viện dẫn chỉ ghi "Căn cứ Luật Tổ chức chính quyền địa phương ngày 16 tháng 6 năm 2025;" (không cần ghi ngày hiệu lực).
+
+## B. Ban hành văn bản: quy phạm pháp luật, văn bản hành chính, văn thư, lưu trữ, văn bản điện tử
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 64/2025/QH15 | 19/02/2025 | Luật Ban hành văn bản quy phạm pháp luật | 01/4/2025 | Còn hiệu lực, sửa đổi bởi Luật 87/2025/QH15 | Xác định văn bản nào là QPPL (nghị quyết HĐND xã, quyết định UBND xã) hay văn bản cá biệt, hành chính; trình tự soạn thảo, thẩm định, lấy ý kiến, đăng công báo, công bố | vanban.chinhphu.vn/?pageid=27160&docid=213327 | Đã XM |
+| Luật 87/2025/QH15 | 25/6/2025 | Sửa đổi, bổ sung một số điều của Luật Ban hành VBQPPL | 01/7/2025 | Còn hiệu lực | HĐND cấp xã ban hành nghị quyết, UBND cấp xã ban hành quyết định (VBQPPL); VBQPPL của Chủ tịch UBND tỉnh, HĐND và UBND cấp xã không được quy định hiệu lực trở về trước | luatvietnam.vn/...-403951-d1.html | Đã XM |
+| Nghị định 78/2025/NĐ-CP | 01/4/2025 (chưa đối chiếu) | Quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Ban hành VBQPPL | 01/4/2025 (chưa đối chiếu) | Còn hiệu lực, sửa đổi bởi NĐ 187/2025/NĐ-CP | Quy trình soạn thảo, thẩm định dự thảo VBQPPL cấp xã; mẫu tờ trình, báo cáo thẩm định | Kết quả tìm kiếm (luatvietnam, thuvienphapluat) | 1 nguồn (Số, trích yếu: Đã XM; ngày: chưa đối chiếu) |
+| Nghị định 187/2025/NĐ-CP | 01/7/2025 | Sửa đổi, bổ sung NĐ 78/2025/NĐ-CP | chưa đối chiếu | Còn hiệu lực | Như NĐ 78/2025, phần sửa đổi theo mô hình 2 cấp | Kết quả tìm kiếm | Đã XM (số, ngày) |
+| Nghị định 79/2025/NĐ-CP | chưa đối chiếu | Kiểm tra, rà soát, hệ thống hóa và xử lý VBQPPL | chưa đối chiếu | chưa đối chiếu | Rà soát, tự kiểm tra VBQPPL do xã ban hành | - | Chưa XM |
+| Nghị định 30/2020/NĐ-CP | 05/3/2020 | Về công tác văn thư | 05/3/2020 (Điều 37: có hiệu lực kể từ ngày ký) | **Còn hiệu lực.** Không tìm thấy nghị định thay thế, sửa đổi đến 12/9/2026. Thay NĐ 110/2004 và NĐ 09/2010 | Thể thức, kỹ thuật trình bày văn bản hành chính (Phụ lục I); thẩm quyền ký (Điều 13); chữ viết tắt tên loại (Phụ lục III); quản lý văn bản đi, đến; lập hồ sơ, nộp lưu | vanban.chinhphu.vn (docid=199378); luatvietnam.vn/...-181212-d1.html | Đã XM (số, ngày); Điều 13, 37: 1 nguồn (luatvietnam) |
+| Luật 33/2024/QH15 | 21/6/2024 | Luật Lưu trữ | 01/7/2025 | Còn hiệu lực, thay Luật Lưu trữ 2011 | Lập hồ sơ, nộp lưu, thời hạn bảo quản (hồ sơ trường học, nhân sự); tài liệu lưu trữ điện tử; cơ sở dữ liệu tài liệu lưu trữ | tulieuvankien.dangcongsan.vn; sotuphap.hochiminhcity.gov.vn | Đã XM |
+| Nghị định hướng dẫn Luật Lưu trữ 2024 | - | - | - | - | - | - | Chưa XM |
+| Luật 20/2023/QH15 | chưa đối chiếu | Luật Giao dịch điện tử | 01/7/2024 (chưa đối chiếu) | Còn hiệu lực; sẽ sửa đổi bởi Luật 20/2026/QH16 | Giá trị pháp lý của văn bản điện tử, chữ ký điện tử, ký số văn bản | - | Chưa XM |
+| Luật 20/2026/QH16 | luatvietnam ghi thông qua 24/8/2026 (cần đối chiếu) | Sửa đổi, bổ sung một số điều của Luật Tần số vô tuyến điện, Luật Viễn thông, Luật Giao dịch điện tử và Luật Chuyển giao công nghệ | 01/3/2027; một số quy định từ 01/10/2026 | Đã ban hành, **chưa có hiệu lực** ngày 12/9/2026 | Theo dõi để cập nhật quy định giao dịch điện tử từ 10/2026 và 3/2027 | luatvietnam.vn/...-446901-d1.html; mst.gov.vn | Đã XM (số, hiệu lực); ngày thông qua: 1 nguồn |
+| Nghị định 23/2025/NĐ-CP | 21/02/2025 | Quy định về chữ ký điện tử và dịch vụ tin cậy | 10/4/2025 | Còn hiệu lực. Thay NĐ 130/2018/NĐ-CP và NĐ 48/2024/NĐ-CP. Không áp dụng chữ ký số chuyên dùng công vụ | Chữ ký số của tổ chức, cá nhân (hồ sơ TTHC điện tử, hợp đồng) | xaydungchinhsach.chinhphu.vn/nghi-dinh-so-23-2025-nd-cp-...-119250225073330307.htm | Đã XM |
+| Văn bản về chữ ký số chuyên dùng công vụ (NĐ 68/2024/NĐ-CP?) | chưa đối chiếu | Chữ ký số chuyên dùng công vụ | chưa đối chiếu | chưa đối chiếu | Ký số văn bản của UBND xã, trường công lập trên hệ thống quản lý văn bản | - | Chưa XM |
+| Luật 148/2025/QH15 | 11/12/2025 | Luật Chuyển đổi số | 01/7/2026 | Còn hiệu lực | Kế hoạch chuyển đổi số của xã, trường; dữ liệu số, nền tảng số; chính quyền số | luatvietnam.vn/...-422111-d1.html; mst.gov.vn | Đã XM |
+
+## C. Thủ tục hành chính, một cửa, dịch vụ công
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Nghị định 118/2025/NĐ-CP | 09/6/2025 | Về thực hiện thủ tục hành chính theo cơ chế một cửa, một cửa liên thông tại Bộ phận Một cửa và Cổng Dịch vụ công quốc gia | 01/7/2025 | Còn hiệu lực. **Thay NĐ 61/2018/NĐ-CP và NĐ 107/2021/NĐ-CP** | Tiếp nhận, trả kết quả hồ sơ TTHC giáo dục cấp xã (thành lập, cho phép hoạt động, sáp nhập trường; công nhận tốt nghiệp THCS...) qua Bộ phận Một cửa, Cổng DVC quốc gia; TTHC không phụ thuộc địa giới hành chính; xin lỗi khi trễ hạn | vanban.chinhphu.vn/?pageid=27160&docid=213871 | Đã XM |
+| Quyết định công bố TTHC của Bộ GD&ĐT và của UBND tỉnh Nghệ An (danh mục TTHC cấp xã) | Theo từng QĐ | Công bố TTHC mới, sửa đổi, bãi bỏ | Theo QĐ | - | Kiểm tra thành phần hồ sơ, thời hạn, mẫu đơn trước khi ký kết quả TTHC; không yêu cầu thêm giấy tờ ngoài bộ TTHC đã công bố | - | Chưa XM (chưa rà số hiệu) |
+| Nghị định 63/2010/NĐ-CP (kiểm soát TTHC) và các NĐ sửa đổi | 08/6/2010 (chưa đối chiếu) | Kiểm soát thủ tục hành chính | chưa đối chiếu | Chưa XM tình trạng sau 2025 | Khi dự thảo văn bản có quy định TTHC | - | Chưa XM |
+
+## D. Cán bộ, công chức, viên chức: tuyển dụng, sử dụng, đánh giá, kỷ luật
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 80/2025/QH15 | 24/6/2025 | Luật Cán bộ, công chức | 01/7/2025 | Còn hiệu lực. Thay Luật CBCC 22/2008/QH12 (và luật sửa đổi 2019) | Quản lý công chức cấp xã (Phòng VH-XH, Văn phòng): vị trí việc làm, đánh giá, khen thưởng, kỷ luật, đạo đức công vụ | xaydungchinhsach.chinhphu.vn/toan-van-luat-can-bo-cong-chuc-119250705110927293.htm; hcc.nghean.gov.vn | Đã XM |
+| Luật 129/2025/QH15 | 10/12/2025 | Luật Viên chức | 01/7/2026 | Còn hiệu lực. Thay Luật Viên chức 58/2010/QH12 (và sửa đổi 2019) | Quản lý viên chức trường học: tuyển dụng, hợp đồng làm việc, vị trí việc làm, đánh giá, kỷ luật, điều động | xaydungchinhsach.chinhphu.vn/toan-van-luat-vien-chuc-so-129-2025-qh15-119260107101503932.htm; luatvietnam.vn | Đã XM |
+| Nghị định 27/2026/NĐ-CP | 19/01/2026 | Cơ sở dữ liệu quốc gia về cán bộ, công chức, viên chức (theo tóm tắt) | chưa đối chiếu | Còn hiệu lực | Cập nhật hồ sơ điện tử CBCCVC | vpubnd.dongnai.gov.vn | 1 nguồn |
+| Nghị định 361/2025/NĐ-CP | 31/12/2025 | Quy định vị trí việc làm công chức | chưa đối chiếu | Còn hiệu lực; thay phần công chức của NĐ 62/2020 | Xây dựng, thẩm định đề án vị trí việc làm công chức cấp xã | Danh mục phần mềm (luatvietnam) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Nghị định 232/2026/NĐ-CP | 26/6/2026 | Vị trí việc làm viên chức trong đơn vị sự nghiệp công lập (theo tóm tắt) | 01/7/2026 (chưa đối chiếu) | Còn hiệu lực | Thẩm định vị trí việc làm, số lượng người làm việc của trường | vpubnd.dongnai.gov.vn | 1 nguồn |
+| Nghị định 235/2026/NĐ-CP | 26/6/2026 | Hợp đồng làm việc, hợp đồng lao động trong đơn vị sự nghiệp công lập (theo tóm tắt) | 01/7/2026 (chưa đối chiếu) | Còn hiệu lực | Ký, thẩm định hợp đồng của trường (giáo viên hợp đồng, nhân viên) | vpubnd.dongnai.gov.vn | 1 nguồn |
+| Nghị định 335/2025/NĐ-CP | 21/12/2025 | Quy định về đánh giá, xếp loại chất lượng đối với cơ quan hành chính nhà nước và công chức | 01/01/2026 | Còn hiệu lực | Đánh giá công chức cấp xã (thang 100 điểm, theo tháng/quý), đánh giá UBND xã, Phòng VH-XH | vanban.chinhphu.vn/?docid=216292; xaydungchinhsach.chinhphu.vn | Đã XM |
+| Nghị định 233/2026/NĐ-CP | 26/6/2026 | Quy định về đánh giá, xếp loại chất lượng đối với đơn vị sự nghiệp công lập và viên chức | 01/7/2026 | Còn hiệu lực. Thay NĐ 90/2020 và NĐ 48/2023 (phần viên chức) | Phê duyệt kết quả đánh giá viên chức, hiệu trưởng, đánh giá trường; 4 mức (xuất sắc ≥90, tốt 70-89, hoàn thành 50-69, không hoàn thành <50); đánh giá theo tháng/quý; **đơn vị ban hành quy chế đánh giá trước 30/11/2026** | ninhbinh.gov.vn; isos.gov.vn; vpubnd.dongnai.gov.vn | Đã XM |
+| Nghị định 172/2025/NĐ-CP | 30/6/2025 | Quy định về xử lý kỷ luật cán bộ, công chức | 01/7/2025 | Còn hiệu lực; **sửa đổi bởi NĐ 251/2025/NĐ-CP** (luatvietnam ghi hiệu lực 23/9/2025; nội dung: trình tự kỷ luật người đã thôi việc, nghỉ hưu). Bãi bỏ NĐ 112/2020/NĐ-CP (phần cán bộ, công chức) và NĐ 71/2023/NĐ-CP | Thẩm định hồ sơ kỷ luật công chức cấp xã (hội đồng kỷ luật, trình tự, thời hiệu) | vanban.chinhphu.vn/?pageid=27160&docid=214325; xaydungchinhsach.chinhphu.vn; luatvietnam.vn/...-404381-d1.html | Đã XM (NĐ 172); NĐ 251/2025: 1 nguồn |
+| Nghị định 234/2026/NĐ-CP | 26/6/2026 | Xử lý kỷ luật viên chức (theo tóm tắt) | 01/7/2026 (chưa đối chiếu) | Còn hiệu lực | Thẩm định, ký quyết định kỷ luật viên chức, cán bộ quản lý trường (Chủ tịch UBND xã với hiệu trưởng, phó hiệu trưởng) | vpubnd.dongnai.gov.vn; kết quả tìm kiếm | Đã XM (số, ngày) |
+
+## E. Thi đua, khen thưởng
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 06/2022/QH15 | 15/6/2022 | Luật Thi đua, khen thưởng | 01/01/2024 | Còn hiệu lực; sửa đổi bởi Luật 06/2026/QH16 từ 01/10/2026 | Thẩm định hồ sơ khen thưởng; Chủ tịch UBND xã tặng Giấy khen, danh hiệu thi đua cấp xã | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Luật 06/2026/QH16 | 23/4/2026 | Luật sửa đổi, bổ sung một số điều của Luật Thi đua, khen thưởng | **01/10/2026** | Đã ban hành, **chưa có hiệu lực** ngày 12/9/2026 | Hồ sơ khen thưởng xét từ 01/10/2026 phải theo luật sửa đổi (khen thưởng công trạng, khen thưởng chuyên đề; tiêu chuẩn, thẩm quyền) | vanban.chinhphu.vn/?pageid=27160&docid=218100; xaydungchinhsach.chinhphu.vn | Đã XM |
+| Nghị định 152/2025/NĐ-CP | 14/6/2025 | Phân cấp, phân quyền trong lĩnh vực thi đua, khen thưởng; quy định chi tiết và hướng dẫn thi hành một số điều của Luật Thi đua, khen thưởng | 01/7/2025 | Còn hiệu lực. **Thay NĐ 98/2023/NĐ-CP** (và NĐ 28/2024) | Thẩm quyền, hồ sơ, quy trình khen thưởng cấp xã sau sắp xếp. Theo dõi nghị định mới hướng dẫn Luật 06/2026 (từ 01/10/2026) | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Thông tư 07/2026/TT-BGDĐT | 15/02/2026 | Quy định chi tiết thi hành một số điều của Luật TĐKT và NĐ 152/2025; hướng dẫn thi đua, khen thưởng ngành Giáo dục | 02/4/2026 | Còn hiệu lực. Thay TT 21/2020 (chưa đối chiếu), TT 29/2023, TT 10/2024 | Khen thưởng giáo viên, trường; tiêu chuẩn Chiến sĩ thi đua cơ sở, Lao động tiên tiến ngành giáo dục | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) |
+
+## F. Tiếp công dân, khiếu nại, tố cáo, xử lý đơn
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật Tiếp công dân 42/2013/QH13; Luật Khiếu nại 02/2011/QH13; Luật Tố cáo 25/2018/QH14 | chưa đối chiếu | Các luật gốc | chưa đối chiếu | Còn hiệu lực; sửa đổi bởi Luật 136/2025/QH15 từ 01/7/2026 (có văn bản hợp nhất 30/VBHN-VPQH 2026 - Luật Tiếp công dân) | Giải quyết khiếu nại lần đầu quyết định hành chính của Chủ tịch UBND xã, xử lý tố cáo công chức, viên chức do xã quản lý | luatvietnam.vn (VBHN) | 1 nguồn (Số hiệu các luật gốc: chưa đối chiếu) |
+| Luật 136/2025/QH15 | 10/12/2025 | Luật sửa đổi, bổ sung một số điều của Luật Tiếp công dân, Luật Khiếu nại, Luật Tố cáo | 01/7/2026 | Còn hiệu lực | Tiếp công dân trực tiếp và trực tuyến; Chủ tịch UBND cấp xã trực tiếp tiếp công dân **ít nhất 02 ngày trong 01 tháng**; bỏ thẩm quyền Chủ tịch UBND cấp huyện, làm rõ thẩm quyền Chủ tịch UBND xã | vanban.chinhphu.vn/?pageid=27160&docid=216516; hdnd.ninhbinh.gov.vn | Đã XM |
+| Nghị định 154/2026/NĐ-CP | 15/5/2026 | Quy định chi tiết một số điều và biện pháp tổ chức thi hành Luật Tiếp công dân | 01/7/2026 | Còn hiệu lực. Thay NĐ 64/2014/NĐ-CP | Lịch tiếp công dân của Chủ tịch UBND xã, tiếp trực tuyến (thông báo trước ít nhất 05 ngày làm việc), từ chối tiếp công dân | congan.laichau.gov.vn; chonthanh.dongnai.gov.vn; baophapluat.vn | Đã XM |
+| Nghị định hướng dẫn Luật Khiếu nại, Luật Tố cáo sau Luật 136/2025 (thay NĐ 124/2020, NĐ 31/2019?) | - | - | - | - | - | - | Chưa XM |
+| Thông tư 05/2021/TT-TTCP (quy trình tiếp công dân, xử lý đơn) | chưa đối chiếu | - | chưa đối chiếu | Chưa XM tình trạng sau 01/7/2026 | Phân loại, xử lý đơn thư gửi UBND xã | - | Chưa XM |
+
+## G. Dân chủ cơ sở, công khai, tổ chức công đoàn ở đơn vị công lập
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 10/2022/QH15 | 10/11/2022 | Luật Thực hiện dân chủ ở cơ sở | 01/7/2023 | Còn hiệu lực; sửa đổi bởi Luật 97/2025/QH15 | Công khai, lấy ý kiến Nhân dân, viên chức trước khi quyết định (quy hoạch mạng lưới trường, sáp nhập điểm trường, thu - chi, hội nghị viên chức) | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Luật 97/2025/QH15 | 27/6/2025 | Luật sửa đổi, bổ sung một số điều của Luật Mặt trận Tổ quốc Việt Nam, Luật Công đoàn, Luật Thanh niên và Luật Thực hiện dân chủ ở cơ sở | 01/7/2025 | Còn hiệu lực | Như trên; phần Luật Công đoàn sửa đổi | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) |
+| Nghị định 59/2023/NĐ-CP | chưa đối chiếu | Quy định chi tiết một số điều của Luật Thực hiện dân chủ ở cơ sở | chưa đối chiếu | Chưa XM sửa đổi sau 2025 | Tổ chức hội nghị cán bộ, công chức, viên chức; công khai ở cơ quan, đơn vị | - | Chưa XM |
+| Thông tư 11/2020/TT-BGDĐT | 19/5/2020 | Hướng dẫn thực hiện dân chủ trong hoạt động của cơ sở giáo dục công lập | - | Cần đối chiếu (quy định giao việc cho công đoàn không còn áp dụng được ở trường không còn công đoàn) | Duyệt quy chế dân chủ, hội nghị viên chức của trường | Danh mục phần mềm (đối chiếu 09/2026) | Đã XM (theo danh mục phần mềm 09/2026) (ghi "cần đối chiếu") |
+| Kết luận 157-KL/TW của Bộ Chính trị | 25/5/2025 | Về thực hiện các nghị quyết, kết luận về sắp xếp tổ chức bộ máy, đơn vị hành chính | - | Văn bản của Đảng, **không phải VBQPPL** | Kết thúc hoạt động, không thành lập công đoàn ở cơ quan hành chính, lực lượng vũ trang, đơn vị sự nghiệp hưởng 100% lương từ NSNN (trường công lập) | thuvienphapluat (tóm tắt); uongbi.gov.vn; hanoimoi.vn | Đã XM |
+| Công văn 4173/TLĐ-ToC của Tổng Liên đoàn Lao động Việt Nam | 28/5/2025 | Hướng dẫn sắp xếp tổ chức công đoàn theo KL 157-KL/TW | - | Văn bản của tổ chức chính trị - xã hội | Công đoàn cơ sở ở trường công lập hưởng 100% lương NSNN giải thể, dừng hoạt động (hoàn thành trước 15/6/2025). **Không tìm thấy luật, nghị định riêng của Nhà nước kèm theo KL 157** (ngoài Luật 97/2025 sửa Luật Công đoàn - chưa đọc nội dung phần này) | hanoimoi.vn; daibieunhandan.vn | Đã XM |
+
+## H. Tài chính, ngân sách, tài sản công, đầu tư công
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 89/2025/QH15 | 25/6/2025 | Luật Ngân sách nhà nước | 01/01/2026, áp dụng từ năm ngân sách 2026 (chưa đối chiếu, khớp các nguồn); một số nội dung (phân cấp chi khoa học - công nghệ, chuyển đổi số giữa ngân sách tỉnh và xã) thực hiện từ 01/7/2025 | Còn hiệu lực. Thay Luật NSNN 2015 (83/2015/QH13 - chưa đối chiếu) | Giao dự toán cho trường, điều chỉnh dự toán, quyết toán ngân sách cấp xã, công khai ngân sách | vanban.chinhphu.vn/?pageid=27160&docid=214601; datafiles.chinhphu.vn (VBHN 89/VBHN-VPQH 2026) | Đã XM (số, ngày); hiệu lực: chưa đối chiếu |
+| Nghị định 73/2026/NĐ-CP | 10/3/2026 | Quy định chi tiết và hướng dẫn thi hành một số điều của Luật Ngân sách nhà nước năm 2025 | Chưa XM | Còn hiệu lực; dự kiến thay NĐ 163/2016/NĐ-CP (Chưa XM) | Lập, chấp hành, kế toán, quyết toán, công khai ngân sách cấp xã; kế hoạch tài chính 5 năm | stc.quangngai.gov.vn | 1 nguồn |
+| Luật Quản lý, sử dụng tài sản công 15/2017/QH14 và các luật sửa đổi | 21/6/2017 (chưa đối chiếu) | Quản lý, sử dụng tài sản công | chưa đối chiếu | Còn hiệu lực; Chưa XM luật sửa đổi 2024-2025 | Giao, điều chuyển, thanh lý tài sản trường học sau sáp nhập (phòng học, thiết bị), nhà văn hóa | - | Chưa XM |
+| Nghị định 186/2025/NĐ-CP | 01/7/2025 | Quy định chi tiết một số điều của Luật Quản lý, sử dụng tài sản công | 01/7/2025 | Còn hiệu lực. Bãi bỏ NĐ 151/2017, NĐ 114/2024, NĐ 50/2025 và một số điều NĐ 125/2025, NĐ 127/2025 | Thẩm quyền quyết định điều chuyển, thanh lý, bán, tiêu hủy tài sản công; mua sắm; khai thác tài sản của trường | vanban.chinhphu.vn/?pageid=27160&docid=214493; luatvietnam.vn | Đã XM |
+| Luật Đầu tư công (hiện hành) | - | - | - | - | Chủ trương đầu tư, phê duyệt dự án nhỏ (phòng học, nhà văn hóa) | - | Chưa XM |
+
+## I. Xử lý vi phạm hành chính
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật Xử lý vi phạm hành chính 15/2012/QH13, sửa đổi 67/2020/QH14 | chưa đối chiếu | Luật XLVPHC | chưa đối chiếu | Còn hiệu lực, sửa đổi tiếp bởi Luật 88/2025/QH15 | Lập biên bản, ra quyết định xử phạt (dạy thêm trái phép, cơ sở giáo dục hoạt động không phép...) | - | 1 nguồn (Số hiệu luật gốc: chưa đối chiếu) |
+| Luật 88/2025/QH15 | 25/6/2025 | Luật sửa đổi, bổ sung một số điều của Luật Xử lý vi phạm hành chính | 01/7/2025 | Còn hiệu lực | Chủ tịch UBND cấp xã thực hiện thẩm quyền xử phạt của Chủ tịch UBND cấp huyện (theo các nghị định xử phạt từng lĩnh vực) cho đến khi Chính phủ quy định thay thế | xaydungchinhsach.chinhphu.vn/toan-van-luat-sua-doi-...-119250629101104322.htm; luatvietnam.vn | Đã XM |
+| Nghị định 189/2025/NĐ-CP | chưa đối chiếu | Quy định chi tiết Luật XLVPHC về thẩm quyền xử phạt (theo bài viết) | 01/7/2025 | Còn hiệu lực (theo bài viết) | Điều 5: Chủ tịch UBND cấp xã phạt tiền đến 50% mức tối đa của lĩnh vực, phạt cảnh cáo, tước giấy phép, tịch thu tang vật, biện pháp khắc phục hậu quả | danviet.vn | 1 nguồn |
+| Nghị định xử phạt VPHC trong lĩnh vực giáo dục (NĐ 04/2021/NĐ-CP và sửa đổi?) | chưa đối chiếu | - | chưa đối chiếu | Chưa XM | Xử phạt vi phạm trong giáo dục (dạy thêm, cơ sở không phép) | - | Chưa XM |
+
+## J. Bảo vệ dữ liệu cá nhân
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật 91/2025/QH15 | 26/6/2025 | Luật Bảo vệ dữ liệu cá nhân | 01/01/2026 | Còn hiệu lực | Thẩm định văn bản có danh sách học sinh, giáo viên (công khai, niêm yết, gửi rộng); thu thập dữ liệu trẻ em cần sự đồng ý của người đại diện | luatvietnam.vn/...-106497-article.html | Đã XM |
+| Nghị định 356/2025/NĐ-CP | 31/12/2025 | Quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân | 01/01/2026 | Còn hiệu lực. Thay NĐ 13/2023/NĐ-CP | Đánh giá tác động xử lý dữ liệu cá nhân, người phụ trách bảo vệ dữ liệu, mẫu báo cáo | luatvietnam.vn; wincolaw.com.vn | Đã XM |
+
+## K. Phòng, chống tham nhũng, kê khai tài sản, ứng xử công vụ
+
+| Số hiệu | Ngày ban hành | Trích yếu | Hiệu lực | Tình trạng | Dùng khi | Nguồn | Xác minh |
+|---|---|---|---|---|---|---|---|
+| Luật Phòng, chống tham nhũng 36/2018/QH14 | chưa đối chiếu | Luật PCTN | 01/7/2019 (chưa đối chiếu) | Còn hiệu lực; sửa đổi bởi Luật 132/2025/QH15 | Xung đột lợi ích, công khai, minh bạch, trách nhiệm người đứng đầu | - | 1 nguồn (Số hiệu: chưa đối chiếu) |
+| Luật 132/2025/QH15 | 10/12/2025 | Luật sửa đổi, bổ sung một số điều của Luật Phòng, chống tham nhũng | 01/7/2026 | Còn hiệu lực | Ngưỡng kê khai bổ sung khi tài sản biến động từ 1 tỷ đồng/năm; ngưỡng tài sản phải kê khai từ 150 triệu đồng/loại; bảo vệ người tố cáo | giavien.haiphong.gov.vn; luatvietnam.vn | Đã XM |
+| Nghị định 164/2026/NĐ-CP | 15/5/2026 | Kiểm soát tài sản, thu nhập của người có chức vụ, quyền hạn trong cơ quan, tổ chức, đơn vị | 01/7/2026 | Còn hiệu lực. Thay NĐ 130/2020/NĐ-CP | Lập danh sách người phải kê khai (hiệu trưởng, phó hiệu trưởng, công chức vị trí nhạy cảm), tổ chức kê khai, công khai bản kê khai | noichinh.vn; stp.hue.gov.vn; daiphuoc.dongnai.gov.vn | Đã XM |
+| Văn bản về quy tắc ứng xử, văn hóa công vụ của CBCCVC | - | - | - | - | Ban hành quy tắc ứng xử của UBND xã, trường | - | Chưa XM (Luật CBCC 80/2025 có quy định đạo đức công vụ; Chưa XM văn bản quy tắc ứng xử mới) |
+
+## Chưa XM - kiểm tra trước khi dùng
+
+Không dẫn các nội dung sau vào văn bản khi chưa đối chiếu bản gốc (ghi `[CẦN KIỂM TRA]`):
+
+1. **Điều khoản hiệu lực của Luật 72/2025/QH15**: 16/6/2025 (Sở Nội vụ Đắk Lắk) hay 01/7/2025 (luatvietnam). Nguyên văn khoản 2 Điều 40 (danh sách việc tập thể UBND quyết định) và số điều của nguyên tắc "hoạt động theo chế độ tập thể".
+2. **Nguyên văn từng chữ** của NĐ 30/2020 Điều 13 và Phụ lục I khoản 7 (đợt này mới xác nhận nội dung qua luatvietnam, chưa mở được bản PDF). NĐ 30 có quy định riêng về vị trí, hình thức chữ ký số của người có thẩm quyền và của cơ quan (Phụ lục I) - chưa trích.
+3. Nội dung đầy đủ Điều 15 Quy chế mẫu (NĐ 315/2025): các điểm b, c... khoản 1 (văn bản Chủ tịch phải ký), việc ký thay trong trường hợp Chủ tịch ủy quyền.
+4. NĐ 79/2025/NĐ-CP (kiểm tra, rà soát VBQPPL): số, ngày, hiệu lực. Ngày ban hành, hiệu lực NĐ 78/2025, NĐ 187/2025 (mới có số và nội dung).
+5. Nghị định hướng dẫn Luật Lưu trữ 2024 (số hiệu, ngày).
+6. Văn bản về chữ ký số chuyên dùng công vụ (NĐ 68/2024/NĐ-CP?) và số hiệu, ngày Luật Giao dịch điện tử 20/2023/QH15; ngày thông qua Luật 20/2026/QH16.
+7. Nghị định mới hướng dẫn Luật Khiếu nại, Luật Tố cáo sau Luật 136/2025 (có thay NĐ 124/2020, NĐ 31/2019 không?); tình trạng TT 05/2021/TT-TTCP (xử lý đơn).
+8. Tình trạng NĐ 59/2023/NĐ-CP (dân chủ cơ sở) sau Luật 97/2025; nội dung phần sửa Luật Công đoàn trong Luật 97/2025 (có quy định về đơn vị hưởng 100% lương NSNN hay không).
+9. Hiệu lực NĐ 73/2026/NĐ-CP và việc thay NĐ 163/2016; thông tư hướng dẫn Luật NSNN 2025 của Bộ Tài chính.
+10. Luật Quản lý, sử dụng tài sản công: các luật sửa đổi 2024-2025 (số hiệu); Luật Đầu tư công hiện hành (số hiệu, hiệu lực) và thẩm quyền quyết định chủ trương đầu tư của HĐND, UBND cấp xã.
+11. NĐ 189/2025/NĐ-CP (thẩm quyền xử phạt VPHC): ngày ban hành, trích yếu chính xác (mới có 1 nguồn báo); nghị định xử phạt VPHC lĩnh vực giáo dục hiện hành; quy định giao quyền xử phạt cho Phó Chủ tịch sau Luật 88/2025.
+12. Văn bản đánh giá, xếp loại chất lượng **cán bộ** (Chủ tịch, Phó Chủ tịch UBND xã) sau NĐ 335/2025 và NĐ 233/2026.
+13. Hiệu lực, ngày ban hành của NĐ 232/2026, 234/2026, 235/2026 (mới có ngày 26/6/2026 từ 1-2 nguồn); NĐ 251/2025 (ngày ban hành).
+14. Văn bản quy tắc ứng xử, văn hóa công vụ của CBCCVC hiện hành (sau Luật CBCC 2025, Luật Viên chức 2025).
+15. Quyết định công bố TTHC lĩnh vực giáo dục cấp xã của Bộ GD&ĐT và UBND tỉnh Nghệ An (số hiệu), tình trạng NĐ 63/2010/NĐ-CP về kiểm soát TTHC.
+16. Số hiệu các luật gốc ghi "chưa đối chiếu" trong bảng (Luật Khiếu nại 02/2011, Luật Tố cáo 25/2018, Luật Tiếp công dân 42/2013, Luật XLVPHC 15/2012 và 67/2020, Luật PCTN 36/2018, Luật QLSDTSC 15/2017, Luật NSNN 83/2015, Luật TCCQĐP 65/2025 và 77/2015) - viết theo hiểu biết sẵn có, chưa mở lại nguồn trong đợt này.
+
+Ghi chú rà soát: đợt tra cứu này hết hạn mức tìm kiếm web giữa chừng; các mục danh mục phần mềm lấy từ danh mục căn cứ của Trợ lý (đã ghi "đối chiếu 09/2026"), nên kiểm lại bằng quy trình cập nhật căn cứ khi có dịp.

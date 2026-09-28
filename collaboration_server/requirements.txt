@@ -1,0 +1,2 @@
+# Runtime: Python >= 3.10, standard library only. No pip packages required.
+# Optional browser smoke test uses websocket-client (not a server dependency).

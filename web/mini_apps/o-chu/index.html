@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ô Chữ Bí Mật</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="thanh-dau">
+  <div class="khoi-tieu-de">
+    <h1 id="tieuDe">🧩 Ô Chữ Bí Mật</h1>
+    <span class="phu" id="monLop"></span>
+  </div>
+
+  <div class="thanh-dieu-khien-lop">
+    <label for="chonLop">📚 <strong>Chọn Lớp:</strong></label>
+    <select id="chonLop" title="Chọn bộ ô chữ theo lớp">
+      <option value="lop-6">Lớp 6 (Trái Đất - 7 chữ cái)</option>
+      <option value="lop-7">Lớp 7 (Tam Giác - 7 chữ cái)</option>
+      <option value="lop-8" selected>Lớp 8 (Đồ Thị - 5 chữ cái)</option>
+      <option value="lop-9">Lớp 9 (Căn Thức - 7 chữ cái)</option>
+      <option value="lop-10">Lớp 10 (Vectơ - 5 chữ cái)</option>
+      <option value="lop-11">Lớp 11 (Đạo Hàm - 6 chữ cái)</option>
+      <option value="lop-12">Lớp 12 (Tích Phân - 8 chữ cái)</option>
+      <option value="do-vui">💡 Đố Vui (Tri Thức - 7 chữ cái)</option>
+      <option value="tu-tao">✏️ Ô Chữ Tự Tạo Của Tôi</option>
+    </select>
+  </div>
+
+  <div class="nhom-nut-dau">
+    <button class="nut nut-nho nut-sang" id="nutTaoOChu" type="button" title="Tự tạo trò chơi ô chữ theo bài dạy của thầy/cô">✏️ Tự tạo ô chữ</button>
+    <button class="nut nut-nho" id="nutAm" type="button" title="Bật/tắt âm thanh (phím M)">Âm thanh: Bật</button>
+    <button class="nut nut-nho" id="nutToanManHinh" type="button" title="Toàn màn hình (phím F)">Toàn màn hình</button>
+  </div>
+</header>
+
+<main class="noi-dung">
+  <div class="vung-luoi" id="vungLuoi">
+    <div class="luoi" id="luoi"></div>
+  </div>
+
+  <section class="bang-hoi">
+    <div class="dong-dau">
+      <div class="nhan-hang" id="nhanHang">Chọn một hàng ngang</div>
+      <button class="nut nut-nho nut-khoa" id="nutTuKhoa" type="button" title="Đoán từ khóa (phím K)">Từ khóa: <span id="tuKhoaHien"></span></button>
+    </div>
+    <div class="goi-y" id="goiY">Bấm số thứ tự hàng ngang (hoặc phím 1, 2, 3...) để xem câu hỏi gợi ý.</div>
+    <div class="dong-tra-loi">
+      <input type="text" id="oTraLoi" placeholder="Nhập câu trả lời của học sinh..." autocomplete="off" spellcheck="false" aria-label="Câu trả lời">
+      <button class="nut nut-chinh" id="nutKiemTra" type="button">Kiểm tra (Enter)</button>
+      <button class="nut" id="nutGoiYChu" type="button" title="Gợi ý mở 1 chữ cái chưa giải">💡 Gợi ý chữ cái</button>
+      <button class="nut" id="nutMo" type="button" title="Mở toàn bộ đáp án hàng này (phím O)">Mở đáp án (O)</button>
+    </div>
+    <div class="thong-bao" id="thongBao"></div>
+    <div class="canh-bao-du-lieu" id="canhBaoDuLieu" hidden></div>
+  </section>
+</main>
+
+<!-- Modal tự tạo ô chữ -->
+<div id="modalTaoOChu" class="hop-thoai-nen" hidden>
+  <div class="hop-thoai-noi-dung the-khung-lon">
+    <div class="hop-thoai-dau">
+      <h3>✏️ Tự Tạo Ô Chữ Dạy Học Riêng</h3>
+      <button class="nut-dong" id="nutDongModal" type="button">✕</button>
+    </div>
+
+    <div class="modal-body-ochu">
+      <div class="huong-dan-dan">
+        <p>💡 <strong>Cách tạo cực dễ:</strong> Thầy cô chỉ cần nhập Từ khóa hàng dọc và các câu hàng ngang tương ứng (số hàng ngang bằng số chữ cái của từ khóa). Hệ thống sẽ tự động tìm chữ cái chung để xếp ô chữ cân đối!</p>
+      </div>
+
+      <div class="form-nhap-khoa">
+        <label>🔑 <strong>Từ khóa hàng dọc:</strong>
+          <input type="text" id="inpTuKhoa" placeholder="Ví dụ: TOÁN HỌC" style="font-weight: 700; text-transform: uppercase;">
+        </label>
+        <label style="flex: 1;">❓ <strong>Câu hỏi gợi ý từ khóa:</strong>
+          <input type="text" id="inpGoiYTuKhoa" placeholder="Nhập câu đố gợi ý cho toàn bộ từ khóa..." style="width: 100%;">
+        </label>
+      </div>
+
+      <h4>Các câu hàng ngang:</h4>
+      <div id="danhSachHangTao" class="danh-sach-hang-tao"></div>
+
+      <div class="hang-nut-modal" style="margin-top: 10px;">
+        <button class="nut" id="nutNapMauOChu" type="button">📄 Dán mẫu thử</button>
+        <button class="nut nut-chinh" id="nutLuuOChu" type="button">💾 Áp dụng & Chơi ngay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="goi-y-phim">
+  Phím tắt: <kbd>1</kbd>-<kbd>9</kbd>: Chọn hàng | <kbd>K</kbd>: Đoán từ khóa | <kbd>Enter</kbd>: Kiểm tra câu trả lời | <kbd>O</kbd>: Mở đáp án | <kbd>M</kbd>: Âm thanh | <kbd>F</kbd>: Toàn màn hình
+</footer>
+
+<script src="du-lieu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

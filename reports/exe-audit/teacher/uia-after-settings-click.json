@@ -1,0 +1,712 @@
+﻿[
+    {
+        "id":  "",
+        "name":  "Thông tin giáo viên",
+        "type":  "ControlType.Window"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "Họ tên",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Trường",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Tỉnh / xã",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Môn dạy",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Lớp dạy",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Lớp chủ nhiệm",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Năm học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "Lưu thông tin",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Lưu thông tin",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "ImgLogo",
+        "name":  "",
+        "type":  "ControlType.Image"
+    },
+    {
+        "id":  "TxtTenTL",
+        "name":  "TRỢ LÝ",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTenVP",
+        "name":  "GIÁO VIÊN",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Soạn bài · Kiểm tra · Sáng tạo",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnGiaoViecMoiBen",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Giao việc mới",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "CuonMenu",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "VIỆC THƯỜNG LÀM",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavTrangChu",
+        "name":  "Trang chủ",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Trang chủ",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavTroChuyen",
+        "name":  "Trò chuyện AI",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Trò chuyện AI",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavSoanVanBan",
+        "name":  "Soạn bài dạy",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Soạn bài dạy",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavKiemTra",
+        "name":  "Kiểm tra, đánh giá",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Kiểm tra, đánh giá",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavChuNhiem",
+        "name":  "Chủ nhiệm lớp",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Chủ nhiệm lớp",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavNhiemVu",
+        "name":  "Hồ sơ chuyên môn",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Hồ sơ chuyên môn",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavLich",
+        "name":  "Lịch, tiến độ",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Lịch, tiến độ",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "XƯỞNG PHẦN MỀM",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavXuong",
+        "name":  "Xưởng phần mềm",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Xưởng phần mềm",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "HỆ THỐNG",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavThuVien",
+        "name":  "Kho tài liệu",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Kho tài liệu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavTienIch",
+        "name":  "Kỹ năng trợ lý",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Kỹ năng trợ lý",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "NavCaiDat",
+        "name":  "Cài đặt",
+        "type":  "ControlType.RadioButton"
+    },
+    {
+        "id":  "",
+        "name":  "Cài đặt",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "TẤT CẢ VÌ HỌC SINH THÂN YÊU",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Trợ lý Giáo viên",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtPhuDe",
+        "name":  "Soạn bài • Kiểm tra đánh giá • Chủ nhiệm",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTimNhanh",
+        "name":  "",
+        "type":  "ControlType.Edit"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "GoiYTimNhanh",
+        "name":  "Nhập việc cần làm (ví dụ: kế hoạch bài dạy bài Hằng đẳng thức, Toán 8)...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtVietTat",
+        "name":  "GV",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTenNguoiDung",
+        "name":  "Thầy/cô",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtChucVu",
+        "name":  "Giáo viên",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtChao",
+        "name":  "Chào thầy/cô!",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtCauNoi",
+        "name":  "“Mỗi bài dạy hay là một món quà cho học trò”",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnKhaiBaoNhanh",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Khai báo thông tin giáo viên",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtNgay",
+        "name":  "Thứ Ba, 22/09/2026",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTuanNay",
+        "name":  "Năm học 2026–2027",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Chức năng chính",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcChatT",
+        "name":  "Trò chuyện AI",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcChatM",
+        "name":  "Giao việc như nhắn tin; khung trò chuyện lớn, đọc được câu trả lời dài.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcSoanBaiT",
+        "name":  "Soạn bài dạy",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcSoanBaiM",
+        "name":  "Kế hoạch bài dạy, trình chiếu, phiếu học tập, đề cương ôn tập.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcKiemTraT",
+        "name":  "Kiểm tra, đánh giá",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcKiemTraM",
+        "name":  "Ma trận, bản đặc tả, đề, đáp án; nhận xét, tổng hợp điểm.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcChuNhiemT",
+        "name":  "Chủ nhiệm lớp",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcChuNhiemM",
+        "name":  "Kế hoạch chủ nhiệm, họp cha mẹ học sinh, theo dõi học sinh.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcXuongT",
+        "name":  "Xưởng phần mềm",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcXuongM",
+        "name":  "Nói yêu cầu - trợ lý làm trò chơi, bài ôn tập, ứng dụng cho lớp.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcHoSoT",
+        "name":  "Hồ sơ chuyên môn",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcHoSoM",
+        "name":  "Kế hoạch giáo dục, sinh hoạt chuyên môn, sáng kiến, chuẩn nghề nghiệp.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcThuVienT",
+        "name":  "Kho tài liệu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcThuVienM",
+        "name":  "Bài dạy, đề, hồ sơ, phần mềm đã làm; tìm, mở, sửa tiếp.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcVBDenT",
+        "name":  "Văn bản nhà trường",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcVBDenM",
+        "name":  "Đọc, tóm tắt văn bản của trường, tổ, Sở; trích việc phải làm.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcTraCuuT",
+        "name":  "Tra cứu quy định",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TcTraCuuM",
+        "name":  "Đánh giá học sinh, kế hoạch bài dạy, chế độ làm việc giáo viên...",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Tiến độ dạy học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnXemTienDo",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "Kiểm thử WPF giáo viên",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Dự án phần mềm",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnXemDuAn",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "Chọn một mẫu trong Xưởng phần mềm để bắt đầu.",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Việc sắp đến hạn",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnXemViecHan",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "Xem tất cả  →",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Pane"
+    },
+    {
+        "id":  "",
+        "name":  "2026-09-22 · Kiểm thử WPF giáo viên",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtTrangThai",
+        "name":  "Sẵn sàng hỗ trợ",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "TxtPhienBan",
+        "name":  "Bản độc lập · Kết nối trường học",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnCapNhatChan",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Kiểm tra cập nhật",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnHuongDan",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Hướng dẫn",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnMoThuMuc",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Mở thư mục làm việc",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnSaoLuuChan",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Sao lưu dữ liệu",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "BtnLienHe",
+        "name":  "",
+        "type":  "ControlType.Button"
+    },
+    {
+        "id":  "",
+        "name":  "",
+        "type":  "ControlType.Text"
+    },
+    {
+        "id":  "",
+        "name":  "Liên hệ hỗ trợ",
+        "type":  "ControlType.Text"
+    }
+]
