@@ -43,6 +43,30 @@ internal interface IShellLinkW
     void SetPath([MarshalAs(UnmanagedType.LPWStr)] string path);
 }
 
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+internal struct PROPERTYKEY
+{
+    public Guid fmtid;
+    public uint pid;
+}
+
+[StructLayout(LayoutKind.Explicit)]
+internal struct PROPVARIANT
+{
+    [FieldOffset(0)] public ushort vt;
+    [FieldOffset(8)] public IntPtr pwszVal;
+}
+
+[ComImport, Guid("886d8eeb-8cf2-4446-8d02-cdba1dbdcf99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+internal interface IPropertyStore
+{
+    [PreserveSig] int GetCount(out uint cProps);
+    [PreserveSig] int GetAt(uint iProp, out PROPERTYKEY pkey);
+    [PreserveSig] int GetValue(ref PROPERTYKEY key, out PROPVARIANT pv);
+    [PreserveSig] int SetValue(ref PROPERTYKEY key, ref PROPVARIANT pv);
+    [PreserveSig] int Commit();
+}
+
 internal static class WindowsInstaller
 {
     private const string PayloadResource = "TroLy.Payload.zip";
@@ -53,6 +77,9 @@ internal static class WindowsInstaller
     private static SetupManifest manifest;
     private static string terms;
     private static bool integrationCheck = false;
+
+    [DllImport("shell32.dll")]
+    private static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
 
     [STAThread]
     private static int Main(string[] args)
@@ -781,7 +808,44 @@ internal static class WindowsInstaller
             string target = Path.GetFullPath(targetPath);
             link.SetPath(target);
             link.SetWorkingDirectory(Path.GetFullPath(workingDirectory));
-            link.SetIconLocation(target, 0);
+
+            string targetDir = Path.GetDirectoryName(target);
+            string ico = Path.Combine(targetDir, "_internal", "wpf", "icon.ico");
+            if (!File.Exists(ico))
+                ico = Path.Combine(targetDir, "wpf", "icon.ico");
+            if (!File.Exists(ico))
+                ico = Path.Combine(targetDir, "icon.ico");
+            if (!File.Exists(ico))
+                ico = Path.Combine(workingDirectory, "wpf", "icon.ico");
+            if (!File.Exists(ico))
+                ico = Path.Combine(workingDirectory, "icon.ico");
+            if (File.Exists(ico))
+                link.SetIconLocation(ico, 0);
+            else
+                link.SetIconLocation(target, 0);
+
+            try
+            {
+                var store = shortcut as IPropertyStore;
+                if (store != null)
+                {
+                    var pkey = new PROPERTYKEY
+                    {
+                        fmtid = new Guid("9F4C2855-9F79-4B39-A8D0-E1D42DE1D5F3"),
+                        pid = 5
+                    };
+                    var pv = new PROPVARIANT
+                    {
+                        vt = 31, // VT_LPWSTR
+                        pwszVal = Marshal.StringToCoTaskMemUni("TroLyGiaoDuc.MamNon.Desktop")
+                    };
+                    store.SetValue(ref pkey, ref pv);
+                    store.Commit();
+                    Marshal.FreeCoTaskMem(pv.pwszVal);
+                }
+            }
+            catch { }
+
             var persistent = (System.Runtime.InteropServices.ComTypes.IPersistFile)shortcut;
             try
             {
@@ -796,6 +860,7 @@ internal static class WindowsInstaller
                 linkPath = Path.Combine(dir, cleanName + ext);
                 persistent.Save(Path.GetFullPath(linkPath), true);
             }
+            try { SHChangeNotify(0x08000000, 0, IntPtr.Zero, IntPtr.Zero); } catch { }
             persistent.Load(Path.GetFullPath(linkPath), 0);
             var actual = new StringBuilder(32768);
             link.GetPath(actual, actual.Capacity, IntPtr.Zero, 4);

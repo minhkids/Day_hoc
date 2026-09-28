@@ -6,6 +6,90 @@ trap { [IO.File]::WriteAllText((Join-Path $env:TROLY_PRESCHOOL_DATA_DIR 'wpf-sta
 
 Add-Type -AssemblyName PresentationFramework,PresentationCore,WindowsBase
 
+# Thiet lap Application User Model ID va Window Icon de Windows Taskbar hien thi dung icon ung dung giao duc thay vi icon PowerShell
+$appIdSource = @"
+using System;
+using System.Runtime.InteropServices;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public struct PROPERTYKEY
+{
+    public Guid fmtid;
+    public uint pid;
+}
+
+[StructLayout(LayoutKind.Explicit)]
+public struct PROPVARIANT
+{
+    [FieldOffset(0)] public ushort vt;
+    [FieldOffset(8)] public IntPtr pwszVal;
+}
+
+[ComImport, Guid("886d8eeb-8cf2-4446-8d02-cdba1dbdcf99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface IPropertyStore
+{
+    [PreserveSig] int GetCount(out uint cProps);
+    [PreserveSig] int GetAt(uint iProp, out PROPERTYKEY pkey);
+    [PreserveSig] int GetValue(ref PROPERTYKEY key, out PROPVARIANT pv);
+    [PreserveSig] int SetValue(ref PROPERTYKEY key, ref PROPVARIANT pv);
+    [PreserveSig] int Commit();
+}
+
+public class Shell32Helper {
+    [DllImport("shell32.dll", SetLastError = true)]
+    public static extern int SetCurrentProcessExplicitAppUserModelID([MarshalAs(UnmanagedType.LPWStr)] string AppID);
+
+    [DllImport("shell32.dll", SetLastError = true)]
+    public static extern int SHGetPropertyStoreForWindow(IntPtr hWnd, ref Guid riid, out IPropertyStore ppv);
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    public static extern IntPtr LoadImage(IntPtr hinst, string lpszName, uint uType, int cxDesired, int cyDesired, uint fuLoad);
+
+    public const uint WM_SETICON = 0x0080;
+    public const uint IMAGE_ICON = 1;
+    public const uint LR_LOADFROMFILE = 0x00000010;
+    public static readonly IntPtr ICON_SMALL = new IntPtr(0);
+    public static readonly IntPtr ICON_BIG = new IntPtr(1);
+
+    public static void SetIcon(IntPtr hWnd, string iconPath) {
+        try {
+            IntPtr hSmall = LoadImage(IntPtr.Zero, iconPath, IMAGE_ICON, 16, 16, LR_LOADFROMFILE);
+            IntPtr hBig = LoadImage(IntPtr.Zero, iconPath, IMAGE_ICON, 32, 32, LR_LOADFROMFILE);
+            if (hSmall != IntPtr.Zero) SendMessage(hWnd, WM_SETICON, ICON_SMALL, hSmall);
+            if (hBig != IntPtr.Zero) SendMessage(hWnd, WM_SETICON, ICON_BIG, hBig);
+        } catch {}
+    }
+
+    public static void SetWindowAppId(IntPtr hWnd, string appId) {
+        try {
+            Guid iid = new Guid("886d8eeb-8cf2-4446-8d02-cdba1dbdcf99");
+            IPropertyStore store;
+            if (SHGetPropertyStoreForWindow(hWnd, ref iid, out store) == 0 && store != null) {
+                PROPERTYKEY pkey = new PROPERTYKEY {
+                    fmtid = new Guid("9F4C2855-9F79-4B39-A8D0-E1D42DE1D5F3"),
+                    pid = 5
+                };
+                PROPVARIANT pv = new PROPVARIANT {
+                    vt = 31,
+                    pwszVal = Marshal.StringToCoTaskMemUni(appId)
+                };
+                store.SetValue(ref pkey, ref pv);
+                store.Commit();
+                Marshal.FreeCoTaskMem(pv.pwszVal);
+                Marshal.ReleaseComObject(store);
+            }
+        } catch {}
+    }
+}
+"@
+try {
+    Add-Type -TypeDefinition $appIdSource -ErrorAction SilentlyContinue
+    [Shell32Helper]::SetCurrentProcessExplicitAppUserModelID("TroLyGiaoDuc.MamNon.Desktop") | Out-Null
+} catch {}
+
 $client=New-Object Net.WebClient;$client.Encoding=[Text.Encoding]::UTF8;$client.Headers['X-TroLy-Token']=$env:TROLY_BRIDGE_TOKEN
 
 function Api($action,$data=@{}) {
@@ -22,7 +106,21 @@ function Api($action,$data=@{}) {
 
 $window=[Windows.Markup.XamlReader]::Load((New-Object Xml.XmlNodeReader $xml))
 
-$window.Icon=[Windows.Media.Imaging.BitmapFrame]::Create([Uri](Join-Path $PSScriptRoot 'icon.ico'))
+$iconFile = Join-Path $PSScriptRoot 'icon.ico'
+if(Test-Path -LiteralPath $iconFile){
+    $window.Icon=[Windows.Media.Imaging.BitmapFrame]::Create([Uri]$iconFile)
+}
+
+$window.Add_SourceInitialized({
+    try {
+        $helper = New-Object Windows.Interop.WindowInteropHelper($window)
+        $iconFile = Join-Path $PSScriptRoot 'icon.ico'
+        if(Test-Path -LiteralPath $iconFile){
+            [Shell32Helper]::SetIcon($helper.Handle, $iconFile)
+        }
+        [Shell32Helper]::SetWindowAppId($helper.Handle, "TroLyGiaoDuc.MamNon.Desktop")
+    } catch {}
+})
 
 function F($name){$window.FindName($name)}
 

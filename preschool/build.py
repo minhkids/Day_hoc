@@ -16,3 +16,11 @@ subprocess.run([sys.executable,'-m','PyInstaller','--noconfirm','--clean','--one
  '--hidden-import','updater',
  '--icon',str(app/'wpf/icon.ico'),'--exclude-module','numpy','--exclude-module','pandas','--exclude-module','matplotlib',
  str(app/'desktop.py')],env=env,cwd=root,check=True)
+
+import shutil
+dist_app = Path(os.environ.get('TROLY_DIST_DIR', str(root / 'exe'))) / 'TroLyGiaoVienMamNon'
+if dist_app.is_dir():
+    shutil.copy2(app / 'wpf/icon.ico', dist_app / 'icon.ico')
+    (dist_app / 'wpf').mkdir(parents=True, exist_ok=True)
+    shutil.copy2(app / 'wpf/icon.ico', dist_app / 'wpf/icon.ico')
+

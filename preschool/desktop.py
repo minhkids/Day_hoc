@@ -668,6 +668,12 @@ def create_server(bridge, token):
     return ThreadingHTTPServer(('127.0.0.1',0),Handler)
 
 def launch():
+    if sys.platform == 'win32':
+        try:
+            import ctypes
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('TroLyGiaoDuc.MamNon.Desktop')
+        except Exception:
+            pass
     bridge=Bridge();token=secrets.token_urlsafe(32);server=create_server(bridge,token)
     threading.Thread(target=server.serve_forever,daemon=True).start()
     if updater and '--smoke' not in sys.argv and '--screenshots' not in sys.argv:
