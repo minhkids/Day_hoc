@@ -159,9 +159,3 @@ File thực thi độc lập:
 exe/TroLyChuyenVien-DocLap/TroLyChuyenVien-DocLap.exe
 ```
 
----
-
-## 📞 Hỗ Trợ & Liên Hệ
-- **Tác giả phát triển**: Thầy Trần Thanh Chung
-- **Zalo**: 0913031073
-- **Bản quyền**: Hệ thống Trợ lý AI Giáo dục Việt Nam – Mở khóa vĩnh viễn, bảo mật dữ liệu tuyệt đối.

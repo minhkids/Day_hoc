@@ -1943,18 +1943,368 @@ if($bTop){$bTop.Add_Click({Check-Update})}
 
 foreach($pair in @(@('BtnWord','docx'),@('BtnSlides','pptx'),@('BtnExcel','xlsx'))){$b=F $pair[0];$b.Tag=$pair[1];$b.Add_Click({param($s,$e)if(-not (F 'DocBody').Text.Trim()){Notice 'Nhập nội dung trước khi xuất.';return};$path=Pick $true ([string]$s.Tag);if($path){[void](Api 'export' @{title=(F 'DocTitle').Text;body=(F 'DocBody').Text;format=$s.Tag;path=$path});Status ('Đã xuất: '+$path)}})}
 
-(F 'BtnNewChat').Add_Click({if($script:job){Notice 'Hãy chờ hoặc hủy yêu cầu đang chạy.';return};$script:session=$null;$script:lastAnswer='';(F 'ChatHistory').Clear();(F 'ChatPrompt').Clear();$script:files=@();(F 'FileStatus').Text='Chưa đính kèm tài liệu'})
+function Convert-MarkdownToInlines {
+    param([string]$text)
+    $inlines = New-Object System.Collections.Generic.List[System.Windows.Documents.Inline]
+    $parts = [System.Text.RegularExpressions.Regex]::Split($text, '(\*\*.*?\*\*)')
+    foreach ($part in $parts) {
+        if ([string]::IsNullOrEmpty($part)) { continue }
+        if ($part.StartsWith('**') -and $part.EndsWith('**') -and $part.Length -ge 4) {
+            $inner = $part.Substring(2, $part.Length - 4)
+            $bold = New-Object Windows.Documents.Bold
+            [void]$bold.Inlines.Add((New-Object Windows.Documents.Run($inner)))
+            [void]$inlines.Add($bold)
+        } else {
+            [void]$inlines.Add((New-Object Windows.Documents.Run($part)))
+        }
+    }
+    return $inlines
+}
 
-(F 'BtnClearChat').Add_Click({if(Confirm 'Xóa tất cả hội thoại trong phiên này?'){[void](Api 'chat_clear');$script:session=$null;$script:job=$null;$script:lastAnswer='';(F 'ChatHistory').Clear();(F 'BtnSend').IsEnabled=$true;(F 'BtnCancel').IsEnabled=$false}})
+function Build-FormattedBlock {
+    param([string]$rawText)
+    $panel = New-Object Windows.Controls.StackPanel
+    $lines = $rawText -split "`r?`n"
+    $i = 0
+    while ($i -lt $lines.Length) {
+        $line = $lines[$i]
+        $trimmed = $line.Trim()
+        if ([string]::IsNullOrWhiteSpace($trimmed)) {
+            $spacer = New-Object Windows.Controls.Border
+            $spacer.Height = 8
+            [void]$panel.Children.Add($spacer)
+            $i++
+            continue
+        }
+        if ($trimmed -match '^(#{1,3})\s+(.*)$') {
+            $level = $matches[1].Length
+            $headingText = $matches[2]
+            $tb = New-Object Windows.Controls.TextBlock
+            $tb.TextWrapping = [Windows.TextWrapping]::Wrap
+            $tb.Margin = New-Object Windows.Thickness(0, 8, 0, 4)
+            $tb.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#13423B'))
+            if ($level -eq 1) {
+                $tb.FontSize = 17
+                $tb.FontWeight = [Windows.FontWeights]::Bold
+            } elseif ($level -eq 2) {
+                $tb.FontSize = 15.5
+                $tb.FontWeight = [Windows.FontWeights]::SemiBold
+            } else {
+                $tb.FontSize = 14.5
+                $tb.FontWeight = [Windows.FontWeights]::SemiBold
+            }
+            foreach ($inl in (Convert-MarkdownToInlines $headingText)) { [void]$tb.Inlines.Add($inl) }
+            [void]$panel.Children.Add($tb)
+            $i++
+            continue
+        }
+        if ($trimmed -match '^[-*•]\s+(.*)$') {
+            $itemText = $matches[1]
+            $dp = New-Object Windows.Controls.DockPanel
+            $dp.Margin = New-Object Windows.Thickness(4, 2, 0, 2)
+            $bullet = New-Object Windows.Controls.TextBlock
+            $bullet.Text = "• "
+            $bullet.FontWeight = [Windows.FontWeights]::Bold
+            $bullet.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#207465'))
+            $bullet.Margin = New-Object Windows.Thickness(0, 0, 6, 0)
+            [Windows.Controls.DockPanel]::SetDock($bullet, [Windows.Controls.Dock]::Left)
+            [void]$dp.Children.Add($bullet)
+            $tb = New-Object Windows.Controls.TextBlock
+            $tb.TextWrapping = [Windows.TextWrapping]::Wrap
+            $tb.FontSize = 14
+            $tb.LineHeight = 22
+            $tb.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#1D3531'))
+            foreach ($inl in (Convert-MarkdownToInlines $itemText)) { [void]$tb.Inlines.Add($inl) }
+            [void]$dp.Children.Add($tb)
+            [void]$panel.Children.Add($dp)
+            $i++
+            continue
+        }
+        if ($trimmed -match '^(\d+[\.\)])\s+(.*)$') {
+            $numPrefix = $matches[1]
+            $itemText = $matches[2]
+            $dp = New-Object Windows.Controls.DockPanel
+            $dp.Margin = New-Object Windows.Thickness(4, 3, 0, 3)
+            $numTb = New-Object Windows.Controls.TextBlock
+            $numTb.Text = $numPrefix + " "
+            $numTb.FontWeight = [Windows.FontWeights]::SemiBold
+            $numTb.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#207465'))
+            $numTb.Margin = New-Object Windows.Thickness(0, 0, 6, 0)
+            [Windows.Controls.DockPanel]::SetDock($numTb, [Windows.Controls.Dock]::Left)
+            [void]$dp.Children.Add($numTb)
+            $tb = New-Object Windows.Controls.TextBlock
+            $tb.TextWrapping = [Windows.TextWrapping]::Wrap
+            $tb.FontSize = 14
+            $tb.LineHeight = 22
+            $tb.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#1D3531'))
+            foreach ($inl in (Convert-MarkdownToInlines $itemText)) { [void]$tb.Inlines.Add($inl) }
+            [void]$dp.Children.Add($tb)
+            [void]$panel.Children.Add($dp)
+            $i++
+            continue
+        }
+        $tb = New-Object Windows.Controls.TextBlock
+        $tb.TextWrapping = [Windows.TextWrapping]::Wrap
+        $tb.FontSize = 14
+        $tb.LineHeight = 22
+        $tb.Margin = New-Object Windows.Thickness(0, 2, 0, 2)
+        $tb.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#1D3531'))
+        foreach ($inl in (Convert-MarkdownToInlines $trimmed)) { [void]$tb.Inlines.Add($inl) }
+        [void]$panel.Children.Add($tb)
+        $i++
+    }
+    return $panel
+}
 
-(F 'BtnAttach').Add_Click({$path=Pick;if($path){$script:files+=@($path);(F 'FileStatus').Text=($script:files|ForEach-Object{[IO.Path]::GetFileName($_)}) -join ', '}})
+function Add-ChatMessage {
+    param(
+        [Windows.Controls.StackPanel]$container,
+        [Windows.Controls.ScrollViewer]$scroll,
+        [string]$role,
+        [string]$content,
+        [string[]]$files = @()
+    )
+    $wrapper = New-Object Windows.Controls.Border
+    $wrapper.Margin = New-Object Windows.Thickness(0, 0, 0, 14)
 
-(F 'BtnClearFiles').Add_Click({$script:files=@();(F 'FileStatus').Text='Chưa đính kèm tài liệu'})
+    if ($role -eq 'user') {
+        $wrapper.HorizontalAlignment = [Windows.HorizontalAlignment]::Right
+        $wrapper.MaxWidth = 680
+        $wrapper.Background = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#EBF5F1'))
+        $wrapper.BorderBrush = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#CCE4D9'))
+        $wrapper.BorderThickness = New-Object Windows.Thickness(1)
+        $wrapper.CornerRadius = New-Object Windows.CornerRadius(16, 16, 4, 16)
+        $wrapper.Padding = New-Object Windows.Thickness(16, 12, 16, 12)
 
-(F 'BtnToEditor').Add_Click({if($script:lastAnswer){Open-Editor 'Nội dung từ trợ lý mầm non' $script:lastAnswer}else{Notice 'Chưa có câu trả lời để đưa vào tài liệu.'}})
+        $sp = New-Object Windows.Controls.StackPanel
+        $head = New-Object Windows.Controls.DockPanel
+        $head.Margin = New-Object Windows.Thickness(0, 0, 0, 6)
+        $badge = New-Object Windows.Controls.TextBlock
+        $badge.Text = "👩‍🏫 Cô / Thầy"
+        $badge.FontSize = 12
+        $badge.FontWeight = [Windows.FontWeights]::SemiBold
+        $badge.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#165248'))
+        [void]$head.Children.Add($badge)
+        [void]$sp.Children.Add($head)
 
-$chatToolbar=(F 'BtnToEditor').Parent
-if($chatToolbar -is [Windows.Controls.WrapPanel]){
+        if ($files -and $files.Count -gt 0) {
+            $fp = New-Object Windows.Controls.WrapPanel
+            $fp.Margin = New-Object Windows.Thickness(0, 0, 0, 6)
+            foreach ($f in $files) {
+                $fname = [System.IO.Path]::GetFileName($f)
+                $fb = New-Object Windows.Controls.Border
+                $fb.Background = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#D6EBE1'))
+                $fb.CornerRadius = New-Object Windows.CornerRadius(6)
+                $fb.Padding = New-Object Windows.Thickness(6, 2, 6, 2)
+                $fb.Margin = New-Object Windows.Thickness(0, 0, 4, 4)
+                $ft = New-Object Windows.Controls.TextBlock
+                $ft.Text = "📎 " + $fname
+                $ft.FontSize = 11
+                $ft.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#134B42'))
+                $fb.Child = $ft
+                [void]$fp.Children.Add($fb)
+            }
+            [void]$sp.Children.Add($fp)
+        }
+
+        $tb = New-Object Windows.Controls.TextBlock
+        $tb.Text = $content
+        $tb.TextWrapping = [Windows.TextWrapping]::Wrap
+        $tb.FontSize = 14
+        $tb.LineHeight = 21
+        $tb.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#183832'))
+        [void]$sp.Children.Add($tb)
+
+        $wrapper.Child = $sp
+    }
+    elseif ($role -eq 'thinking') {
+        $wrapper.HorizontalAlignment = [Windows.HorizontalAlignment]::Left
+        $wrapper.MaxWidth = 720
+        $wrapper.Background = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#FFFFFF'))
+        $wrapper.BorderBrush = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#E0EBE4'))
+        $wrapper.BorderThickness = New-Object Windows.Thickness(1)
+        $wrapper.CornerRadius = New-Object Windows.CornerRadius(16, 16, 16, 4)
+        $wrapper.Padding = New-Object Windows.Thickness(16, 12, 16, 12)
+        $wrapper.Tag = 'thinking_card'
+
+        $sp = New-Object Windows.Controls.StackPanel
+        $sp.Orientation = [Windows.Controls.Orientation]::Horizontal
+
+        $icon = New-Object Windows.Controls.TextBlock
+        $icon.Text = "✨ "
+        $icon.FontSize = 15
+        [void]$sp.Children.Add($icon)
+
+        $txt = New-Object Windows.Controls.TextBlock
+        $txt.Text = "Trợ lý Mầm non đang suy nghĩ và chuẩn bị nội dung..."
+        $txt.FontSize = 13.5
+        $txt.FontStyle = [Windows.FontStyles]::Italic
+        $txt.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#58786F'))
+        $txt.VerticalAlignment = [Windows.VerticalAlignment]::Center
+        [void]$sp.Children.Add($txt)
+
+        $wrapper.Child = $sp
+    }
+    else {
+        $wrapper.HorizontalAlignment = [Windows.HorizontalAlignment]::Stretch
+        $wrapper.Background = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#FFFFFF'))
+        $wrapper.BorderBrush = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#DEE9E3'))
+        $wrapper.BorderThickness = New-Object Windows.Thickness(1)
+        $wrapper.CornerRadius = New-Object Windows.CornerRadius(16, 16, 16, 4)
+        $wrapper.Padding = New-Object Windows.Thickness(20, 16, 20, 14)
+
+        $sp = New-Object Windows.Controls.StackPanel
+
+        $head = New-Object Windows.Controls.DockPanel
+        $head.Margin = New-Object Windows.Thickness(0, 0, 0, 10)
+
+        $avatar = New-Object Windows.Controls.Border
+        $avatar.Width = 28
+        $avatar.Height = 28
+        $avatar.CornerRadius = New-Object Windows.CornerRadius(8)
+        $avatar.Background = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#1C6A5D'))
+        $avatar.Margin = New-Object Windows.Thickness(0, 0, 8, 0)
+        $avTxt = New-Object Windows.Controls.TextBlock
+        $avTxt.Text = "✨"
+        $avTxt.FontSize = 14
+        $avTxt.HorizontalAlignment = [Windows.HorizontalAlignment]::Center
+        $avTxt.VerticalAlignment = [Windows.VerticalAlignment]::Center
+        $avTxt.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#FFE8A3'))
+        $avatar.Child = $avTxt
+        [Windows.Controls.DockPanel]::SetDock($avatar, [Windows.Controls.Dock]::Left)
+        [void]$head.Children.Add($avatar)
+
+        $title = New-Object Windows.Controls.TextBlock
+        $title.Text = "Trợ lý Giáo viên Mầm non"
+        $title.FontWeight = [Windows.FontWeights]::Bold
+        $title.FontSize = 13.5
+        $title.Foreground = New-Object Windows.Media.SolidColorBrush([Windows.Media.ColorConverter]::ConvertFromString('#113832'))
+        $title.VerticalAlignment = [Windows.VerticalAlignment]::Center
+        [void]$head.Children.Add($title)
+
+        [void]$sp.Children.Add($head)
+
+        $bodyBlock = Build-FormattedBlock $content
+        [void]$sp.Children.Add($bodyBlock)
+
+        $actions = New-Object Windows.Controls.DockPanel
+        $actions.Margin = New-Object Windows.Thickness(0, 12, 0, 0)
+
+        $btnCopy = New-Object Windows.Controls.Button
+        $btnCopy.Content = "📋 Sao chép"
+        $btnCopy.Padding = New-Object Windows.Thickness(10, 5, 10, 5)
+        $btnCopy.FontSize = 12
+        $btnCopy.Margin = New-Object Windows.Thickness(0, 0, 8, 0)
+        $btnCopy.Tag = $content
+        $btnCopy.Add_Click({
+            param($s,$e)
+            try {
+                [Windows.Clipboard]::SetText($s.Tag)
+                $s.Content = "✓ Đã sao chép"
+            } catch {}
+        })
+        [void]$actions.Children.Add($btnCopy)
+
+        $btnEdit = New-Object Windows.Controls.Button
+        $btnEdit.Content = "📝 Đưa vào Soạn thảo"
+        $btnEdit.Padding = New-Object Windows.Thickness(10, 5, 10, 5)
+        $btnEdit.FontSize = 12
+        $btnEdit.Tag = $content
+        $btnEdit.Add_Click({
+            param($s,$e)
+            try {
+                Open-Editor 'Nội dung từ trợ lý mầm non' $s.Tag
+            } catch {}
+        })
+        [void]$actions.Children.Add($btnEdit)
+
+        [void]$sp.Children.Add($actions)
+
+        $wrapper.Child = $sp
+    }
+
+    [void]$container.Children.Add($wrapper)
+    if ($scroll) {
+        $scroll.ScrollToEnd()
+    }
+    return $wrapper
+}
+
+(F 'BtnNewChat').Add_Click({
+    if($script:job){Notice 'Hãy chờ hoặc hủy yêu cầu đang chạy.';return}
+    $script:session=$null
+    $script:lastAnswer=''
+    $script:job=$null
+    (F 'ChatHistory').Clear()
+    (F 'ChatPrompt').Clear()
+    $script:files=@()
+    (F 'FileStatus').Text='Chưa đính kèm tài liệu'
+    $att = F 'AttachedFilesPanel'
+    if($att){$att.Visibility=[Windows.Visibility]::Collapsed}
+    $msgs = F 'ChatMessages'
+    if($msgs){
+        $wel = F 'ChatWelcome'
+        $toRemove = @()
+        foreach($child in $msgs.Children){ if($child -ne $wel){ $toRemove += @($child) } }
+        foreach($c in $toRemove){ [void]$msgs.Children.Remove($c) }
+        if($wel){$wel.Visibility=[Windows.Visibility]::Visible}
+    }
+    (F 'BtnSend').IsEnabled=$true
+    (F 'BtnCancel').IsEnabled=$false
+    Status 'Đã tạo cuộc trò chuyện mới.'
+})
+
+(F 'BtnClearChat').Add_Click({
+    if(Confirm 'Xóa tất cả hội thoại trong phiên này?'){
+        [void](Api 'chat_clear')
+        $script:session=$null
+        $script:job=$null
+        $script:lastAnswer=''
+        (F 'ChatHistory').Clear()
+        (F 'ChatPrompt').Clear()
+        $script:files=@()
+        (F 'FileStatus').Text='Chưa đính kèm tài liệu'
+        $att = F 'AttachedFilesPanel'
+        if($att){$att.Visibility=[Windows.Visibility]::Collapsed}
+        $msgs = F 'ChatMessages'
+        if($msgs){
+            $wel = F 'ChatWelcome'
+            $toRemove = @()
+            foreach($child in $msgs.Children){ if($child -ne $wel){ $toRemove += @($child) } }
+            foreach($c in $toRemove){ [void]$msgs.Children.Remove($c) }
+            if($wel){$wel.Visibility=[Windows.Visibility]::Visible}
+        }
+        (F 'BtnSend').IsEnabled=$true
+        (F 'BtnCancel').IsEnabled=$false
+        Status 'Đã xóa hội thoại.'
+    }
+})
+
+(F 'BtnAttach').Add_Click({
+    $path=Pick
+    if($path){
+        $script:files+=@($path)
+        (F 'FileStatus').Text=($script:files|ForEach-Object{[IO.Path]::GetFileName($_)}) -join ', '
+        $att = F 'AttachedFilesPanel'
+        if($att){$att.Visibility=[Windows.Visibility]::Visible}
+    }
+})
+
+(F 'BtnClearFiles').Add_Click({
+    $script:files=@()
+    (F 'FileStatus').Text='Chưa đính kèm tài liệu'
+    $att = F 'AttachedFilesPanel'
+    if($att){$att.Visibility=[Windows.Visibility]::Collapsed}
+})
+
+(F 'BtnToEditor').Add_Click({
+    if($script:lastAnswer){Open-Editor 'Nội dung từ trợ lý mầm non' $script:lastAnswer}
+    else{Notice 'Chưa có câu trả lời để đưa vào tài liệu.'}
+})
+
+$chatToolbar=F 'ChatQuickBar'
+if(-not $chatToolbar){$chatToolbar=(F 'BtnToEditor').Parent}
+if($chatToolbar){
  Add $chatToolbar (Button '🌟 Soạn bài STEAM 5E' {Launch-AdvMethod-AI 'STEAM (Mô hình 5E: Gắn kết - Khám phá - Giải thích - Củng cố - Đánh giá)'})
  Add $chatToolbar (Button '🏛️ Đánh giá Chuẩn Trường Mức 2' {Launch-SchoolStandards-AI 2})
  Add $chatToolbar (Button '📊 Hoàn thiện Bảng Chuẩn QG' {Launch-SchoolStandards-FillAI})
@@ -1967,38 +2317,88 @@ if($chatToolbar -is [Windows.Controls.WrapPanel]){
  Add $chatToolbar (Button '🗣️ Xoa dịu: Phụ huynh phàn nàn' {Launch-Situation-AI 'Phụ huynh bức xúc phàn nàn vì con bị muỗi cắn hoặc xước da'})
 }
 
+$bSteam = F 'BtnWelcomeSteam'
+if($bSteam){$bSteam.Add_Click({Launch-AdvMethod-AI 'STEAM (Mô hình 5E: Gắn kết - Khám phá - Giải thích - Củng cố - Đánh giá)'})}
+$bStd = F 'BtnWelcomeStandards'
+if($bStd){$bStd.Add_Click({Launch-SchoolStandards-AI 2})}
+$bCry = F 'BtnWelcomeCry'
+if($bCry){$bCry.Add_Click({Launch-Situation-AI 'Trẻ mới đi học khóc nhiều, bám mẹ không chịu vào lớp'})}
+$bBite = F 'BtnWelcomeBite'
+if($bBite){$bBite.Add_Click({Launch-Situation-AI 'Trẻ tranh giành đồ chơi, đánh hoặc cắn bạn'})}
+
+(F 'ChatPrompt').Add_KeyDown({
+    param($s, $e)
+    if ($e.Key -eq [Windows.Input.Key]::Enter) {
+        $shift = [Windows.Input.Keyboard]::IsKeyDown([Windows.Input.Key]::LeftShift) -or [Windows.Input.Keyboard]::IsKeyDown([Windows.Input.Key]::RightShift)
+        if (-not $shift) {
+            $e.Handled = $true
+            Click (F 'BtnSend')
+        }
+    }
+})
+
 (F 'BtnSend').Add_Click({
-
  Refresh;if(-not $script:data.has_key -or -not $script:data.profile.model){Notice 'Vào Cài đặt để nhập model và API key OpenRouter. Mẫu và sổ theo dõi vẫn dùng được khi chưa có AI.';return}
-
  $prompt=(F 'ChatPrompt').Text.Trim();if(-not $prompt){Notice 'Nhập yêu cầu trước khi gửi.';return}
 
  $r=Api 'chat_start' @{prompt=$prompt;session=$script:session;files=@($script:files)}
+ $script:job=$r.job;$script:session=$r.session
 
- $script:job=$r.job;$script:session=$r.session;(F 'ChatHistory').AppendText("`nCÔ / THẦY: "+$prompt+"`n");(F 'ChatPrompt').Clear()
+ $wel = F 'ChatWelcome'
+ if($wel){$wel.Visibility=[Windows.Visibility]::Collapsed}
+
+ [void](Add-ChatMessage (F 'ChatMessages') (F 'ChatScroll') 'user' $prompt $script:files)
+ (F 'ChatHistory').AppendText("`nCÔ / THẦY: "+$prompt+"`n")
+
+ $script:thinkingCard = Add-ChatMessage (F 'ChatMessages') (F 'ChatScroll') 'thinking' ''
+ (F 'ChatPrompt').Clear()
+ $script:files=@();(F 'FileStatus').Text='Chưa đính kèm tài liệu'
+ $att = F 'AttachedFilesPanel'
+ if($att){$att.Visibility=[Windows.Visibility]::Collapsed}
 
  (F 'BtnSend').IsEnabled=$false;(F 'BtnCancel').IsEnabled=$true;Status 'Trợ lý đang soạn nội dung…'
-
 })
 
-(F 'BtnCancel').Add_Click({if($script:job){[void](Api 'chat_cancel' @{job=$script:job});$script:job=$null;(F 'BtnSend').IsEnabled=$true;(F 'BtnCancel').IsEnabled=$false;Status 'Đã hủy nhận kết quả của yêu cầu.'}})
+(F 'BtnCancel').Add_Click({
+ if($script:job){
+  [void](Api 'chat_cancel' @{job=$script:job})
+  $script:job=$null
+  if($script:thinkingCard){
+   [void](F 'ChatMessages').Children.Remove($script:thinkingCard)
+   $script:thinkingCard=$null
+  }
+  (F 'BtnSend').IsEnabled=$true;(F 'BtnCancel').IsEnabled=$false;Status 'Đã hủy nhận kết quả của yêu cầu.'
+ }
+})
 
 $poll=New-Object Windows.Threading.DispatcherTimer;$poll.Interval=[TimeSpan]::FromMilliseconds(700)
 
 $poll.Add_Tick({
-
  if(-not $script:job){return}
-
- try{$r=Api 'chat_poll' @{job=$script:job};if($r.state -ne 'running'){
-
+ try{
+  $r=Api 'chat_poll' @{job=$script:job}
+  if($r.state -ne 'running'){
+   $script:job=$null;(F 'BtnSend').IsEnabled=$true;(F 'BtnCancel').IsEnabled=$false
+   if($script:thinkingCard){
+    [void](F 'ChatMessages').Children.Remove($script:thinkingCard)
+    $script:thinkingCard=$null
+   }
+   if($r.state -eq 'done'){
+    $script:lastAnswer=$r.answer
+    [void](Add-ChatMessage (F 'ChatMessages') (F 'ChatScroll') 'assistant' $r.answer)
+    (F 'ChatHistory').AppendText("`nTRỢ LÝ: "+$r.answer+"`n");(F 'ChatHistory').ScrollToEnd()
+    Status 'Đã soạn xong. Có thể đưa câu trả lời vào tài liệu.'
+   }
+   elseif($r.state -eq 'error'){Notice $r.error}else{Status 'Yêu cầu đã dừng.'}
+  }
+ }catch{
   $script:job=$null;(F 'BtnSend').IsEnabled=$true;(F 'BtnCancel').IsEnabled=$false
-
-  if($r.state -eq 'done'){$script:lastAnswer=$r.answer;(F 'ChatHistory').AppendText("`nTRỢ LÝ: "+$r.answer+"`n");(F 'ChatHistory').ScrollToEnd();Status 'Đã soạn xong. Có thể đưa câu trả lời vào tài liệu.'}
-
-  elseif($r.state -eq 'error'){Notice $r.error}else{Status 'Yêu cầu đã dừng.'}
-
- }}catch{$script:job=$null;(F 'BtnSend').IsEnabled=$true;(F 'BtnCancel').IsEnabled=$false;Notice $_.Exception.Message}
-
+  if($script:thinkingCard){
+   [void](F 'ChatMessages').Children.Remove($script:thinkingCard)
+   $script:thinkingCard=$null
+  }
+  Notice $_.Exception.Message
+ }
 });$poll.Start()
 
 $window.Add_Closing({param($s,$e)if($script:dirty -and (F 'DocBody').Text.Trim() -and -not $Smoke){if(-not (Confirm 'Tài liệu đang sửa chưa lưu. Đóng ứng dụng và bỏ thay đổi?')){$e.Cancel=$true}}})

@@ -55,12 +55,135 @@
      <TextBlock Grid.Row="3" Text="Có thể sửa và lưu trực tiếp. Các mẫu là gợi ý; điều chỉnh theo độ tuổi và mẫu của trường." Foreground="#668077" TextWrapping="Wrap" Margin="0,8,0,0"/>
     </Grid>
     <Grid x:Name="ChatPanel" Visibility="Collapsed">
-     <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
-     <WrapPanel><Button x:Name="BtnNewChat" Content="Chat mới"/><Button x:Name="BtnClearChat" Content="Xóa hội thoại"/><Button x:Name="BtnAttach" Content="Đính kèm"/><Button x:Name="BtnToEditor" Content="Lưu vào tài liệu"/></WrapPanel>
-     <TextBox Grid.Row="1" x:Name="ChatHistory" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontSize="15" Padding="20" Margin="0,12,0,8"/>
-     <DockPanel Grid.Row="2"><Button x:Name="BtnClearFiles" Content="Bỏ đính kèm" DockPanel.Dock="Right"/><TextBlock x:Name="FileStatus" Text="Chưa đính kèm tài liệu" TextWrapping="Wrap" Foreground="#668077" VerticalAlignment="Center"/></DockPanel>
-     <TextBox Grid.Row="3" x:Name="ChatPrompt" Height="115" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Padding="12"/>
-     <DockPanel Grid.Row="4"><Button x:Name="BtnSend" DockPanel.Dock="Right" Content="Gửi yêu cầu" Style="{StaticResource Primary}"/><Button x:Name="BtnCancel" DockPanel.Dock="Right" Content="Hủy yêu cầu" IsEnabled="False"/><TextBlock Text="Hội thoại chỉ giữ trong phiên. Chủ động lưu câu trả lời cần dùng vào Kho tài liệu." TextWrapping="Wrap" Foreground="#668077" VerticalAlignment="Center"/></DockPanel>
+     <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+     </Grid.RowDefinitions>
+
+     <!-- Row 0: Top Action Bar -->
+     <DockPanel Grid.Row="0" Margin="0,0,0,10">
+      <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+       <Button x:Name="BtnNewChat" Content="✨ Hội thoại mới" Margin="0,0,6,0"/>
+       <Button x:Name="BtnClearChat" Content="🗑️ Xóa hội thoại" Margin="0,0,6,0"/>
+       <Button x:Name="BtnToEditor" Content="📝 Đưa vào Soạn thảo"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+       <Border Background="#E6F2ED" CornerRadius="12" Padding="10,5" Margin="0,0,10,0">
+        <TextBlock Text="🤖 Trợ lý AI Mầm non" FontWeight="SemiBold" Foreground="#165147" FontSize="12"/>
+       </Border>
+       <TextBlock Text="Chuyên sâu phương pháp giáo dục mầm non, chuẩn trường học &amp; tình huống" Foreground="#68847C" FontSize="12" VerticalAlignment="Center"/>
+      </StackPanel>
+     </DockPanel>
+
+     <!-- Row 1: Chat Stream Container (Gemini / ChatGPT Style) -->
+     <Border Grid.Row="1" Background="#F8FAF9" CornerRadius="16" BorderBrush="#E1ECE6" BorderThickness="1" ClipToBounds="True" Margin="0,0,0,8">
+      <ScrollViewer x:Name="ChatScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+       <StackPanel x:Name="ChatMessages" Margin="22,18,22,18">
+        <!-- Welcome Banner -->
+        <Border x:Name="ChatWelcome" Background="White" CornerRadius="16" BorderBrush="#E0EBE4" BorderThickness="1" Padding="24,20" Margin="0,4,0,16">
+         <StackPanel>
+          <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+           <Border Background="#1C6A5D" Width="40" Height="40" CornerRadius="10" Margin="0,0,12,0">
+            <TextBlock Text="✨" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFE699"/>
+           </Border>
+           <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Xin chào cô! Em là Trợ lý AI Mầm non" FontSize="18" FontWeight="Bold" Foreground="#123B35"/>
+            <TextBlock Text="Sẵn sàng đồng hành cùng cô soạn giáo án, đánh giá chuẩn và tháo gỡ mọi tình huống sư phạm" Foreground="#617F76" FontSize="12.5" Margin="0,2,0,0"/>
+           </StackPanel>
+          </StackPanel>
+
+          <TextBlock Text="Cô có thể đặt câu hỏi tự do hoặc chọn nhanh các chủ đề gợi ý bên dưới:" Foreground="#4F6D65" FontSize="13" Margin="0,0,0,12"/>
+
+          <WrapPanel x:Name="WelcomeSuggestions">
+           <Button x:Name="BtnWelcomeSteam" Tag="steam" Padding="12,8" Margin="0,0,8,8" Background="#F2F8F5">
+            <StackPanel Orientation="Horizontal">
+             <TextBlock Text="🌟" FontSize="14" Margin="0,0,6,0"/>
+             <StackPanel>
+              <TextBlock Text="Kế hoạch STEAM 5E" FontWeight="SemiBold" Foreground="#184A42" FontSize="12.5"/>
+              <TextBlock Text="Soạn bài tích hợp mô hình 5E chuẩn" Foreground="#6E8E84" FontSize="11"/>
+             </StackPanel>
+            </StackPanel>
+           </Button>
+           <Button x:Name="BtnWelcomeStandards" Tag="standards" Padding="12,8" Margin="0,0,8,8" Background="#F2F8F5">
+            <StackPanel Orientation="Horizontal">
+             <TextBlock Text="🏛️" FontSize="14" Margin="0,0,6,0"/>
+             <StackPanel>
+              <TextBlock Text="Đánh giá Chuẩn Trường Mức 2" FontWeight="SemiBold" Foreground="#184A42" FontSize="12.5"/>
+              <TextBlock Text="Theo Thông tư 19/2018 và 13/2020" Foreground="#6E8E84" FontSize="11"/>
+             </StackPanel>
+            </StackPanel>
+           </Button>
+           <Button x:Name="BtnWelcomeCry" Tag="cry" Padding="12,8" Margin="0,0,8,8" Background="#F2F8F5">
+            <StackPanel Orientation="Horizontal">
+             <TextBlock Text="😭" FontSize="14" Margin="0,0,6,0"/>
+             <StackPanel>
+              <TextBlock Text="Xử lý: Trẻ khóc sáng sớm" FontWeight="SemiBold" Foreground="#184A42" FontSize="12.5"/>
+              <TextBlock Text="3 bước dỗ dành &amp; xoa dịu phụ huynh" Foreground="#6E8E84" FontSize="11"/>
+             </StackPanel>
+            </StackPanel>
+           </Button>
+           <Button x:Name="BtnWelcomeBite" Tag="bite" Padding="12,8" Margin="0,0,8,8" Background="#F2F8F5">
+            <StackPanel Orientation="Horizontal">
+             <TextBlock Text="🦷" FontSize="14" Margin="0,0,6,0"/>
+             <StackPanel>
+              <TextBlock Text="Xử lý: Trẻ cắn / đánh bạn" FontWeight="SemiBold" Foreground="#184A42" FontSize="12.5"/>
+              <TextBlock Text="Kịch bản can thiệp &amp; hòa giải" Foreground="#6E8E84" FontSize="11"/>
+             </StackPanel>
+            </StackPanel>
+           </Button>
+          </WrapPanel>
+         </StackPanel>
+        </Border>
+       </StackPanel>
+      </ScrollViewer>
+     </Border>
+
+     <!-- Row 2: Hidden ChatHistory for backward compatibility -->
+     <TextBox Grid.Row="2" x:Name="ChatHistory" Visibility="Collapsed"/>
+
+     <!-- Row 3: Horizontal Quick Situations and Shortcuts Bar -->
+     <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,0,0,6">
+      <StackPanel x:Name="ChatQuickBar" Orientation="Horizontal"/>
+     </ScrollViewer>
+
+     <!-- Row 4: Floating Rounded Prompt Bar (Gemini / ChatGPT Style) -->
+     <Border Grid.Row="4" Background="White" CornerRadius="16" BorderBrush="#CCDED5" BorderThickness="1.5" Padding="14,10">
+      <Grid>
+       <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+       </Grid.RowDefinitions>
+
+       <!-- Attached Files Chip Strip -->
+       <DockPanel x:Name="AttachedFilesPanel" Margin="0,0,0,6" Visibility="Collapsed">
+        <Button x:Name="BtnClearFiles" Content="✕ Bỏ đính kèm" DockPanel.Dock="Right" Padding="8,4" FontSize="11" Margin="6,0,0,0"/>
+        <Border Background="#EBF5F0" CornerRadius="10" Padding="10,5">
+         <TextBlock x:Name="FileStatus" Text="Chưa đính kèm tài liệu" Foreground="#1B6054" FontSize="12" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+        </Border>
+       </DockPanel>
+
+       <!-- Textarea -->
+       <TextBox Grid.Row="1" x:Name="ChatPrompt" MinHeight="50" MaxHeight="130" AcceptsReturn="True" TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto" FontSize="14" BorderThickness="0" Background="Transparent"
+                Padding="4,2,4,4" Margin="0"/>
+
+       <!-- Bottom Bar: Attach, Shortcuts info, Cancel, Send -->
+       <DockPanel Grid.Row="2" Margin="0,6,0,0">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+         <Button x:Name="BtnAttach" Content="📎 Đính kèm tệp" Padding="12,6" FontSize="12" Margin="0,0,6,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" VerticalAlignment="Center">
+         <Button x:Name="BtnCancel" Content="⏹ Hủy yêu cầu" IsEnabled="False" Padding="12,7" FontSize="12" Margin="0,0,8,0"/>
+         <Button x:Name="BtnSend" Content="➤ Gửi yêu cầu" Style="{StaticResource Primary}" Padding="18,7" FontSize="13" FontWeight="SemiBold"/>
+        </StackPanel>
+        <TextBlock Text="Shift+Enter: xuống dòng · Enter: gửi" Foreground="#84A198" FontSize="11.5" VerticalAlignment="Center" Margin="10,0,10,0" HorizontalAlignment="Right"/>
+       </DockPanel>
+      </Grid>
+     </Border>
     </Grid>
    </Grid>
    <TextBlock Grid.Row="2" x:Name="Status" Text="Sẵn sàng" Foreground="#668077" FontSize="12" TextWrapping="Wrap" Margin="0,14,0,0"/>
