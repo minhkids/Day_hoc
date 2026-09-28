@@ -584,9 +584,9 @@ def get_versions_data() -> dict:
         },
         "preschool": {
             "name": "Trợ lý Giáo viên Mầm non",
-            "latest_version": "1.0.1",
+            "latest_version": "1.0.2",
             "download_url": "https://github.com/minhkids/Day_hoc/releases/download/v1.0.1/TroLyGiaoVienMamNon-Setup.exe",
-            "changelog": "- Tự động quét và cập nhật Thông tư, Nghị định mới.\n- Tích hợp chuẩn hoá địa chỉ sáp nhập phường qua GeoVina API.",
+            "changelog": "- [MỚI] Thử nghiệm tính năng tự động cập nhật từ xa qua Render thành công!\n- Nâng cấp giao diện nút Cập nhật nhanh trên thanh tiêu đề và thanh điều hướng.\n- Tối ưu hóa tốc độ phản hồi và độ ổn định khi tải bản nâng cấp.",
             "mandatory": False
         }
     }
