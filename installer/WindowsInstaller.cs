@@ -319,12 +319,7 @@ internal static class WindowsInstaller
             {
                 CreateShortcut(StartMenuLink(), installedExe, versionPath);
                 CreateShortcut(UninstallMenuLink(), uninstaller, Path.GetDirectoryName(uninstaller));
-
-                string desktopLink = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), manifest.AppName + ".lnk");
-                if (File.Exists(desktopLink))
-                {
-                    CreateShortcut(desktopLink, installedExe, versionPath);
-                }
+                CreateShortcut(DesktopLink(), installedExe, versionPath);
             }
             catch { }
 
@@ -354,6 +349,7 @@ internal static class WindowsInstaller
         private readonly Button next;
         private readonly Button back;
         private readonly Button cancel;
+        private readonly CheckBox desktopShortcut;
         private readonly CheckBox launch;
         private readonly Panel content;
         private readonly Label pageHeading;
@@ -367,6 +363,7 @@ internal static class WindowsInstaller
         public string InstallForCheck(string basePath)
         {
             accept.Checked = true;
+            desktopShortcut.Checked = true;
             destination.Text = basePath;
             Install();
             return installedVersionPath;
@@ -413,6 +410,7 @@ internal static class WindowsInstaller
             accept = new CheckBox();
             destination = new TextBox { ReadOnly = true };
             destination.Text = DefaultInstallBase();
+            desktopShortcut = new CheckBox { Text = "Tạo lối tắt trên màn hình nền (Desktop)", Checked = true };
             launch = new CheckBox { Text = "Mở ứng dụng sau khi hoàn tất", Checked = true };
             progress = new ProgressBar { Style = ProgressBarStyle.Continuous, Minimum = 0, Maximum = 100 };
             status = new Label { ForeColor = System.Drawing.Color.FromArgb(91, 107, 127) };
@@ -433,7 +431,7 @@ internal static class WindowsInstaller
             foreach (Control control in content.Controls.Cast<Control>().Where(c => c != pageHeading && c != pageHint).ToArray())
             {
                 content.Controls.Remove(control);
-                if (control != destination && control != launch && control != accept && control != progress && control != status)
+                if (control != destination && control != launch && control != desktopShortcut && control != accept && control != progress && control != status)
                     control.Dispose();
             }
             for (int i = 0; i < steps.Length; i++)
@@ -518,16 +516,17 @@ internal static class WindowsInstaller
         {
             pageHeading.Text = "Chọn vị trí cài đặt";
             pageHint.Text = "Ứng dụng được cài cho tài khoản Windows hiện tại, không cần quyền quản trị.";
-            var pathTitle = new Label { Left = 32, Top = 132, Width = 690, Height = 24, Text = "Thư mục chương trình", Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.FromArgb(22, 42, 75) };
-            destination.SetBounds(32, 164, 570, 34); destination.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            var browse = new Button { Left = 614, Top = 162, Width = 122, Height = 36, Text = "Chọn thư mục…", FlatStyle = FlatStyle.Flat, BackColor = System.Drawing.Color.FromArgb(244, 247, 251) };
+            var pathTitle = new Label { Left = 32, Top = 124, Width = 690, Height = 24, Text = "Thư mục chương trình", Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.FromArgb(22, 42, 75) };
+            destination.SetBounds(32, 154, 570, 34); destination.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            var browse = new Button { Left = 614, Top = 152, Width = 122, Height = 36, Text = "Chọn thư mục…", FlatStyle = FlatStyle.Flat, BackColor = System.Drawing.Color.FromArgb(244, 247, 251) };
             browse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(205, 214, 226);
             browse.Click += (s, e) => Browse();
-            launch.SetBounds(32, 220, 690, 30); launch.Font = new System.Drawing.Font("Segoe UI", 9.5F); launch.ForeColor = System.Drawing.Color.FromArgb(52, 70, 94);
+            desktopShortcut.SetBounds(32, 202, 690, 26); desktopShortcut.Font = new System.Drawing.Font("Segoe UI", 9.5F); desktopShortcut.ForeColor = System.Drawing.Color.FromArgb(52, 70, 94);
+            launch.SetBounds(32, 234, 690, 26); launch.Font = new System.Drawing.Font("Segoe UI", 9.5F); launch.ForeColor = System.Drawing.Color.FromArgb(52, 70, 94);
             var dataNote = new Label { Left = 32, Top = 276, Width = 690, Height = 76,
                 Text = "Thư mục cài đặt: " + manifest.InstallFolder + "\\versions\\" + manifest.Version + "\nDữ liệu cá nhân được lưu riêng và không bị xóa khi gỡ chương trình.",
                 ForeColor = System.Drawing.Color.FromArgb(91, 107, 127), Font = new System.Drawing.Font("Segoe UI", 9.5F) };
-            content.Controls.AddRange(new Control[] { pathTitle, destination, browse, launch, dataNote });
+            content.Controls.AddRange(new Control[] { pathTitle, destination, browse, desktopShortcut, launch, dataNote });
         }
 
         private void ShowComplete()
@@ -648,6 +647,10 @@ internal static class WindowsInstaller
                     string repairedUninstaller = EnsureRegistration(basePath);
                     CreateShortcut(StartMenuLink(), existingExe, versionPath);
                     CreateShortcut(UninstallMenuLink(), repairedUninstaller, Path.GetDirectoryName(repairedUninstaller));
+                    if (desktopShortcut.Checked)
+                    {
+                        CreateShortcut(DesktopLink(), existingExe, versionPath);
+                    }
                     installedVersionPath = versionPath;
                     ShowPage(3);
                     return;
@@ -687,11 +690,15 @@ internal static class WindowsInstaller
                 {
                     CreateShortcut(StartMenuLink(), installedExe, versionPath);
                     CreateShortcut(UninstallMenuLink(), uninstaller, Path.GetDirectoryName(uninstaller));
+                    if (desktopShortcut.Checked)
+                    {
+                        CreateShortcut(DesktopLink(), installedExe, versionPath);
+                    }
                 }
                 catch (Exception shortcutError)
                 {
                     if (integrationCheck) throw;
-                    MessageBox.Show(this, "Ứng dụng đã được cài đặt, nhưng Windows không tạo được lối tắt Menu Start. Bạn có thể mở trực tiếp:\n\n" + installedExe + "\n\nChi tiết: " + RootError(shortcutError).Message,
+                    MessageBox.Show(this, "Ứng dụng đã được cài đặt, nhưng Windows không tạo được lối tắt. Bạn có thể mở trực tiếp:\n\n" + installedExe + "\n\nChi tiết: " + RootError(shortcutError).Message,
                         Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -712,7 +719,7 @@ internal static class WindowsInstaller
             foreach (Control control in content.Controls.Cast<Control>().Where(c => c != pageHeading && c != pageHint).ToArray())
             {
                 content.Controls.Remove(control);
-                if (control != destination && control != launch && control != accept && control != progress && control != status)
+                if (control != destination && control != launch && control != desktopShortcut && control != accept && control != progress && control != status)
                     control.Dispose();
             }
             pageHeading.Text = "Đang cài đặt";
@@ -834,10 +841,17 @@ internal static class WindowsInstaller
                         fmtid = new Guid("9F4C2855-9F79-4B39-A8D0-E1D42DE1D5F3"),
                         pid = 5
                     };
+                    string appId = "TroLyGiaoDuc.MamNon.Desktop";
+                    if (manifest != null)
+                    {
+                        if (manifest.AppId == "teacher") appId = "TroLyGiaoDuc.GiaoVien.Desktop";
+                        else if (manifest.AppId == "school") appId = "TroLyGiaoDuc.QuanTriTruongHoc.Desktop";
+                        else if (manifest.AppId == "specialist") appId = "TroLyGiaoDuc.ChuyenVien.Desktop";
+                    }
                     var pv = new PROPVARIANT
                     {
                         vt = 31, // VT_LPWSTR
-                        pwszVal = Marshal.StringToCoTaskMemUni("TroLyGiaoDuc.MamNon.Desktop")
+                        pwszVal = Marshal.StringToCoTaskMemUni(appId)
                     };
                     store.SetValue(ref pkey, ref pv);
                     store.Commit();
@@ -894,6 +908,23 @@ internal static class WindowsInstaller
         }
         return link;
     }
+
+    private static string DesktopDirectory()
+    {
+        return IsIntegrationManifest() ? Path.Combine(CheckRoot(), "Desktop") : Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+    }
+
+    private static string DesktopLink()
+    {
+        string link = Path.Combine(DesktopDirectory(), manifest.AppName + ".lnk");
+        if (!File.Exists(link))
+        {
+            string fallback = Path.Combine(DesktopDirectory(), StripDiacritics(manifest.AppName) + ".lnk");
+            if (File.Exists(fallback)) return fallback;
+        }
+        return link;
+    }
+
     private static bool IsIntegrationManifest() { return manifest != null && manifest.RegistryKey.Contains("-InstallTest-"); }
     private static string CheckRoot() { return Path.Combine(Path.GetTempPath(), "TLI-" + manifest.RegistryKey.Substring(manifest.RegistryKey.Length - 8)); }
     private static string MenuDirectory()
@@ -935,6 +966,7 @@ internal static class WindowsInstaller
             string executable = Path.GetFullPath(Path.Combine(versionPath, manifest.Executable));
             if (!File.Exists(executable)) throw new FileNotFoundException("Không tìm thấy ứng dụng đã cài.", executable);
             CreateShortcut(StartMenuLink(), executable, versionPath);
+            CreateShortcut(DesktopLink(), executable, versionPath);
             Console.WriteLine("Shortcut repaired: " + StartMenuLink());
             return 0;
         }
@@ -997,6 +1029,12 @@ internal static class WindowsInstaller
         if (Directory.Exists(versions)) Directory.Delete(versions, true);
         if (File.Exists(StartMenuLink())) File.Delete(StartMenuLink());
         if (File.Exists(UninstallMenuLink())) File.Delete(UninstallMenuLink());
+        try { if (File.Exists(DesktopLink())) File.Delete(DesktopLink()); } catch { }
+        try
+        {
+            string cleanDesk = Path.Combine(DesktopDirectory(), StripDiacritics(manifest.AppName) + ".lnk");
+            if (File.Exists(cleanDesk)) File.Delete(cleanDesk);
+        } catch { }
         using (RegistryKey parent = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall", true))
             if (parent != null) parent.DeleteSubKeyTree(manifest.RegistryKey, false);
         string warning = "";
@@ -1090,7 +1128,7 @@ internal static class WindowsInstaller
         }
         Require(File.ReadAllText(legacy) == "legacy executable", "old uninstaller unchanged");
         Require(Directory.Exists(Path.Combine(root, "versions", "previous-test")), "previous version preserved on upgrade");
-        Require(File.Exists(StartMenuLink()) && File.Exists(UninstallMenuLink()), "application and uninstall shortcuts");
+        Require(File.Exists(StartMenuLink()) && File.Exists(UninstallMenuLink()) && File.Exists(DesktopLink()), "application, uninstall and desktop shortcuts");
         string registeredUninstaller;
         using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryPath()))
         {
@@ -1114,7 +1152,7 @@ internal static class WindowsInstaller
             Require(File.Exists(legacy) && File.ReadAllText(result).Trim() != "PASS", "blocked legacy file reported without blocking uninstall");
         Require(!Directory.Exists(Path.Combine(root, "versions")), "application files removed");
         Require(!Directory.Exists(Path.Combine(root, ".maintenance")), "installed uninstaller removed");
-        Require(!File.Exists(StartMenuLink()) && !File.Exists(UninstallMenuLink()), "shortcuts removed");
+        Require(!File.Exists(StartMenuLink()) && !File.Exists(UninstallMenuLink()) && !File.Exists(DesktopLink()), "shortcuts removed");
         using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryPath())) Require(key == null, "uninstall registry removed");
         Require(File.ReadAllText(userFile) == "keep personal data" && File.ReadAllText(outside) == "keep outside app", "personal files preserved");
         Console.WriteLine("PASS " + manifest.AppId + ": fresh install, locked-file upgrade, same-version repair, real uninstall, personal data preserved");

@@ -25,10 +25,10 @@
   },
   "preschool": {
     "name": "Trợ lý Giáo viên Mầm non",
-    "latest_version": "1.0.3",
-    "download_url": "https://github.com/minhkids/Day_hoc/releases/download/v1.0.3/TroLyGiaoVienMamNon-Setup.exe",
-    "changelog": "- [MỚI] Bản cập nhật v1.0.3 thử nghiệm tính năng nâng cấp tự động ngầm hoàn chỉnh!\n- Toàn bộ dữ liệu của lớp học được giữ nguyên 100%.\n- Tự động đóng và khởi chạy lại phiên bản mới mượt mà.",
+    "latest_version": "1.0.4",
+    "download_url": "https://github.com/minhkids/Day_hoc/releases/download/v1.0.4/TroLyGiaoVienMamNon-Setup.exe",
+    "changelog": "- [MỚI] Tinh gọn giao diện v1.0.4: Loại bỏ phần Chăm sóc trẻ và Tin nhắn phụ huynh, tập trung vào Kế hoạch giáo dục và Hồ sơ trẻ em.\n- Toàn bộ dữ liệu của lớp học được giữ nguyên 100%.\n- Cập nhật trải nghiệm sử dụng nhanh và thuận tiện hơn.",
     "mandatory": false,
-    "release_date": "2026-09-28"
+    "release_date": "2026-10-04"
   }
 }

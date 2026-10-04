@@ -257,7 +257,7 @@ function Cards($page){
 
  }
 
- if($page -in @('activities','parents','materials','legal','children','care','observations')){[void](Disclosure (F 'PageBody') 'Chọn mẫu có sẵn' $wrap)}else{Add (F 'PageBody') $wrap}
+ if($page -in @('activities','plans','materials','legal','children','observations')){[void](Disclosure (F 'PageBody') 'Chọn mẫu có sẵn' $wrap)}else{Add (F 'PageBody') $wrap}
 
 }
 
@@ -271,7 +271,7 @@ function Show-Home {
   @('activities','Soạn hoạt động','Chuẩn bị bài dạy cho lớp','01'),
   @('children','Hồ sơ trẻ','Xem và cập nhật danh sách lớp','02'),
   @('observations','Theo dõi trẻ','Ghi lại tiến bộ trong ngày','03'),
-  @('parents','Tin nhắn phụ huynh','Soạn lời nhắn cho gia đình','04')
+  @('plans','Kế hoạch giáo dục','Kế hoạch năm, tháng, tuần và ngày','04')
  )){
   $b=Button '' {param($sender,$event)Show-Page ([string]$sender.Tag)} $item[0]
   $b.Background='White';$b.Padding='22';$b.Margin='0,0,14,14';$b.HorizontalContentAlignment='Stretch'
@@ -373,7 +373,7 @@ function Show-Journal($kind){
  })
  Add $form $refineBar
 
- Field $form 'Next' $(if($kind -eq 'care'){'Nội dung trao đổi với gia đình'}else{'Hỗ trợ tiếp theo'}) '' $null $true
+ Field $form 'Next' 'Hỗ trợ tiếp theo' '' $null $true
 
  $bar=New-Object Windows.Controls.WrapPanel
 
@@ -1883,10 +1883,6 @@ function Show-Page($id){
 
   'observations' {Show-Journal 'observation'}
 
-  'care' {Show-Journal 'care'}
-
-  'parents' {Show-Parents}
-
   'legal' {Show-Legal}
 
   'library' {Show-Library}
@@ -1913,10 +1909,10 @@ Refresh
 
 $navGroups=@(
  @('HẰNG NGÀY',@('home','activities','plans','materials')),
- @('LỚP CỦA CÔ',@('children','observations','care','parents','calendar')),
+ @('LỚP CỦA CÔ',@('children','observations','calendar')),
  @('TÀI LIỆU & HỖ TRỢ',@('professional','legal','library','chat','settings'))
 )
-$shortNames=@{care='Chăm sóc trẻ';parents='Tin nhắn phụ huynh';legal='Tra cứu văn bản';materials='Học liệu & trò chơi';children='Hồ sơ trẻ'}
+$shortNames=@{legal='Tra cứu văn bản';materials='Học liệu & trò chơi';children='Hồ sơ trẻ'}
 foreach($group in $navGroups){
  $heading=Label $group[0] 10;$heading.Foreground='#A7C8BA';$heading.Margin='14,14,0,6';$heading.FontWeight='SemiBold';Add (F 'NavPanel') $heading
  foreach($id in $group[1]){
@@ -2467,15 +2463,13 @@ function Smoke-Actions {
 
  $script:ui.RecordList.SelectedIndex=0;Load-Record;SetValue 'Next' 'Chuẩn bị thêm khối gỗ.';Click $script:ui.SaveRecord
 
- Show-Page 'care';SetValue 'Child' 'TRE-TEST-01';SetValue 'Notes' 'Tham gia hoạt động cùng nhóm.';SetValue 'Meal' 'Ăn theo ghi nhận của giáo viên';Click $script:ui.SaveRecord
-
  Show-Page 'calendar';SetValue 'TaskTitle' 'Chuẩn bị góc thiên nhiên';Click $script:ui.SaveTask
 
  Show-Page 'legal';SetValue 'SearchLegal' '19/2018';[void](Api 'legal_verify_all')
 
  Refresh
 
- if(@($script:data.document).Count -lt 1 -or @($script:data.child).Count -lt 1 -or @($script:data.observation).Count -lt 1 -or @($script:data.care).Count -lt 1 -or @($script:data.task).Count -lt 1){throw 'Smoke: thiếu dữ liệu sau khi bấm lưu.'}
+ if(@($script:data.document).Count -lt 1 -or @($script:data.child).Count -lt 1 -or @($script:data.observation).Count -lt 1 -or @($script:data.task).Count -lt 1){throw 'Smoke: thiếu dữ liệu sau khi bấm lưu.'}
 
  $doc=$script:data.document[0]
 
@@ -2517,7 +2511,7 @@ if($Smoke){
 
    Prepare-Template 'week';Screenshot 'editor';$s.Stop()
 
-   [IO.File]::WriteAllText((Join-Path $script:data.root 'wpf-smoke.json'),(ConvertTo-Json @{pages=$script:smokePages;actions=@('home-shortcut','template-disclosure','child-detail-groups','legal-category-filter','compact-layout','settings','template','document-save','child-create-convert','observation-create-edit','care-save','task-save','legal-search','export-docx-pptx-xlsx','journal-export');ai_mock=[bool]$SmokeAI;errors=@($script:errors)} -Depth 8))
+   [IO.File]::WriteAllText((Join-Path $script:data.root 'wpf-smoke.json'),(ConvertTo-Json @{pages=$script:smokePages;actions=@('home-shortcut','template-disclosure','child-detail-groups','legal-category-filter','compact-layout','settings','template','document-save','child-create-convert','observation-create-edit','task-save','legal-search','export-docx-pptx-xlsx','journal-export');ai_mock=[bool]$SmokeAI;errors=@($script:errors)} -Depth 8))
 
    $window.Close()
 

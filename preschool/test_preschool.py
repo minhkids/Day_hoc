@@ -73,8 +73,8 @@ class PreschoolTests(unittest.TestCase):
         self.assertEqual(self.bridge.dispatch('chat_poll',dict(job=job['job']))['state'],'cancelled')
         self.assertEqual(self.bridge.chats,{})
     def test_journal_export_text_cells(self):
-        self.bridge.dispatch('save',dict(kind='care',item=dict(date='2026-09-24',child='=SUM(1,2)',notes='Ghi nhận')))
-        target=Path(self.tmp.name)/'journal.xlsx';self.bridge.dispatch('export_records',dict(kind='care',path=str(target)))
+        self.bridge.dispatch('save',dict(kind='observation',item=dict(date='2026-09-24',child='=SUM(1,2)',notes='Ghi nhận')))
+        target=Path(self.tmp.name)/'journal.xlsx';self.bridge.dispatch('export_records',dict(kind='observation',path=str(target)))
         from openpyxl import load_workbook
         wb=load_workbook(target);self.assertEqual(wb.active['B2'].data_type,'s');wb.close()
     def test_legal_circulars_and_sync(self):

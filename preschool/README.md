@@ -1,8 +1,8 @@
-# Trợ lý Giáo viên Mầm non 1.0.1
+# Trợ lý Giáo viên Mầm non 1.0.4
 
-## Giao diện tinh gọn · 1.0.1
+## Giao diện tinh gọn · 1.0.4
 
-- Trang chủ có bốn lối vào chính: soạn hoạt động, hồ sơ trẻ, theo dõi trẻ và tin nhắn phụ huynh.
+- Trang chủ có bốn lối vào chính: soạn hoạt động, hồ sơ trẻ, theo dõi trẻ và kế hoạch giáo dục.
 - Menu chia ba nhóm: Hằng ngày, Lớp của cô, Tài liệu & hỗ trợ.
 - Hồ sơ trẻ thu gọn sức khỏe, gia đình và nơi ở; bấm tên nhóm để mở và chỉnh sửa.
 - Mẫu có sẵn và công cụ chuyên môn được mở khi cần. Tra cứu văn bản dùng ô tìm kiếm và danh sách chọn nhóm.
@@ -21,7 +21,7 @@ Kiểm tra bản này được ghi riêng tại `reports/preschool/ui-1.0.1.md`;
 
 ## Chức năng
 
-14 trang: Trang chủ, Soạn hoạt động, Kế hoạch giáo dục, Hồ sơ trẻ em, Theo dõi trẻ, Chăm sóc và quản lý lớp, Phối hợp phụ huynh, Hồ sơ chuyên môn, Thông tư & Văn bản mới, Học liệu và trò chơi, Kho tài liệu, Lịch công việc, Trò chuyện AI, Cài đặt.
+12 trang: Trang chủ, Soạn hoạt động, Kế hoạch giáo dục, Hồ sơ trẻ em, Theo dõi trẻ, Hồ sơ chuyên môn, Thông tư & Văn bản mới, Học liệu và trò chơi, Kho tài liệu, Lịch công việc, Trò chuyện AI, Cài đặt.
 
 - Tự động cập nhật Công văn, Nghị định & Thông tư mới GD Mầm non: Tự động quét và cập nhật các văn bản QPPL, công văn hướng dẫn nhiệm vụ năm học và chính sách mới nhất từ Cổng TTĐT Bộ GD&ĐT (moet.gov.vn) và Cổng Chính phủ (chinhphu.vn, baochinhphu.vn) ngay khi ứng dụng khởi động và có mạng; hỗ trợ bộ lọc nhanh theo Nghị định, Thông tư, Công văn & Hướng dẫn, Chế độ & Phụ cấp, PP Giáo dục tiên tiến, Chuẩn trường (Mức 1, 2, 3), và Hồ sơ Đảng & Chi bộ; có "Tóm tắt 3 phút cho Giáo viên Mầm non" (nêu rõ điểm mới, quyền lợi, tác động đến lớp dạy); đối chiếu tính chuẩn xác đường dẫn và nút đưa vào biên bản/kế hoạch.
 - **Trung tâm Nghiệp vụ & Trợ lý AI Thông tư - Nghị định (Mới)**:
@@ -34,8 +34,8 @@ Kiểm tra bản này được ghi riêng tại `reports/preschool/ui-1.0.1.md`;
   + Thể trạng & số đo: Cân nặng (kg), chiều cao (cm), tự động tính chỉ số BMI và đánh giá thể trạng dinh dưỡng (Bình thường - Kênh A, Suy dinh dưỡng nhẹ cân/thấp còi, Thừa cân/béo phì), lưu ý sức khỏe/dị ứng.
   + Thông tin gia đình: Họ tên bố, số điện thoại bố, họ tên mẹ, số điện thoại mẹ, người giám hộ và số điện thoại liên hệ khẩn cấp.
   + Nơi ở & Chuyển đổi sáp nhập phường qua GeoVina API: Lưu trữ đồng thời nơi ở TRƯỚC SÁP NHẬP và nơi ở SAU SÁP NHẬP. Có hướng dẫn nhập tiện lợi (chỉ cần nhập tên Phường/Xã cũ - Quận/Huyện - Tỉnh/TP, không bắt buộc nhập số nhà, ngõ ngách chi tiết). Nút bấm chuyển đổi thủ công rõ ràng [📍 Chuyển đổi sang Phường mới], không tự động đổi ngầm khi lưu hồ sơ để cô giáo dễ kiểm soát. Tích hợp trực tiếp **GeoVina API** (https://geovina.io.vn) tự động nhận diện và chuyển đổi hai chiều chuẩn xác theo dữ liệu hành chính mới nhất của Tổng cục Thống kê (GSO); hỗ trợ tự động lấy token miễn phí, lưu cache cục bộ `geovina_cache.json` cho tốc độ phản hồi tức thì; có cơ chế chuyển đổi hàng loạt (`/batch`) cho toàn bộ danh sách lớp; tự động chuyển sang bộ quy tắc nội bộ khi không có kết nối mạng; nút [📄 Tải file Excel mẫu] chuẩn 17 cột và nút [📥 Nạp danh sách từ Excel] giúp nạp danh sách cả lớp trong tích tắc; xuất danh sách 16 cột ra Excel (.xlsx).
-- 36 mẫu có cấu trúc: chỉnh sửa, lưu và xuất Word/PowerPoint/Excel khi không có mạng.
-- Sổ theo dõi trẻ & Nhật ký chăm sóc: liên kết trực tiếp với danh mục trẻ em để chọn nhanh trẻ khi ghi nhận; thêm, sửa, tìm, xóa và xuất Excel.
+- Các mẫu có cấu trúc: chỉnh sửa, lưu và xuất Word/PowerPoint/Excel khi không có mạng.
+- Sổ theo dõi trẻ: liên kết trực tiếp với danh mục trẻ em để chọn nhanh trẻ khi ghi nhận; thêm, sửa, tìm, xóa và xuất Excel.
 - Công việc: tên, hạn, trạng thái; chỉnh sửa và hiển thị trên Trang chủ.
 - AI: nhập model và API key OpenRouter tại Cài đặt; đính kèm tài liệu, hội thoại trong phiên, hủy yêu cầu và chuyển trả lời sang trình soạn thảo. Không tự gửi tin nhắn cho phụ huynh.
 - Hai học liệu HTML chạy tại máy: nhận biết màu sắc và đồng hồ hoạt động.
@@ -60,4 +60,4 @@ python preschool/smoke.py --exe
 python preschool/build_installer.py
 ```
 
-Kết quả kiểm tra bản 1.0.0 ngày 24/09/2026: 10 kiểm thử tự động đạt (100%); smoke test đạt 14/14 trang bao gồm Hồ sơ trẻ em, GeoVina API và 4 tính năng AI Thông tư & Chuẩn trường & Hồ sơ Đảng; EXE đóng gói mở 14 trang và thực hiện các thao tác lưu/sửa, xuất Office, tra cứu pháp luật đạt; luồng AI trên WPF đạt với nhà cung cấp mô phỏng; hai trò chơi đạt kiểm tra trên Chrome headless; bộ cài đạt hoàn thiện. Báo cáo: `reports/preschool/release-check.json`.
+Kết quả kiểm tra: kiểm thử tự động đạt (100%); smoke test đạt 12/12 trang bao gồm Hồ sơ trẻ em, GeoVina API và các tính năng AI Thông tư & Chuẩn trường & Hồ sơ Đảng; EXE đóng gói mở 12 trang và thực hiện các thao tác lưu/sửa, xuất Office, tra cứu pháp luật đạt; luồng AI trên WPF đạt với nhà cung cấp mô phỏng; hai trò chơi đạt kiểm tra trên Chrome headless; bộ cài đạt hoàn thiện. Báo cáo: `reports/preschool/release-check.json`.

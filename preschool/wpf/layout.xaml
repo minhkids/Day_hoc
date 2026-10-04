@@ -30,7 +30,7 @@
      <Separator Background="#356158"/>
      <Button x:Name="BtnCheckUpdateNav" Style="{StaticResource Nav}" Content="🔄 Cập nhật phần mềm" FontSize="12"/>
      <Button x:Name="BtnSchool" Style="{StaticResource Nav}" Content="Không gian trường học ↗" FontSize="12"/>
-     <TextBlock Text="Phiên bản mầm non · 1.0.3" Foreground="#A7C8BA" FontSize="11" Margin="10,8,0,0"/>
+     <TextBlock Text="Phiên bản mầm non · 1.0.4" Foreground="#A7C8BA" FontSize="11" Margin="10,8,0,0"/>
     </StackPanel>
     <ScrollViewer VerticalScrollBarVisibility="Auto"><StackPanel x:Name="NavPanel"/></ScrollViewer>
    </DockPanel>
