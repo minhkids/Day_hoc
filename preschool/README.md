@@ -1,6 +1,6 @@
-# Trợ lý Giáo viên Mầm non 1.0.4
+# Trợ lý Giáo viên Mầm non 1.0.5
 
-## Giao diện tinh gọn · 1.0.4
+## Nghiệp vụ Mầm non & Công tác Đảng · 1.0.5
 
 - Trang chủ có bốn lối vào chính: soạn hoạt động, hồ sơ trẻ, theo dõi trẻ và kế hoạch giáo dục.
 - Menu chia ba nhóm: Hằng ngày, Lớp của cô, Tài liệu & hỗ trợ.
@@ -28,7 +28,7 @@ Kiểm tra bản này được ghi riêng tại `reports/preschool/ui-1.0.1.md`;
   + **Phương pháp Giáo dục tiên tiến**: Hướng dẫn và kết nối AI soạn bài theo VBHN 01/VBHN-BGDĐT: STEAM (quy trình 5E: Gắn kết - Khám phá - Giải thích - Áp dụng - Đánh giá, quy trình thiết kế kỹ thuật EDP), Montessori (5 góc hoạt động, bài học 3 bước), Reggio Emilia (học theo dự án, xưởng sáng tạo Atelier), Học qua chơi lấy trẻ làm trung tâm. Nút bấm 1-click kích hoạt Trợ lý AI soạn giáo án chi tiết và chuyển sang trình soạn thảo để xuất Word/PowerPoint.
   + **Đánh giá Chuẩn trường học theo Mức độ (1, 2, 3)**: Dựa trên Thông tư 19/2018/TT-BGDĐT (Kiểm định chất lượng & Chuẩn quốc gia trường MN) và Thông tư 13/2020/TT-BGDĐT (Tiêu chuẩn CSVC Mức 1 & Mức 2). AI tự động lọc đúng tiêu chí/chỉ báo tương ứng theo Mức 1 (tối thiểu), Mức 2 (Chuẩn QG Mức 1), Mức 3 (Chuẩn QG Mức 2); phân tích Đạt/Chưa đạt, Điểm mạnh, Tồn tại, Kế hoạch cải tiến và mã hóa minh chứng chuẩn [H1-1.01-01].
   + **Bảng đánh giá trường học đạt chuẩn quốc gia theo các mức độ**: Khung biểu mẫu bảng tự đánh giá 5 Tiêu chuẩn, 25 Tiêu chí (Phụ lục Thông tư 19/2018/TT-BGDĐT). Tích hợp nút [📊 Mở Bảng tự đánh giá] chỉnh sửa ngay hoặc [🤖 AI Điền mẫu Bảng tự đánh giá] để AI tự động điền dự thảo toàn diện.
-  + **Cập nhật Hồ sơ Đảng & Chi bộ**: Dành riêng cho giáo viên mầm non theo Quy định 124-QĐ/TW & Hướng dẫn 25-HD/BTCTW. Bao gồm: Bản kiểm điểm đảng viên cuối năm (Mẫu 02-HD/BTCTW), Bản cam kết tu dưỡng rèn luyện năm, Biên bản & Nghị quyết sinh hoạt Chi bộ trường học. Tích hợp AI gợi ý tự phê bình, ưu điểm, hạn chế và giải pháp khắc phục gắn liền với thực tế nuôi dạy trẻ.
+  + **Cập nhật Hồ sơ Đảng & Chi bộ**: Dành riêng cho giáo viên mầm non và cấp ủy chi bộ theo Quy định 124-QĐ/TW & Hướng dẫn 25-HD/BTCTW. Bao gồm trọn bộ 7 công cụ nghiệp vụ: Bản kiểm điểm đảng viên cuối năm (Mẫu 02-HD/BTCTW), Bản cam kết tu dưỡng rèn luyện năm, Biên bản & Nghị quyết sinh hoạt Chi bộ định kỳ/chuyên đề, Báo cáo sinh hoạt Chi bộ, Báo cáo kết quả kiểm điểm đánh giá xếp loại Đảng viên, Sổ điểm danh Đảng viên dự họp chi bộ, và Bài tham luận Đảng tại Đại hội/chuyên đề. Tích hợp AI một chạm tự động gợi ý nội dung tự phê bình, ưu điểm, hạn chế, phương hướng và giải pháp khắc phục gắn liền với thực tiễn nuôi dưỡng, chăm sóc, giáo dục trẻ mầm non.
 - Quản lý Hồ sơ trẻ em & Chuyển đổi nơi ở sáp nhập phường qua GeoVina API (https://geovina.io.vn/docs):
   + Quản lý danh sách học sinh: Mã trẻ, họ tên, giới tính, ngày sinh, lớp.
   + Thể trạng & số đo: Cân nặng (kg), chiều cao (cm), tự động tính chỉ số BMI và đánh giá thể trạng dinh dưỡng (Bình thường - Kênh A, Suy dinh dưỡng nhẹ cân/thấp còi, Thừa cân/béo phì), lưu ý sức khỏe/dị ứng.

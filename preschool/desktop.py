@@ -39,7 +39,7 @@ except ImportError:
 ROOT = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parent))
 APP_ID = 'preschool'
 APP_NAME = 'Trợ lý Giáo viên Mầm non'
-VERSION = '1.0.4'
+VERSION = '1.0.5'
 core.SYSTEM = SYSTEM
 DEFAULTS = dict(name='', agency='', classes='', age=AGES[4], year='2026–2027',
                 role='Giáo viên mầm non', position='Giáo viên mầm non',

@@ -1397,6 +1397,68 @@ function Launch-PartyMinutes-AI {
  Show-Page 'chat'
 }
 
+function Launch-PartyBranchReport-AI {
+ $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
+ (F 'ChatPrompt').Text = "Hãy soạn thảo BÁO CÁO KẾT QUẢ CÔNG TÁC ĐẢNG VÀ SINH HOẠT CHI BỘ ĐỊNH KỲ (Tháng/Quý) của Chi bộ $($school):`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu ngữ, Tiêu đề '# BÁO CÁO KẾT QUẢ CÔNG TÁC ĐẢNG VÀ SINH HOẠT CHI BỘ', không có lời mào đầu AI.`n- Trình bày đầy đủ 5 phần chuẩn mực của văn bản Đảng trường mầm non:`n  1. Đặc điểm tình hình chi bộ (Số lượng đảng viên chính thức, dự bị; thuận lợi, khó khăn đặc thù bậc học mầm non)`n  2. Kết quả lãnh đạo thực hiện nhiệm vụ chính trị và chuyên môn nuôi dạy trẻ (An toàn thể chất - tinh thần, dinh dưỡng bán trú, đổi mới phương pháp giáo dục tiên tiến STEAM/Montessori)`n  3. Kết quả công tác xây dựng Đảng (Chính trị tư tưởng, bồi dưỡng quần chúng phát triển đảng viên mới, kiểm tra giám sát)`n  4. Đánh giá chung (Ưu điểm, hạn chế và nguyên nhân thực tế)`n  5. Phương hướng, nhiệm vụ trọng tâm kỳ tới gắn với kế hoạch năm học.`n`nSoạn chi tiết, trang trọng, số liệu giả định hợp lý và đúng chuẩn thể thức văn bản Đảng."
+ Show-Page 'chat'
+}
+
+function Launch-PartyRating-AI {
+ $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
+ (F 'ChatPrompt').Text = "Hãy soạn thảo BÁO CÁO KẾT QUẢ KIỂM ĐIỂM, ĐÁNH GIÁ, XẾP LOẠI CHẤT LƯỢNG TỔ CHỨC ĐẢNG VÀ ĐẢNG VIÊN CUỐI NĂM (Theo Quy định 124-QĐ/TW & Hướng dẫn 25-HD/BTCTW) của Chi bộ $($school):`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề '# BÁO CÁO ĐÁNH GIÁ, XẾP LOẠI CHẤT LƯỢNG ĐẢNG VIÊN VÀ CHI BỘ NĂM ...', không mở bài thừa.`n- Bố cục chuẩn thể thức Đảng:`n  1. Công tác quán triệt và triển khai thực hiện`n  2. Kết quả kiểm điểm tự đánh giá tập thể Chi bộ mầm non`n  3. Bảng tổng hợp kết quả đánh giá, xếp loại đảng viên (Hoàn thành xuất sắc nhiệm vụ - khống chế không quá 20% theo quy định; Hoàn thành tốt nhiệm vụ; Hoàn thành nhiệm vụ; Không hoàn thành nhiệm vụ)`n  4. Đề xuất khen thưởng tập thể và đảng viên tiêu biểu`n  5. Kế hoạch, biện pháp khắc phục tồn tại, khuyết điểm trong năm tới.`n`nTrình bày chuyên nghiệp, logic, chuẩn tỷ lệ theo quy định của Ban Tổ chức Trung ương."
+ Show-Page 'chat'
+}
+
+function Launch-PartyAttendance-AI {
+ $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
+ (F 'ChatPrompt').Text = "Hãy lập SỔ ĐIỂM DANH VÀ THEO DÕI ĐẢNG VIÊN THAM DỰ SINH HOẠT CHI BỘ TRƯỜNG MẦM NON ($($school)):`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề '# SỔ ĐIỂM DANH ĐẢNG VIÊN DỰ SINH HOẠT CHI BỘ', không mở bài thừa.`n- Lập bảng Markdown rõ ràng gồm:`n  1. Thông tin buổi sinh hoạt (Thời gian, địa điểm, chủ trì, thư ký, nội dung kỳ sinh hoạt)`n  2. Thống kê quân số: Tổng số đảng viên, số có mặt, số vắng mặt (có phép, không phép)`n  3. Bảng chi tiết danh sách đảng viên có mặt (STT, Họ tên, Chức vụ chuyên môn, Chức vụ Đảng, Chữ ký xác nhận)`n  4. Bảng danh sách đảng viên vắng mặt và lý do cụ thể`n  5. Phần kết luận và xác nhận của Bí thư Chi bộ.`n`nThiết kế gọn gàng, chuẩn mực, sẵn sàng in ấn hoặc lưu trữ sổ bộ Đảng."
+ Show-Page 'chat'
+}
+
+function Launch-PartySpeech-AI {
+ $school = if($script:data.profile.agency){$script:data.profile.agency}else{'Trường Mầm non'}
+ $name = if($script:data.profile.name){$script:data.profile.name}else{'Đảng viên Giáo viên'}
+ (F 'ChatPrompt').Text = "Hãy soạn thảo BÀI THAM LUẬN ĐẢNG VIÊN TẠI ĐẠI HỘI CHI BỘ / BUỔI SINH HOẠT CHUYÊN ĐỀ CỦA CHI BỘ TRƯỜNG MẦM NON ($($school), đồng chí: $($name)):`n`nQUY TẮC BẮT BUỘC:`n- Bắt đầu ngay bằng Tiêu đề '# BÀI THAM LUẬN: NÂNG CAO VAI TRÒ TIÊN PHONG CỦA ĐẢNG VIÊN TRONG ĐỔI MỚI PHƯƠNG PHÁP NUÔI DẠY VÀ BẢO ĐẢM AN TOÀN TUYỆT ĐỐI CHO TRẺ MẦM NON', không mào đầu của AI.`n- Cấu trúc bài tham luận sâu sắc, thuyết phục:`n  1. Lời chào trang trọng gửi tới Đoàn chủ tịch, đại biểu và toàn thể đảng viên`n  2. Thực trạng công tác nuôi dưỡng, chăm sóc, giáo dục trẻ và vai trò hạt nhân của Chi bộ`n  3. Những kết quả nổi bật và bài học kinh nghiệm từ thực tiễn đứng lớp của đảng viên giáo viên`n  4. Đề xuất 4 giải pháp trọng tâm (Nêu cao tinh thần trách nhiệm nhà giáo; Đổi mới phương pháp STEAM/lấy trẻ làm trung tâm; Xây dựng môi trường an toàn, hạnh phúc; Tự phê bình và học tập Bác)`n  5. Lời cam kết quyết tâm và lời chúc Đại hội thành công tốt đẹp.`n`nGiọng văn truyền cảm hứng, tính chiến đấu và tính xây dựng cao, đậm chất sư phạm mầm non."
+ Show-Page 'chat'
+}
+
+
+function Show-Professional {
+ $p=F 'PageBody'
+ 
+ $hero=New-Object Windows.Controls.Border;$hero.Background='#E8F2EE';$hero.CornerRadius='14';$hero.Padding='18';$hero.Margin='0,0,0,16'
+ $hs=Panel
+ 
+ $ht=Label 'Sinh hoạt chuyên môn & Đào tạo' 18
+ $ht.FontWeight='Bold';$ht.Foreground='#164B43';Add $hs $ht
+ 
+ $desc=Label 'Nâng cao năng lực giáo viên và thiết kế tài liệu chuyên môn' 13;$desc.Foreground='#164B43';$desc.Margin='0,0,0,12';Add $hs $desc
+ 
+ $btnLayout=New-Object Windows.Controls.WrapPanel
+ 
+ $btn=Button 'Thiết kế mẫu chuyên môn mới từ File' {
+  $file = Pick -save $false -format 'docx'
+  if(-not $file){return}
+  $script:files = @($file)
+  (F 'FileStatus').Text = [IO.Path]::GetFileName($file)
+  $att = F 'AttachedFilesPanel'
+  if($att){$att.Visibility='Visible'}
+  
+  $prompt="Dựa vào cấu trúc và phong cách của tài liệu chuyên môn mẫu được đính kèm, hãy thiết kế một tài liệu tương tự nhưng với chủ đề và ý tưởng khác (Vui lòng gợi ý cho tôi một số chủ đề hoặc hỏi tôi muốn làm chủ đề gì nhé)."
+  (F 'ChatPrompt').Text = $prompt
+  $script:session = 'professional'
+  Show-Page 'chat'
+ }
+ $btn.Padding='12,8';$btn.Margin='0,8,12,0';$btn.Background='#207465';$btn.Foreground='White';$btn.FontWeight='SemiBold'
+ Add $btnLayout $btn
+ 
+ Add $hs $btnLayout
+ $hero.Child=$hs
+ Add $p $hero
+
+ Cards 'professional'
+}
+
 function Show-Legal {
 
  $p=F 'PageBody'
@@ -1535,12 +1597,20 @@ function Show-Legal {
  $box4=New-Object Windows.Controls.Border;$box4.Background='#FFFFFF';$box4.BorderBrush='#FFCDD2';$box4.BorderThickness='1';$box4.CornerRadius='10';$box4.Padding='12';$box4.Margin='8,8,0,0'
  $b4s=Panel
  $b4Title=Label '🚩 4. CẬP NHẬT HỒ SƠ ĐẢNG VIÊN & CHI BỘ' 13.5;$b4Title.FontWeight='Bold';$b4Title.Foreground='#C62828';Add $b4s $b4Title
- $b4Desc=Label 'Theo QĐ 124-QĐ/TW & HD 25-HD/BTCTW: Chuẩn hóa Bản kiểm điểm đảng viên cuối năm (Mẫu 02), Bản cam kết tu dưỡng và Biên bản sinh hoạt Chi bộ.' 11.5;$b4Desc.Foreground='#D32F2F';Add $b4s $b4Desc
+ $b4Desc=Label 'Theo QĐ 124-QĐ/TW & HD 25-HD/BTCTW: Kiểm điểm đảng viên (Mẫu 02), Báo cáo sinh hoạt chi bộ, Đánh giá xếp loại, Điểm danh và Tham luận chi bộ mầm non.' 11.5;$b4Desc.Foreground='#D32F2F';Add $b4s $b4Desc
  $b4Wrap=New-Object Windows.Controls.WrapPanel;$b4Wrap.Margin='0,6,0,0'
- Add $b4Wrap (Button '✍️ AI Soạn Bản kiểm điểm Đảng viên (Mẫu 02)' {Launch-PartyReview-AI})
- Add $b4Wrap (Button '📜 AI Soạn Bản cam kết tu dưỡng năm' {Launch-PartyCommitment-AI})
- Add $b4Wrap (Button '👥 AI Soạn Biên bản sinh hoạt Chi bộ' {Launch-PartyMinutes-AI})
- Add $b4Wrap (Button '📄 Mở Mẫu Kiểm điểm Đảng trong Soạn thảo' {Prepare-Template 'party_review'})
+ Add $b4Wrap (Button '✍️ AI Kiểm điểm Đảng viên (Mẫu 02)' {Launch-PartyReview-AI})
+ Add $b4Wrap (Button '📜 AI Bản cam kết tu dưỡng năm' {Launch-PartyCommitment-AI})
+ Add $b4Wrap (Button '👥 AI Biên bản sinh hoạt Chi bộ' {Launch-PartyMinutes-AI})
+ Add $b4Wrap (Button '📑 AI Báo cáo sinh hoạt Chi bộ' {Launch-PartyBranchReport-AI})
+ Add $b4Wrap (Button '⭐ AI Báo cáo xếp loại Đảng viên' {Launch-PartyRating-AI})
+ Add $b4Wrap (Button '📋 AI Sổ điểm danh sinh hoạt Đảng' {Launch-PartyAttendance-AI})
+ Add $b4Wrap (Button '🎤 AI Soạn Bài tham luận Đảng' {Launch-PartySpeech-AI})
+ Add $b4Wrap (Button '📄 Mở Mẫu Kiểm điểm Đảng' {Prepare-Template 'party_review'})
+ Add $b4Wrap (Button '📄 Mở Mẫu Báo cáo sinh hoạt' {Prepare-Template 'party_branch_report'})
+ Add $b4Wrap (Button '📄 Mở Mẫu Xếp loại Đảng viên' {Prepare-Template 'party_rating_report'})
+ Add $b4Wrap (Button '📄 Mở Mẫu Điểm danh Đảng viên' {Prepare-Template 'party_attendance'})
+ Add $b4Wrap (Button '📄 Mở Mẫu Tham luận Đảng' {Prepare-Template 'party_speech'})
  Add $b4s $b4Wrap;$box4.Child=$b4s;[Windows.Controls.Grid]::SetColumn($box4, 1);[Windows.Controls.Grid]::SetRow($box4, 1);Add $hubGrid $box4
 
  Add $hubStack $hubGrid
@@ -1896,6 +1966,8 @@ function Show-Page($id){
   'editor' {(F 'PageTitle').Text='Soạn tài liệu';(F 'PageSubtitle').Text='Chỉnh sửa, lưu và xuất hồ sơ của lớp';(F 'PageScroll').Visibility='Collapsed';(F 'EditorPanel').Visibility='Visible'}
 
   'chat' {(F 'PageScroll').Visibility='Collapsed';(F 'ChatPanel').Visibility='Visible'}
+  
+  'professional' {Show-Professional}
 
   default {Cards $id}
 
@@ -2304,7 +2376,11 @@ if($chatToolbar){
  Add $chatToolbar (Button '🌟 Soạn bài STEAM 5E' {Launch-AdvMethod-AI 'STEAM (Mô hình 5E: Gắn kết - Khám phá - Giải thích - Củng cố - Đánh giá)'})
  Add $chatToolbar (Button '🏛️ Đánh giá Chuẩn Trường Mức 2' {Launch-SchoolStandards-AI 2})
  Add $chatToolbar (Button '📊 Hoàn thiện Bảng Chuẩn QG' {Launch-SchoolStandards-FillAI})
- Add $chatToolbar (Button '🚩 Kiểm điểm Đảng viên (Mẫu 02)' {Launch-PartyReview-AI})
+ Add $chatToolbar (Button '🚩 Kiểm điểm Đảng (Mẫu 02)' {Launch-PartyReview-AI})
+ Add $chatToolbar (Button '📑 Báo cáo sinh hoạt Chi bộ' {Launch-PartyBranchReport-AI})
+ Add $chatToolbar (Button '⭐ Xếp loại Đảng viên' {Launch-PartyRating-AI})
+ Add $chatToolbar (Button '📋 Sổ điểm danh Đảng' {Launch-PartyAttendance-AI})
+ Add $chatToolbar (Button '🎤 Tham luận Chi bộ' {Launch-PartySpeech-AI})
  Add $chatToolbar (Button '😭 Xử lý: Trẻ khóc sáng sớm' {Launch-Situation-AI 'Trẻ mới đi học khóc nhiều, bám mẹ không chịu vào lớp'})
  Add $chatToolbar (Button '🦷 Xử lý: Trẻ cắn / đánh bạn' {Launch-Situation-AI 'Trẻ tranh giành đồ chơi, đánh hoặc cắn bạn'})
  Add $chatToolbar (Button '🥣 Xử lý: Trẻ biếng ăn / ngậm cơm' {Launch-Situation-AI 'Trẻ biếng ăn, ngậm cơm lâu, dễ nôn trớ'})

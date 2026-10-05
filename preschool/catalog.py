@@ -60,6 +60,10 @@ SPECS = [
  ('poem','materials','Thơ, vè và nhịp điệu','Nội dung tự sáng tác dễ nghe, dễ nhớ.', ['Chủ đề','Bài thơ hoặc vè tự sáng tác','Cử chỉ, nhịp điệu gợi ý','Cách tổ chức cùng trẻ']),
  ('movement','materials','Trò chơi vận động','Luật chơi đơn giản và cách tổ chức.', ['Tên trò chơi','Mục tiêu, nhóm tuổi','Không gian và đồ dùng','Cách chơi','Vai trò giáo viên','Biến thể theo khả năng']),
  ('picture','materials','Phiếu hoạt động bằng hình ảnh','Nối, tô, phân loại và nhận biết.', ['Mục tiêu, nhóm tuổi','Mô tả hình ảnh cần chuẩn bị','Hướng dẫn hoạt động bằng lời','Cách quan sát trẻ thực hiện','Điều chỉnh độ khó']),
+ ('party_branch_report','professional','Báo cáo sinh hoạt chi bộ','Báo cáo kết quả công tác Đảng và sinh hoạt chi bộ định kỳ.', ['Đặc điểm tình hình chi bộ', 'Kết quả lãnh đạo thực hiện nhiệm vụ chính trị và chuyên môn', 'Kết quả công tác xây dựng Đảng', 'Đánh giá chung', 'Phương hướng, nhiệm vụ trọng tâm kỳ tới']),
+ ('party_rating_report','professional','Báo cáo xếp loại Đảng viên','Báo cáo kết quả kiểm điểm, đánh giá, xếp loại chất lượng đảng viên.', ['Tình hình quán triệt, triển khai việc đánh giá', 'Kết quả kiểm điểm tập thể chi ủy/chi bộ', 'Kết quả đánh giá, xếp loại đảng viên', 'Đề xuất khen thưởng', 'Phương hướng khắc phục hạn chế']),
+ ('party_attendance','professional','Sổ điểm danh Đảng viên','Sổ điểm danh đảng viên dự sinh hoạt chi bộ.', ['Thời gian, địa điểm, nội dung sinh hoạt', 'Tổng số đảng viên', 'Danh sách đảng viên có mặt', 'Danh sách đảng viên vắng mặt', 'Xác nhận của bí thư chi bộ']),
+ ('party_speech','professional','Tham luận Đảng','Bài tham luận sinh hoạt chuyên đề hoặc đại hội chi bộ.', ['Thực trạng công tác', 'Những kết quả nổi bật đã đạt được', 'Khó khăn, vướng mắc trong quá trình thực hiện', 'Đề xuất, kiến nghị giải pháp', 'Lời kết']),
 ]
 
 CUSTOM_BODIES = {
@@ -309,6 +313,132 @@ Thành phần tham dự:
 
            THƯ KÝ CUỘC HỌP                           BÍ THƯ CHI BỘ
         (Ký và ghi rõ họ tên)                    (Ký và ghi rõ họ tên)
+''',
+
+ 'party_branch_report': '''ĐẢNG BỘ: [TÊN ĐẢNG BỘ CẤP TRÊN]
+CHI BỘ: TRƯỜNG MẦM NON [TÊN TRƯỜNG]
+               ĐẢNG CỘNG SẢN VIỆT NAM
+               -------------------
+
+BÁO CÁO KẾT QUẢ CÔNG TÁC ĐẢNG VÀ SINH HOẠT CHI BỘ
+Tháng [THÁNG] năm [NĂM]
+
+1. Đặc điểm tình hình chi bộ
+- Tổng số đảng viên: [...] đồng chí (Chính thức: [...], Dự bị: [...]).
+- Thuận lợi và khó khăn trong tháng.
+
+2. Kết quả lãnh đạo thực hiện nhiệm vụ chính trị và chuyên môn mầm non
+- Công tác nuôi dưỡng, chăm sóc, giáo dục trẻ.
+- Kết quả thực hiện các chuyên đề, phong trào thi đua.
+
+3. Kết quả công tác xây dựng Đảng
+- Công tác chính trị, tư tưởng.
+- Công tác tổ chức, cán bộ và đảng viên (kết nạp đảng viên mới).
+- Công tác kiểm tra, giám sát.
+
+4. Đánh giá chung
+- Ưu điểm, kết quả đạt được.
+- Tồn tại, hạn chế và nguyên nhân.
+
+5. Phương hướng, nhiệm vụ trọng tâm kỳ tới
+- Nhiệm vụ chuyên môn.
+- Nhiệm vụ công tác Đảng.
+''',
+
+ 'party_rating_report': '''ĐẢNG BỘ: [TÊN ĐẢNG BỘ CẤP TRÊN]
+CHI BỘ: TRƯỜNG MẦM NON [TÊN TRƯỜNG]
+               ĐẢNG CỘNG SẢN VIỆT NAM
+               -------------------
+
+BÁO CÁO
+Kết quả kiểm điểm, đánh giá, xếp loại chất lượng tổ chức đảng, đảng viên năm [NĂM]
+
+1. Tình hình quán triệt, triển khai việc đánh giá
+- Chi bộ đã tổ chức quán triệt, triển khai Hướng dẫn số 25-HD/BTCTW và các văn bản liên quan.
+
+2. Kết quả kiểm điểm tập thể chi ủy/chi bộ
+- Tự đánh giá mức độ hoàn thành nhiệm vụ của tập thể: [Hoàn thành Tốt nhiệm vụ / HTXS nhiệm vụ]
+
+3. Kết quả đánh giá, xếp loại đảng viên
+- Tổng số đảng viên được đánh giá, xếp loại: [...] đồng chí.
+- Hoàn thành xuất sắc nhiệm vụ: [...] đồng chí (Tỷ lệ: ...%).
+- Hoàn thành tốt nhiệm vụ: [...] đồng chí.
+- Hoàn thành nhiệm vụ: [...] đồng chí.
+- Không hoàn thành nhiệm vụ: [...] đồng chí.
+
+4. Đề xuất khen thưởng
+- Tập thể: [...]
+- Cá nhân: [...] (Danh sách đính kèm)
+
+5. Phương hướng khắc phục hạn chế
+- Các biện pháp khắc phục yếu kém, tồn tại trong năm tới.
+''',
+
+ 'party_attendance': '''ĐẢNG BỘ: [TÊN ĐẢNG BỘ CẤP TRÊN]
+CHI BỘ: TRƯỜNG MẦM NON [TÊN TRƯỜNG]
+               ĐẢNG CỘNG SẢN VIỆT NAM
+               -------------------
+
+SỔ ĐIỂM DANH ĐẢNG VIÊN DỰ SINH HOẠT CHI BỘ
+Tháng [THÁNG] năm [NĂM]
+
+1. Thời gian, địa điểm, nội dung sinh hoạt
+- Thời gian: [GIỜ] ngày [NGÀY] tháng [THÁNG] năm [NĂM]
+- Địa điểm: Văn phòng Trường Mầm non [TÊN TRƯỜNG]
+- Nội dung: Sinh hoạt chi bộ định kỳ tháng / Sinh hoạt chuyên đề
+
+2. Tổng số đảng viên
+- Tổng số: [...] đồng chí. Trong đó: Chính thức [...], Dự bị [...]
+- Số đảng viên được miễn sinh hoạt: [...] đồng chí.
+
+3. Danh sách đảng viên có mặt
+| STT | Họ và tên | Chức vụ | Ký tên |
+|---|---|---|---|
+| 1 | [Tên đảng viên] | [Chức vụ] | |
+| 2 | [Tên đảng viên] | [Chức vụ] | |
+
+4. Danh sách đảng viên vắng mặt
+| STT | Họ và tên | Có phép / Không phép | Lý do |
+|---|---|---|---|
+| 1 | [Tên đảng viên] | [Có/Không] | [Lý do vắng] |
+
+XÁC NHẬN CỦA BÍ THƯ CHI BỘ
+(Ký và ghi rõ họ tên)
+''',
+
+ 'party_speech': '''ĐẢNG BỘ: [TÊN ĐẢNG BỘ CẤP TRÊN]
+CHI BỘ: TRƯỜNG MẦM NON [TÊN TRƯỜNG]
+               ĐẢNG CỘNG SẢN VIỆT NAM
+               -------------------
+
+BÀI THAM LUẬN
+Về việc nâng cao chất lượng [TÊN CHUYÊN ĐỀ / CÔNG TÁC]
+Tại Đại hội Chi bộ / Sinh hoạt chuyên đề năm [NĂM]
+
+Kính thưa Đoàn chủ tịch!
+Kính thưa các đồng chí đại biểu, thưa toàn thể Đại hội (Chi bộ)!
+
+Hôm nay, tôi rất vinh dự được trình bày tham luận về chủ đề: "Nâng cao chất lượng [TÊN CHUYÊN ĐỀ / CÔNG TÁC]" tại trường Mầm non [TÊN TRƯỜNG].
+
+1. Thực trạng công tác
+- Tóm tắt tình hình thực tiễn tại trường/lớp mầm non liên quan đến chủ đề tham luận.
+- Nhận thức của đảng viên, giáo viên về vai trò của công tác này.
+
+2. Những kết quả nổi bật đã đạt được
+- Nêu rõ các thành tích, sự chuyển biến tích cực nhờ sự lãnh đạo của Chi bộ.
+- Trích dẫn số liệu hoặc ví dụ thực tế.
+
+3. Khó khăn, vướng mắc trong quá trình thực hiện
+- Những rào cản khách quan và chủ quan.
+
+4. Đề xuất, kiến nghị giải pháp
+- Giải pháp 1: [Giải pháp về công tác tư tưởng, chỉ đạo]
+- Giải pháp 2: [Giải pháp về thực hiện chuyên môn]
+- Giải pháp 3: [Giải pháp về phối hợp gia đình - nhà trường]
+
+5. Lời kết
+- Khẳng định quyết tâm thực hiện thắng lợi Nghị quyết.
+- Xin kính chúc sức khỏe các vị đại biểu, chúc Đại hội thành công tốt đẹp!
 '''
 }
 

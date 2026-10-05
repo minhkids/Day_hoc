@@ -99,6 +99,10 @@ class PreschoolTests(unittest.TestCase):
         self.assertIn('party_review', cat_ids)
         self.assertIn('party_commitment', cat_ids)
         self.assertIn('party_branch_minutes', cat_ids)
+        self.assertIn('party_branch_report', cat_ids)
+        self.assertIn('party_rating_report', cat_ids)
+        self.assertIn('party_attendance', cat_ids)
+        self.assertIn('party_speech', cat_ids)
 
         school_eval = next(c for c in state['catalog'] if c['id'] == 'school_standards_eval')
         self.assertIn('Thông tư số 19/2018/TT-BGDĐT', school_eval['body'])
@@ -114,10 +118,24 @@ class PreschoolTests(unittest.TestCase):
         self.assertIn('Mẫu 02-HD/BTCTW', party_review['body'])
         self.assertIn('Quy định 124-QĐ/TW', party_review['body'])
 
+        party_branch_rep = next(c for c in state['catalog'] if c['id'] == 'party_branch_report')
+        self.assertIn('BÁO CÁO KẾT QUẢ CÔNG TÁC ĐẢNG VÀ SINH HOẠT CHI BỘ', party_branch_rep['body'])
+
+        party_rating = next(c for c in state['catalog'] if c['id'] == 'party_rating_report')
+        self.assertIn('xếp loại chất lượng tổ chức đảng, đảng viên', party_rating['body'])
+
+        party_att = next(c for c in state['catalog'] if c['id'] == 'party_attendance')
+        self.assertIn('SỔ ĐIỂM DANH ĐẢNG VIÊN DỰ SINH HOẠT CHI BỘ', party_att['body'])
+
+        party_sp = next(c for c in state['catalog'] if c['id'] == 'party_speech')
+        self.assertIn('BÀI THAM LUẬN', party_sp['body'])
+
         doc1 = self.bridge.dispatch('save', dict(kind='document', item=dict(title='Tự đánh giá chuẩn trường', body=school_eval['body'])))
         self.assertTrue(doc1['id'])
         doc2 = self.bridge.dispatch('save', dict(kind='document', item=dict(title='Bản kiểm điểm đảng viên', body=party_review['body'])))
         self.assertTrue(doc2['id'])
+        doc3 = self.bridge.dispatch('save', dict(kind='document', item=dict(title='Báo cáo sinh hoạt chi bộ', body=party_branch_rep['body'])))
+        self.assertTrue(doc3['id'])
 
     def test_legal_link_verification_mechanism(self):
         # 1. Test valid preschool teacher document URL
