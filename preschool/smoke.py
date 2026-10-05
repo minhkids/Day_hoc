@@ -28,5 +28,5 @@ with tempfile.TemporaryDirectory(prefix='preschool-smoke-') as tmp:
         print(r.stdout.decode('utf-8',errors='replace').encode('ascii','backslashreplace').decode())
         print(r.stderr.decode('utf-8',errors='replace').encode('ascii','backslashreplace').decode())
         raise SystemExit(r.returncode or 1)
-    assert len(data['pages'])==12
-    print('PASS: 12 pages, form create/edit/save, children profile, ward address conversion, legal circulars, Office and journal exports, clean exit.')
+    assert len(data['pages'])==13
+    print('PASS: 13 pages, form create/edit/save, children profile, ward address conversion, legal circulars, Office and journal exports, clean exit.')

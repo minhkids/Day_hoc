@@ -584,9 +584,9 @@ def get_versions_data() -> dict:
         },
         "preschool": {
             "name": "Trợ lý Giáo viên Mầm non",
-            "latest_version": "1.0.5",
-            "download_url": "https://github.com/minhkids/Day_hoc/releases/download/v1.0.5/TroLyGiaoVienMamNon-Setup.exe",
-            "changelog": "- [MỚI] Tích hợp trọn bộ Nghiệp vụ Hồ sơ Đảng & Chi bộ Mầm non theo QĐ 124-QĐ/TW & HD 25-HD/BTCTW:\n  + Báo cáo sinh hoạt Chi bộ định kỳ tháng/quý\n  + Báo cáo kiểm điểm, đánh giá, xếp loại chất lượng Đảng viên cuối năm\n  + Sổ điểm danh Đảng viên dự họp chi bộ\n  + Bài tham luận Đảng viên tại Đại hội / sinh hoạt chuyên đề\n- Bổ sung nút AI 1-chạm và phím tắt nghiệp vụ Đảng trên thanh công cụ.\n- Toàn bộ dữ liệu của lớp học được giữ nguyên 100%.",
+            "latest_version": "1.0.6",
+            "download_url": "https://github.com/minhkids/Day_hoc/releases/download/v1.0.6/TroLyGiaoVienMamNon-Setup.exe",
+            "changelog": "- [MỚI] Tách riêng danh mục 'Hồ sơ Đảng & Chi bộ' ra thanh điều hướng Navbar bên trái.\n- Bổ sung trang làm việc chuyên biệt với 7 biểu mẫu chuẩn và 7 nút trợ lý AI 1-chạm màu đỏ trang trọng.\n- Tối ưu trang 'Hồ sơ chuyên môn' gọn gàng, tập trung hoàn toàn vào sư phạm.\n- Toàn bộ dữ liệu của lớp học được giữ nguyên 100%.",
             "mandatory": False
         }
     }

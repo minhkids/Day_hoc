@@ -1459,6 +1459,44 @@ function Show-Professional {
  Cards 'professional'
 }
 
+function Show-Party {
+ $p=F 'PageBody'
+ 
+ $hero=New-Object Windows.Controls.Border
+ $hero.Background='#FFF5F5';$hero.BorderBrush='#FFCDD2';$hero.BorderThickness='1';$hero.CornerRadius='14';$hero.Padding='18';$hero.Margin='0,0,0,16'
+ $hs=Panel
+ 
+ $ht=Label '⭐ Nghiệp vụ & Hồ sơ Công tác Đảng Chi bộ' 18
+ $ht.FontWeight='Bold';$ht.Foreground='#B71C1C';Add $hs $ht
+ 
+ $desc=Label 'Hồ sơ Đảng viên, sinh hoạt chi bộ trường mầm non và đánh giá xếp loại cuối năm theo quy định' 13
+ $desc.Foreground='#880E4F';$desc.Margin='0,0,0,12';Add $hs $desc
+ 
+ $aiHub=New-Object Windows.Controls.WrapPanel
+ 
+ $partyButtons = @(
+  @('Bản kiểm điểm Mẫu 02 ↗', {Launch-PartyReview-AI}),
+  @('Bản cam kết tu dưỡng ↗', {Launch-PartyCommitment-AI}),
+  @('Biên bản sinh hoạt Chi bộ ↗', {Launch-PartyMinutes-AI}),
+  @('Báo cáo sinh hoạt Chi bộ ↗', {Launch-PartyBranchReport-AI}),
+  @('Báo cáo xếp loại Đảng viên ↗', {Launch-PartyRating-AI}),
+  @('Sổ điểm danh Đảng viên ↗', {Launch-PartyAttendance-AI}),
+  @('Tham luận Đại hội / Chuyên đề ↗', {Launch-PartySpeech-AI})
+ )
+ 
+ foreach($pb in $partyButtons){
+  $btn=Button $pb[0] $pb[1]
+  $btn.Padding='10,7';$btn.Margin='0,6,10,0';$btn.Background='#C62828';$btn.Foreground='White';$btn.FontWeight='SemiBold'
+  Add $aiHub $btn
+ }
+ 
+ Add $hs $aiHub
+ $hero.Child=$hs
+ Add $p $hero
+
+ Cards 'party'
+}
+
 function Show-Legal {
 
  $p=F 'PageBody'
@@ -1969,6 +2007,8 @@ function Show-Page($id){
   
   'professional' {Show-Professional}
 
+  'party' {Show-Party}
+
   default {Cards $id}
 
  }
@@ -1982,9 +2022,9 @@ Refresh
 $navGroups=@(
  @('HẰNG NGÀY',@('home','activities','plans','materials')),
  @('LỚP CỦA CÔ',@('children','observations','calendar')),
- @('TÀI LIỆU & HỖ TRỢ',@('professional','legal','library','chat','settings'))
+ @('TÀI LIỆU & HỖ TRỢ',@('professional','party','legal','library','chat','settings'))
 )
-$shortNames=@{legal='Tra cứu văn bản';materials='Học liệu & trò chơi';children='Hồ sơ trẻ'}
+$shortNames=@{legal='Tra cứu văn bản';materials='Học liệu & trò chơi';children='Hồ sơ trẻ';party='Hồ sơ Đảng & Chi bộ'}
 foreach($group in $navGroups){
  $heading=Label $group[0] 10;$heading.Foreground='#A7C8BA';$heading.Margin='14,14,0,6';$heading.FontWeight='SemiBold';Add (F 'NavPanel') $heading
  foreach($id in $group[1]){
